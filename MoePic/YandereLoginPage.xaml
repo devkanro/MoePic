@@ -1,0 +1,46 @@
+﻿<Models:MoePicPage
+    x:Class="MoePic.YandereLoginPage"
+    xmlns:Models="clr-namespace:MoePic.Models"
+    xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+    xmlns:phone="clr-namespace:Microsoft.Phone.Controls;assembly=Microsoft.Phone"
+    xmlns:shell="clr-namespace:Microsoft.Phone.Shell;assembly=Microsoft.Phone"
+    xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+    xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+    FontFamily="{StaticResource PhoneFontFamilyNormal}"
+    FontSize="{StaticResource PhoneFontSizeNormal}"
+    Style="{StaticResource PageTranstionStyle}"
+    SupportedOrientations="Portrait" Orientation="Portrait"
+    mc:Ignorable="d"
+    shell:SystemTray.IsVisible="False">
+    <Grid x:Name="LayoutRoot" Background="{Binding Background, Source={StaticResource ThemeColor}}">
+        <Grid.RowDefinitions>
+            <RowDefinition Height="50"/>
+            <RowDefinition/>
+        </Grid.RowDefinitions>
+        <Grid Grid.Row="1">
+            <StackPanel>
+                <TextBlock Margin="12,12,12,0" TextWrapping="Wrap" FontSize="30" Foreground="{Binding Text2, Source={StaticResource ThemeColor}}"><Bold><Run Text="{Binding LocalizedResources.YLoginPageTile, Mode=OneWay, Source={StaticResource LocalizedStrings}}"/></Bold></TextBlock>
+                <TextBlock Margin="12,12,12,0" TextWrapping="Wrap" Foreground="{Binding Text2, Source={StaticResource ThemeColor}}" Text="{Binding LocalizedResources.YLoginPageInfo1, Mode=OneWay, Source={StaticResource LocalizedStrings}}"></TextBlock>
+                <TextBlock Margin="12,12,12,0" TextWrapping="Wrap" Foreground="{Binding Text2, Source={StaticResource ThemeColor}}"><Bold><Run Text="{Binding LocalizedResources.YLoginPageContent1, Mode=OneWay, Source={StaticResource LocalizedStrings}}"></Run></Bold></TextBlock>
+                <TextBlock Margin="12,12,12,0" TextWrapping="Wrap" Foreground="{Binding Text2, Source={StaticResource ThemeColor}}"><Bold><Run Text="{Binding LocalizedResources.YLoginPageContent2, Mode=OneWay, Source={StaticResource LocalizedStrings}}"/></Bold></TextBlock>
+                <TextBlock Margin="12,12,12,0" TextWrapping="Wrap" Foreground="{Binding Text2, Source={StaticResource ThemeColor}}"><Bold><Run Text="{Binding LocalizedResources.YLoginPageContent3, Mode=OneWay, Source={StaticResource LocalizedStrings}}"/></Bold></TextBlock>
+                <TextBlock Margin="12,12,12,0" TextWrapping="Wrap" Foreground="{Binding Text2, Source={StaticResource ThemeColor}}" Text="{Binding LocalizedResources.YLoginPageInfo2, Mode=OneWay, Source={StaticResource LocalizedStrings}}"></TextBlock>
+
+                <TextBlock Margin="12,12,12,0" Text="{Binding LocalizedResources.LoginName, Mode=OneWay, Source={StaticResource LocalizedStrings}}" Foreground="{Binding Text2, Source={StaticResource ThemeColor}}"></TextBlock>
+                <TextBox x:Name="name" Background="{Binding Text2, Source={StaticResource ThemeColor}}" BorderBrush="#26D4BBBB" Foreground="#FFC0DEED" BorderThickness="0"></TextBox>
+
+                <TextBlock Margin="12,0,12,0" Text="{Binding LocalizedResources.LoginPassword, Mode=OneWay, Source={StaticResource LocalizedStrings}}" Foreground="{Binding Text2, Source={StaticResource ThemeColor}}"></TextBlock>
+                <PasswordBox x:Name="password" Background="{Binding Text2, Source={StaticResource ThemeColor}}" BorderBrush="#26D4BBBB" Foreground="#FFC0DEED" BorderThickness="0"></PasswordBox>
+                <TextBlock x:Name="ErrorInfo" Margin="12,0,12,0" Text="{Binding LocalizedResources.LoginFail, Mode=OneWay, Source={StaticResource LocalizedStrings}}" Foreground="#FFED5858" Visibility="Collapsed"></TextBlock>
+            </StackPanel>
+            <Grid Background="#7F000000" x:Name="nowLogining" Visibility="Collapsed">
+                <StackPanel VerticalAlignment="Center">
+                    <ProgressBar x:Name="pro" IsIndeterminate="True"></ProgressBar>
+                    <TextBlock Text="{Binding LocalizedResources.Logining, Mode=OneWay, Source={StaticResource LocalizedStrings}}" HorizontalAlignment="Center"></TextBlock>
+                </StackPanel>
+            </Grid>
+        </Grid>
+        
+    </Grid>
+</Models:MoePicPage>

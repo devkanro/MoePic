@@ -1,0 +1,40 @@
+﻿<Models:MoePicPage
+    x:Class="MoePic.LoginPage"
+    xmlns:Models="clr-namespace:MoePic.Models"
+    xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+    xmlns:phone="clr-namespace:Microsoft.Phone.Controls;assembly=Microsoft.Phone"
+    xmlns:shell="clr-namespace:Microsoft.Phone.Shell;assembly=Microsoft.Phone"
+    xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+    xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+    FontFamily="{StaticResource PhoneFontFamilyNormal}"
+    FontSize="{StaticResource PhoneFontSizeNormal}"
+    Style="{StaticResource PageTranstionStyle}"
+    SupportedOrientations="Portrait" Orientation="Portrait"
+    mc:Ignorable="d"
+    shell:SystemTray.IsVisible="False">
+    <Grid x:Name="LayoutRoot" Background="{Binding Background, Source={StaticResource ThemeColor}}">
+        <Grid.RowDefinitions>
+            <RowDefinition Height="50"/>
+            <RowDefinition/>
+        </Grid.RowDefinitions>
+        <Grid Grid.Row="1">
+            <StackPanel>
+                <TextBlock Margin="12,12,12,0" TextWrapping="Wrap" FontSize="30" Foreground="{Binding Text2, Source={StaticResource ThemeColor}}"><Bold><Run Text="{Binding LocalizedResources.LoginPageTile, Mode=OneWay, Source={StaticResource LocalizedStrings}}"/></Bold></TextBlock>
+                <TextBlock Margin="12,12,12,0" TextWrapping="Wrap" Foreground="{Binding Text2, Source={StaticResource ThemeColor}}" Text="{Binding LocalizedResources.LoginPageInfo1, Mode=OneWay, Source={StaticResource LocalizedStrings}}"></TextBlock>
+                <TextBlock Margin="12,12,12,0" TextWrapping="Wrap" Foreground="{Binding Text2, Source={StaticResource ThemeColor}}"><Bold><Run Text="{Binding LocalizedResources.LoginPageContent1, Mode=OneWay, Source={StaticResource LocalizedStrings}}"></Run></Bold></TextBlock>
+                <TextBlock Margin="12,12,12,0" TextWrapping="Wrap" Foreground="{Binding Text2, Source={StaticResource ThemeColor}}"><Bold><Run Text="{Binding LocalizedResources.LoginPageContent2, Mode=OneWay, Source={StaticResource LocalizedStrings}}"/></Bold></TextBlock>
+                <TextBlock Margin="12,12,12,0" TextWrapping="Wrap" Foreground="{Binding Text2, Source={StaticResource ThemeColor}}"><Bold><Run Text="{Binding LocalizedResources.LoginPageContent3, Mode=OneWay, Source={StaticResource LocalizedStrings}}"/></Bold></TextBlock>
+                <TextBlock Margin="12,12,12,0" TextWrapping="Wrap" Foreground="{Binding Text2, Source={StaticResource ThemeColor}}"><Bold><Run Text="{Binding LocalizedResources.LoginPageContent4, Mode=OneWay, Source={StaticResource LocalizedStrings}}"/></Bold></TextBlock>
+                <TextBlock Margin="12,12,12,0" TextWrapping="Wrap" Foreground="{Binding Text2, Source={StaticResource ThemeColor}}" Text="{Binding LocalizedResources.LoginPageInfo2, Mode=OneWay, Source={StaticResource LocalizedStrings}}"></TextBlock>
+                <TextBlock x:Name="signInText" Margin="12,0" TextWrapping="Wrap" Foreground="#7FFFFFFF" Visibility="Collapsed">您已连接到Microsoft账户,登出后萌妹将失去与您的账户之间的连接.</TextBlock>
+            </StackPanel>
+            <Grid x:Name="Logining" Background="#4C000000" Visibility="Collapsed">
+                <StackPanel VerticalAlignment="Center">
+                    <ProgressBar IsIndeterminate="True"></ProgressBar>
+                    <TextBlock Text="{Binding LocalizedResources.Logining, Mode=OneWay, Source={StaticResource LocalizedStrings}}" HorizontalAlignment="Center"></TextBlock>
+                </StackPanel>
+            </Grid>
+        </Grid>
+    </Grid>
+</Models:MoePicPage>

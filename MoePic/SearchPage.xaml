@@ -1,0 +1,49 @@
+﻿<Models:MoePicPage
+    x:Class="MoePic.SearchPage"
+    xmlns:Models="clr-namespace:MoePic.Models"
+    xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+    xmlns:phone="clr-namespace:Microsoft.Phone.Controls;assembly=Microsoft.Phone"
+    xmlns:shell="clr-namespace:Microsoft.Phone.Shell;assembly=Microsoft.Phone"
+    xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+    xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+    xmlns:tl="clr-namespace:Telerik.Windows.Controls;assembly=Telerik.Windows.Controls.Primitives"
+    xmlns:tlin="clr-namespace:Telerik.Windows.Controls;assembly=Telerik.Windows.Controls.Input"
+    xmlns:tlcore="clr-namespace:Telerik.Windows.Controls;assembly=Telerik.Windows.Core"
+    xmlns:local="clr-namespace:MoePic"
+    xmlns:con="clr-namespace:MoePic.Controls"
+    FontFamily="{StaticResource PhoneFontFamilyNormal}"
+    FontSize="{StaticResource PhoneFontSizeNormal}"
+    SupportedOrientations="Portrait" Orientation="Portrait"
+    mc:Ignorable="d"
+    Style="{StaticResource PageTranstionStyle}"
+    shell:SystemTray.IsVisible="False">
+    <Models:MoePicPage.Resources>
+        <local:TagStringConverter x:Key="TagStringConverter"/>
+    </Models:MoePicPage.Resources>
+    <Grid x:Name="LayoutRoot" Background="{Binding Background, Source={StaticResource ThemeColor}}">
+        <Grid.RowDefinitions>
+            <RowDefinition Height="50"/>
+            <RowDefinition Height="67"/>
+            <RowDefinition/>
+        </Grid.RowDefinitions>
+        <Grid Grid.Row="1" Background="#FFC0DEED">
+            <tlin:RadAutoCompleteBox
+            GotFocus="textInput_GotFocus"
+            Grid.Row="1"
+            ClearButtonVisibility="Visible"
+            FilterKeyPath="name"
+            AutoCompletePopupDisplayMode="BelowTextBox"
+            x:Name="textInput" BorderThickness="0" Margin="0,-6,0,0" Grid.RowSpan="2" SuggestionSelected="textInput_SuggestionSelected" BorderBrush="{x:Null}" Foreground="#58aced" Background="#e6f2f7" KeyDown="textInput_KeyDown">
+                <tlin:RadAutoCompleteBox.SuggestionItemTemplate>
+                    <DataTemplate>
+                        <TextBlock Text="{Binding name,Converter={StaticResource TagStringConverter}}"/>
+                    </DataTemplate>
+                </tlin:RadAutoCompleteBox.SuggestionItemTemplate>
+            </tlin:RadAutoCompleteBox>
+        </Grid>
+        <con:PostsViewer x:Name="postViewer" Grid.Row="2" RequestLoadData="postViewer_RequestLoadData"/>
+        <Image Grid.Row="2" Source="/Assets/Effects/ShadowNavUP.png" VerticalAlignment="Top" Stretch="Fill" Height="5"/>
+    </Grid>
+
+</Models:MoePicPage>

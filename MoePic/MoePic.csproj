@@ -1,11 +1,11 @@
 ﻿<?xml version="1.0" encoding="utf-8"?>
-<Project ToolsVersion="4.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+<Project ToolsVersion="12.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
   <PropertyGroup>
     <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
     <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
     <ProductVersion>10.0.20506</ProductVersion>
     <SchemaVersion>2.0</SchemaVersion>
-    <ProjectGuid>{F0F083EB-A195-4506-82FA-A85A45C17F73}</ProjectGuid>
+    <ProjectGuid>{E52323D2-7A2C-4BE7-94E5-D15ED906B0AB}</ProjectGuid>
     <ProjectTypeGuids>{C089C8C0-30E0-4E22-80C0-CE093F111A43};{fae04ec0-301f-11d3-bf4b-00c04f79efbc}</ProjectTypeGuids>
     <OutputType>Library</OutputType>
     <AppDesignerFolder>Properties</AppDesignerFolder>
@@ -13,21 +13,19 @@
     <AssemblyName>MoePic</AssemblyName>
     <TargetFrameworkIdentifier>WindowsPhone</TargetFrameworkIdentifier>
     <TargetFrameworkVersion>v8.1</TargetFrameworkVersion>
-    <SilverlightVersion>
-    </SilverlightVersion>
+    <SilverlightVersion>$(TargetFrameworkVersion)</SilverlightVersion>
     <SilverlightApplication>true</SilverlightApplication>
-    <SupportedCultures>
-    </SupportedCultures>
+    <SupportedCultures>zh-Hans%3bja-JP%3bzh-Hant</SupportedCultures>
     <XapOutputs>true</XapOutputs>
     <GenerateSilverlightManifest>true</GenerateSilverlightManifest>
     <XapFilename>MoePic_$(Configuration)_$(Platform).xap</XapFilename>
     <SilverlightManifestTemplate>Properties\AppManifest.xml</SilverlightManifestTemplate>
     <SilverlightAppEntry>MoePic.App</SilverlightAppEntry>
     <ValidateXaml>true</ValidateXaml>
-    <ThrowErrorsInValidation>true</ThrowErrorsInValidation>
     <MinimumVisualStudioVersion>12.0</MinimumVisualStudioVersion>
-    <TargetFrameworkProfile />
+    <ThrowErrorsInValidation>true</ThrowErrorsInValidation>
     <DefaultLanguage>zh-CN</DefaultLanguage>
+    <ExpressionBlendVersion>12.0.51020.0</ExpressionBlendVersion>
   </PropertyGroup>
   <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
     <DebugSymbols>true</DebugSymbols>
@@ -60,7 +58,6 @@
     <NoConfig>true</NoConfig>
     <ErrorReport>prompt</ErrorReport>
     <WarningLevel>4</WarningLevel>
-    <PlatformTarget />
   </PropertyGroup>
   <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|x86' ">
     <DebugType>pdbonly</DebugType>
@@ -71,7 +68,6 @@
     <NoConfig>true</NoConfig>
     <ErrorReport>prompt</ErrorReport>
     <WarningLevel>4</WarningLevel>
-    <PlatformTarget />
   </PropertyGroup>
   <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|ARM' ">
     <DebugSymbols>true</DebugSymbols>
@@ -83,7 +79,6 @@
     <NoConfig>true</NoConfig>
     <ErrorReport>prompt</ErrorReport>
     <WarningLevel>4</WarningLevel>
-    <PlatformTarget />
   </PropertyGroup>
   <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|ARM' ">
     <DebugType>pdbonly</DebugType>
@@ -94,49 +89,468 @@
     <NoConfig>true</NoConfig>
     <ErrorReport>prompt</ErrorReport>
     <WarningLevel>4</WarningLevel>
-    <PlatformTarget />
   </PropertyGroup>
   <ItemGroup>
-    <Compile Include="About.xaml.cs">
-      <DependentUpon>About.xaml</DependentUpon>
+    <Compile Include="AboutPage.xaml.cs">
+      <DependentUpon>AboutPage.xaml</DependentUpon>
     </Compile>
     <Compile Include="App.xaml.cs">
       <DependentUpon>App.xaml</DependentUpon>
     </Compile>
-    <Compile Include="Commands\RateThisAppCommand.cs" />
-    <Compile Include="Commands\SendAnEmailCommand.cs" />
+    <Compile Include="Controls\AchievementBox.xaml.cs">
+      <DependentUpon>AchievementBox.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Controls\ColorControl.xaml.cs">
+      <DependentUpon>ColorControl.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Controls\ColorfulButton.xaml.cs">
+      <DependentUpon>ColorfulButton.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Controls\CommentBox.xaml.cs">
+      <DependentUpon>CommentBox.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Controls\DownListItem.xaml.cs">
+      <DependentUpon>DownListItem.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Controls\HubTile.xaml.cs">
+      <DependentUpon>HubTile.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Controls\MemoryDiagnostics.xaml.cs">
+      <DependentUpon>MemoryDiagnostics.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Controls\MessageBox.xaml.cs">
+      <DependentUpon>MessageBox.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Controls\MeTile.xaml.cs">
+      <DependentUpon>MeTile.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Controls\NoteItem.xaml.cs">
+      <DependentUpon>NoteItem.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Controls\PeopleTile.xaml.cs">
+      <DependentUpon>PeopleTile.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Controls\PeopleTileItem.xaml.cs">
+      <DependentUpon>PeopleTileItem.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Controls\PhotoTile.xaml.cs">
+      <DependentUpon>PhotoTile.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Controls\PoolItem.xaml.cs">
+      <DependentUpon>PoolItem.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Controls\PoolsViewer.xaml.cs">
+      <DependentUpon>PoolsViewer.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Controls\PostItem.xaml.cs">
+      <DependentUpon>PostItem.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Controls\PostsViewer.xaml.cs">
+      <DependentUpon>PostsViewer.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Controls\PostViewer.xaml.cs">
+      <DependentUpon>PostViewer.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Controls\StatusBar.xaml.cs">
+      <DependentUpon>StatusBar.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Controls\TagItem.xaml.cs">
+      <DependentUpon>TagItem.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Controls\TagListItem.xaml.cs">
+      <DependentUpon>TagListItem.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Controls\TagSearchItem.xaml.cs">
+      <DependentUpon>TagSearchItem.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Controls\ToastBox.xaml.cs">
+      <DependentUpon>ToastBox.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="DatePickerPage.xaml.cs">
+      <DependentUpon>DatePickerPage.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="DebugPage.xaml.cs">
+      <DependentUpon>DebugPage.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="DownListPage.xaml.cs">
+      <DependentUpon>DownListPage.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="FavoritePage.xaml.cs">
+      <DependentUpon>FavoritePage.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="HistoryPage.xaml.cs">
+      <DependentUpon>HistoryPage.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="ImageViewPage.xaml.cs">
+      <DependentUpon>ImageViewPage.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="KonachanLoginPage.xaml.cs">
+      <DependentUpon>KonachanLoginPage.xaml</DependentUpon>
+    </Compile>
     <Compile Include="LocalizedStrings.cs" />
+    <Compile Include="LockPage.xaml.cs">
+      <DependentUpon>LockPage.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="LoginPage.xaml.cs">
+      <DependentUpon>LoginPage.xaml</DependentUpon>
+    </Compile>
     <Compile Include="MainPage.xaml.cs">
       <DependentUpon>MainPage.xaml</DependentUpon>
     </Compile>
+    <Compile Include="Models\AchievementService.cs" />
+    <Compile Include="Models\CDNHelper.cs" />
+    <Compile Include="Models\CycleTileHelp.cs" />
+    <Compile Include="Models\DisplaySize.cs" />
+    <Compile Include="Models\DownloadTask.cs" />
+    <Compile Include="Models\DownloadTaskManger.cs" />
+    <Compile Include="Models\ExHentaiAPI.cs" />
+    <Compile Include="Models\FavoriteHelp.cs" />
+    <Compile Include="Models\FindElement.cs" />
+    <Compile Include="Models\HistoryHelp.cs" />
+    <Compile Include="Models\HSBColor.cs" />
+    <Compile Include="Models\HttpPostRequest.cs" />
+    <Compile Include="Models\ImageSaveHelp.cs" />
+    <Compile Include="Models\LiveAPI.cs" />
+    <Compile Include="Models\MemoryDiagnosticsHelper.cs" />
+    <Compile Include="Models\MessageBoxService.cs" />
+    <Compile Include="Models\MoebooruAPI.cs" />
+    <Compile Include="Models\MoeCache.cs" />
+    <Compile Include="Models\MoePicPage.cs" />
+    <Compile Include="Models\NavigationService.cs" />
+    <Compile Include="Models\PhoneNameResolver.cs" />
+    <Compile Include="Models\RuntimeResources.cs" />
+    <Compile Include="Models\Settings.cs" />
+    <Compile Include="Models\SHA1.cs" />
+    <Compile Include="Models\Share\ShareAPI.cs" />
+    <Compile Include="Models\StatusBarService.cs" />
+    <Compile Include="Models\ThemeColor.cs" />
+    <Compile Include="Models\ToastService.cs" />
+    <Compile Include="Models\Share\WeiboControl.xaml.cs">
+      <DependentUpon>WeiboControl.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Models\UriHelp.cs" />
+    <Compile Include="PasswordPage.xaml.cs">
+      <DependentUpon>PasswordPage.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="PoolViewPage.xaml.cs">
+      <DependentUpon>PoolViewPage.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="PostViewPage.xaml.cs">
+      <DependentUpon>PostViewPage.xaml</DependentUpon>
+    </Compile>
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="RankingPage.xaml.cs">
+      <DependentUpon>RankingPage.xaml</DependentUpon>
+    </Compile>
     <Compile Include="Resources\AppResources.Designer.cs">
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
       <DependentUpon>AppResources.resx</DependentUpon>
     </Compile>
-    <Compile Include="ViewModels\CommandSampleViewModel.cs" />
+    <Compile Include="SearchPage.xaml.cs">
+      <DependentUpon>SearchPage.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="SettingPage.xaml.cs">
+      <DependentUpon>SettingPage.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="SplashScreen.xaml.cs">
+      <DependentUpon>SplashScreen.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="TagAliasEditPage.xaml.cs">
+      <DependentUpon>TagAliasEditPage.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="TagAliasPage.xaml.cs">
+      <DependentUpon>TagAliasPage.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="UserPage.xaml.cs">
+      <DependentUpon>UserPage.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="WelcomePage.xaml.cs">
+      <DependentUpon>WelcomePage.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="WelcomeVIPPage.xaml.cs">
+      <DependentUpon>WelcomeVIPPage.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="WhatsNewPage.xaml.cs">
+      <DependentUpon>WhatsNewPage.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="WXEntryPage.xaml.cs">
+      <DependentUpon>WXEntryPage.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="YandereLoginPage.xaml.cs">
+      <DependentUpon>YandereLoginPage.xaml</DependentUpon>
+    </Compile>
+  </ItemGroup>
+  <ItemGroup>
+    <ApplicationDefinition Include="App.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </ApplicationDefinition>
+    <Page Include="AboutPage.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Assets\Icons\appbar.crown.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="Controls\AchievementBox.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Controls\ColorControl.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Controls\ColorfulButton.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Controls\CommentBox.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Controls\DownListItem.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Controls\HubTile.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Controls\MemoryDiagnostics.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Controls\MessageBox.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Controls\MeTile.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Controls\NoteItem.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Controls\PeopleTile.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Controls\PeopleTileItem.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Controls\PhotoTile.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Controls\PoolItem.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Controls\PoolsViewer.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Controls\PostItem.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Controls\PostsViewer.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Controls\PostViewer.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Controls\StatusBar.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Controls\TagItem.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Controls\TagListItem.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Controls\TagSearchItem.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Controls\ToastBox.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="DatePickerPage.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="DebugPage.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="DownListPage.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="FavoritePage.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="HistoryPage.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="ImageViewPage.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="KonachanLoginPage.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="LockPage.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="LoginPage.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="MainPage.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Models\Share\WeiboControl.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="PasswordPage.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="PoolViewPage.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="PostViewPage.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="RankingPage.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="SearchPage.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="SettingPage.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="SplashScreen.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="TagAliasEditPage.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="TagAliasPage.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="UserPage.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="WelcomePage.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="WelcomeVIPPage.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="WhatsNewPage.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="WXEntryPage.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="YandereLoginPage.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
   </ItemGroup>
   <ItemGroup>
     <AppxManifest Include="Package.appxmanifest">
       <SubType>Designer</SubType>
     </AppxManifest>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="app.config" />
+    <None Include="ClassDiagram1.cd" />
+    <None Include="packages.config" />
     <None Include="Properties\AppManifest.xml" />
     <None Include="Properties\WMAppManifest.xml">
       <SubType>Designer</SubType>
     </None>
   </ItemGroup>
   <ItemGroup>
-    <Content Include="Assets\AlignmentGrid.png" />
+    <Content Include="Assets\AppBar1\next.png" />
+    <Content Include="Assets\AppBar2\feature.calendar.png" />
+    <Content Include="Assets\AppBar\back.png" />
+    <Content Include="Assets\Icons\appbar.settings.png" />
+    <Content Include="Assets\Icons\appbar.download.png" />
+    <Content Include="Assets\Icons\check.png" />
+    <Content Include="Assets\Icons\Favourites.png" />
+    <Content Include="Assets\Icons\favs.png" />
+    <Content Include="Assets\Icons\History.png" />
+    <Content Include="Assets\Icons\share.png" />
+    <Content Include="Assets\Icons\save.png" />
     <Content Include="Assets\ApplicationIcon.png">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     </Content>
     <Content Include="Assets\BadgeLogo.png" />
+    <Content Include="Assets\Effects\ShadowContent.png" />
+    <Content Include="Assets\Effects\ShadowNavUP.png" />
+    <Content Include="Assets\Effects\ShadowRight.png" />
+    <Content Include="Assets\Icons\appbar.bug.png" />
+    <Content Include="Assets\Icons\appbar.delete.png" />
+    <Content Include="Assets\Icons\cancel.png" />
+    <Content Include="Assets\Icons\Crop - 01.png" />
+    <Content Include="Assets\Icons\favs.addto.png" />
+    <Content Include="Assets\Icons\feature.search.png" />
+    <Content Include="Assets\Icons\Pencil-03.png" />
+    <Content Include="Assets\Icons\Refresh.png" />
+    <Content Include="Assets\Icons\Search.png" />
+    <Content Include="Assets\Icons\setting.png" />
+    <Content Include="Assets\Icons\Up.png" />
+    <Content Include="Assets\Icons\ViewBack.png" />
     <Content Include="Assets\Logo.png" />
+    <Content Include="Assets\Logos\konachan.png" />
+    <Content Include="Assets\Logos\microsoft.png" />
+    <Content Include="Assets\Logos\microsoft2.png" />
+    <Content Include="Assets\Logos\moepic.png" />
+    <Content Include="Assets\Logos\onedrive.png" />
+    <Content Include="Assets\Logos\P.png" />
+    <Content Include="Assets\Logos\yandere.png" />
+    <Content Include="Assets\Icons\refresh.small.png" />
+    <Content Include="Assets\Sound\Achievement Unlocked.wav" />
     <Content Include="Assets\SplashScreen.png" />
     <Content Include="Assets\SquareTile150x150.png" />
     <Content Include="Assets\SquareTile71x71.png" />
     <Content Include="Assets\StoreLogo.png" />
+    <Content Include="Assets\WideLogo.png" />
     <Content Include="Assets\Tiles\FlipCycleTileLarge.png">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     </Content>
@@ -152,38 +566,81 @@
     <Content Include="Assets\Tiles\IconicTileSmall.png">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     </Content>
-    <Content Include="Assets\WideLogo.png" />
-    <Content Include="Images\CompanyLogo.png" />
+    <Content Include="README_FIRST.txt" />
+    <Content Include="Toolkit.Content\ApplicationBar.Add.png" />
+    <Content Include="Toolkit.Content\ApplicationBar.Cancel.png" />
+    <Content Include="Toolkit.Content\ApplicationBar.Check.png" />
+    <Content Include="Toolkit.Content\ApplicationBar.Delete.png" />
+    <Content Include="Toolkit.Content\ApplicationBar.Select.png" />
   </ItemGroup>
   <ItemGroup>
-    <Reference Include="Telerik.Windows.Controls.Primitives, Version=2014.2.617.3040, Culture=neutral, PublicKeyToken=5803cfa389c90ce7, processorArchitecture=MSIL">
-      <HintPath>D:\Program Files (x86)\Telerik\UI for Windows Phone 8 Q2 2014\Binaries\WindowsPhone\Telerik.Windows.Controls.Primitives.dll</HintPath>
-      <Private>True</Private>
-    </Reference>
-    <Reference Include="Telerik.Windows.Core, Version=2014.2.617.3040, Culture=neutral, PublicKeyToken=5803cfa389c90ce7, processorArchitecture=MSIL">
-      <HintPath>D:\Program Files (x86)\Telerik\UI for Windows Phone 8 Q2 2014\Binaries\WindowsPhone\Telerik.Windows.Core.dll</HintPath>
-      <Private>True</Private>
-    </Reference>
-  </ItemGroup>
-  <ItemGroup>
-    <Page Include="About.xaml">
-      <Generator>MSBuild:Compile</Generator>
+    <EmbeddedResource Include="Resources\AppResources.en.resx">
       <SubType>Designer</SubType>
-    </Page>
-    <ApplicationDefinition Include="App.xaml">
-      <Generator>MSBuild:Compile</Generator>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Resources\AppResources.ja-JP.resx">
       <SubType>Designer</SubType>
-    </ApplicationDefinition>
-    <Page Include="MainPage.xaml">
-      <Generator>MSBuild:Compile</Generator>
-      <SubType>Designer</SubType>
-    </Page>
-  </ItemGroup>
-  <ItemGroup>
+    </EmbeddedResource>
     <EmbeddedResource Include="Resources\AppResources.resx">
       <Generator>PublicResXFileCodeGenerator</Generator>
       <LastGenOutput>AppResources.Designer.cs</LastGenOutput>
+      <SubType>Designer</SubType>
     </EmbeddedResource>
+    <EmbeddedResource Include="Resources\AppResources.zh-Hans.resx">
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Resources\AppResources.zh-Hant.resx">
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+  </ItemGroup>
+  <ItemGroup>
+    <Reference Include="Google.ProtocolBuffersLite">
+      <HintPath>..\..\..\..\..\Downloads\WinPhone_SDK\SDK开发包_For_Windows Phone8\Google.ProtocolBuffersLite.dll</HintPath>
+    </Reference>
+    <Reference Include="MicroMsgSDK">
+      <HintPath>..\..\..\..\..\Downloads\WinPhone_SDK\SDK开发包_For_Windows Phone8\MicroMsgSDK.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.Expression.Drawing" />
+    <Reference Include="Microsoft.Expression.Interactions, Version=3.9.5.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL" />
+    <Reference Include="Microsoft.Live">
+      <HintPath>..\packages\LiveSDK.5.6\lib\WindowsPhone81\Microsoft.Live.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.Live.Controls">
+      <HintPath>..\packages\LiveSDK.5.6\lib\WindowsPhone81\Microsoft.Live.Controls.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.Phone.Controls.Toolkit">
+      <HintPath>..\packages\WPtoolkit.4.2013.08.16\lib\wp8\Microsoft.Phone.Controls.Toolkit.dll</HintPath>
+    </Reference>
+    <Reference Include="Newtonsoft.Json">
+      <HintPath>..\packages\Newtonsoft.Json.6.0.7\lib\portable-net40+sl5+wp80+win8+wpa81\Newtonsoft.Json.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Net.Http, Version=1.5.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\packages\Microsoft.Net.Http.2.2.28\lib\sl4-windowsphone71\System.Net.Http.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Net.Http.Extensions, Version=1.5.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\packages\Microsoft.Net.Http.2.2.28\lib\sl4-windowsphone71\System.Net.Http.Extensions.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Net.Http.Primitives, Version=1.5.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\packages\Microsoft.Net.Http.2.2.28\lib\sl4-windowsphone71\System.Net.Http.Primitives.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Windows.Interactivity, Version=3.9.5.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL" />
+    <Reference Include="Telerik.Windows.Controls.Input">
+      <HintPath>..\..\..\..\..\..\..\Program Files (x86)\Telerik\UI for Windows Phone 8 Q3 2014\Binaries\WindowsPhone\Telerik.Windows.Controls.Input.dll</HintPath>
+    </Reference>
+    <Reference Include="Telerik.Windows.Controls.Primitives">
+      <HintPath>..\..\..\..\..\..\..\Program Files (x86)\Telerik\UI for Windows Phone 8 Q3 2014\Binaries\WindowsPhone\Telerik.Windows.Controls.Primitives.dll</HintPath>
+    </Reference>
+    <Reference Include="Telerik.Windows.Core">
+      <HintPath>..\..\..\..\..\..\..\Program Files (x86)\Telerik\UI for Windows Phone 8 Q3 2014\Binaries\WindowsPhone\Telerik.Windows.Core.dll</HintPath>
+    </Reference>
+  </ItemGroup>
+  <ItemGroup>
+    <Folder Include="Fonts\" />
+  </ItemGroup>
+  <ItemGroup>
+    <WCFMetadata Include="Service References\" />
   </ItemGroup>
   <Import Project="$(MSBuildExtensionsPath)\Microsoft\$(TargetFrameworkIdentifier)\$(TargetFrameworkVersion)\Microsoft.$(TargetFrameworkIdentifier).$(TargetFrameworkVersion).Overrides.targets" />
   <Import Project="$(MSBuildExtensionsPath)\Microsoft\$(TargetFrameworkIdentifier)\$(TargetFrameworkVersion)\Microsoft.$(TargetFrameworkIdentifier).CSharp.targets" />
@@ -195,4 +652,9 @@
   </Target>
   -->
   <ProjectExtensions />
+  <Import Project="..\packages\Microsoft.Bcl.Build.1.0.14\tools\Microsoft.Bcl.Build.targets" Condition="Exists('..\packages\Microsoft.Bcl.Build.1.0.14\tools\Microsoft.Bcl.Build.targets')" />
+  <Target Name="EnsureBclBuildImported" BeforeTargets="BeforeBuild" Condition="'$(BclBuildImported)' == ''">
+    <Error Condition="!Exists('..\packages\Microsoft.Bcl.Build.1.0.14\tools\Microsoft.Bcl.Build.targets')" Text="This project references NuGet package(s) that are missing on this computer. Enable NuGet Package Restore to download them.  For more information, see http://go.microsoft.com/fwlink/?LinkID=317567." HelpKeyword="BCLBUILD2001" />
+    <Error Condition="Exists('..\packages\Microsoft.Bcl.Build.1.0.14\tools\Microsoft.Bcl.Build.targets')" Text="The build restored NuGet packages. Build the project again to include these packages in the build. For more information, see http://go.microsoft.com/fwlink/?LinkID=317568." HelpKeyword="BCLBUILD2002" />
+  </Target>
 </Project>

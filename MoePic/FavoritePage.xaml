@@ -1,0 +1,66 @@
+﻿<Models:MoePicPage
+    x:Class="MoePic.FavoritePage"
+    xmlns:Models="clr-namespace:MoePic.Models"
+    xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+    xmlns:phone="clr-namespace:Microsoft.Phone.Controls;assembly=Microsoft.Phone"
+    xmlns:shell="clr-namespace:Microsoft.Phone.Shell;assembly=Microsoft.Phone"
+    xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+    xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+    xmlns:con="clr-namespace:MoePic.Controls"
+    xmlns:tool="clr-namespace:Microsoft.Phone.Controls;assembly=Microsoft.Phone.Controls.Toolkit"
+    xmlns:pr="clr-namespace:Telerik.Windows.Controls;assembly=Telerik.Windows.Controls.Primitives"
+    FontFamily="{StaticResource PhoneFontFamilyNormal}"
+    FontSize="{StaticResource PhoneFontSizeNormal}"
+    Style="{StaticResource PageTranstionStyle}"
+    SupportedOrientations="Portrait" Orientation="Portrait"
+    mc:Ignorable="d"
+    shell:SystemTray.IsVisible="False">
+
+    <Grid x:Name="LayoutRoot" Background="{Binding Background, Source={StaticResource ThemeColor}}">
+        <Grid.RowDefinitions>
+            <RowDefinition Height="50"/>
+            <RowDefinition/>
+        </Grid.RowDefinitions>
+        <phone:Pivot Grid.Row="1" Style="{StaticResource MoePivot}">
+            <phone:PivotItem Header="{Binding LocalizedResources.FavPost, Mode=OneWay, Source={StaticResource LocalizedStrings}}" Margin="0" >
+                <con:PostsViewer x:Name="FavPostList"/>
+            </phone:PivotItem>
+            <phone:PivotItem Header="{Binding LocalizedResources.FavTag, Mode=OneWay, Source={StaticResource LocalizedStrings}}" Margin="0" >
+                <Grid>
+                    <Grid.RowDefinitions>
+                        <RowDefinition/>
+                        <RowDefinition Height="48"/>
+                    </Grid.RowDefinitions>
+                    <ListBox x:Name="tagList">
+                        <ListBox.ItemTemplate>
+                            <DataTemplate>
+                                <con:TagListItem Tag="{Binding}">
+                                    
+                                </con:TagListItem>
+                            </DataTemplate>
+                        </ListBox.ItemTemplate>
+                    </ListBox>
+                    <Grid VerticalAlignment="Bottom"   Grid.Row="1" Height="48" Background="White">
+                        <Grid.ColumnDefinitions>
+                            <ColumnDefinition/>
+                            <ColumnDefinition Width="48"></ColumnDefinition>
+                        </Grid.ColumnDefinitions>
+                        <ScrollViewer  VerticalAlignment="Center" HorizontalScrollBarVisibility="Auto" VerticalScrollBarVisibility="Disabled" HorizontalAlignment="Left" Margin="2,0" Background="White" BorderThickness="2">
+                            <StackPanel x:Name="searchTag" VerticalAlignment="Bottom" Orientation="Horizontal" Margin="2">
+
+                            </StackPanel>
+                        </ScrollViewer>
+                        <Button Grid.Column="1" Background="{Binding StatusBar, Source={StaticResource ThemeColor}}" Style="{StaticResource NoBorderButton}" Click="Button_Click">
+                            <Image Source="/Assets/Icons/feature.search.png" HorizontalAlignment="Center" VerticalAlignment="Center"/>
+                        </Button>
+                    </Grid>
+                </Grid>
+            </phone:PivotItem>
+        </phone:Pivot>
+
+        
+        <Image Source="/Assets/Effects/ShadowNavUP.png" VerticalAlignment="Top" Stretch="Fill" Height="5" Margin="0,117,0,0" Grid.RowSpan="2"/>
+    </Grid>
+
+</Models:MoePicPage>

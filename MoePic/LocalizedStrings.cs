@@ -3,7 +3,7 @@
 namespace MoePic
 {
     /// <summary>
-    /// Provides access to string resources.
+    /// 提供对字符串资源的访问权。
     /// </summary>
     public class LocalizedStrings
     {

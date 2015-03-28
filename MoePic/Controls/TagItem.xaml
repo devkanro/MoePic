@@ -1,0 +1,235 @@
+﻿<UserControl
+    xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+    xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+    xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+    xmlns:toolkit="clr-namespace:Microsoft.Phone.Controls;assembly=Microsoft.Phone.Controls.Toolkit"
+    xmlns:es="clr-namespace:Microsoft.Expression.Shapes;assembly=Microsoft.Expression.Drawing" xmlns:em="clr-namespace:Microsoft.Expression.Media;assembly=Microsoft.Expression.Drawing" x:Name="userControl" x:Class="MoePic.Controls.TagItem"
+    xmlns:con="clr-namespace:MoePic.Controls"
+    mc:Ignorable="d"
+    FontFamily="{StaticResource PhoneFontFamilyNormal}"
+    FontSize="{StaticResource PhoneFontSizeNormal}"
+    Foreground="White"
+    d:DesignHeight="48" d:DesignWidth="450" Loaded="userControl_Loaded"
+    HorizontalAlignment="Right"
+    VerticalAlignment="Bottom">
+    <UserControl.Resources>
+        <Storyboard x:Name="ButtonsOut">
+            <DoubleAnimationUsingKeyFrames Storyboard.TargetProperty="(UIElement.RenderTransform).(CompositeTransform.TranslateY)" Storyboard.TargetName="colorfulButton1">
+                <EasingDoubleKeyFrame KeyTime="0" Value="0"/>
+                <EasingDoubleKeyFrame KeyTime="0:0:0.2" Value="-50"/>
+            </DoubleAnimationUsingKeyFrames>
+            <DoubleAnimationUsingKeyFrames Storyboard.TargetProperty="(UIElement.RenderTransform).(CompositeTransform.TranslateY)" Storyboard.TargetName="colorfulButton2">
+                <EasingDoubleKeyFrame KeyTime="0:0:0.05" Value="0"/>
+                <EasingDoubleKeyFrame KeyTime="0:0:0.25" Value="-25"/>
+            </DoubleAnimationUsingKeyFrames>
+            <DoubleAnimationUsingKeyFrames Storyboard.TargetProperty="(UIElement.RenderTransform).(CompositeTransform.TranslateX)" Storyboard.TargetName="colorfulButton2">
+                <EasingDoubleKeyFrame KeyTime="0:0:0.05" Value="0"/>
+                <EasingDoubleKeyFrame KeyTime="0:0:0.25" Value="-43"/>
+            </DoubleAnimationUsingKeyFrames>
+            <DoubleAnimationUsingKeyFrames Storyboard.TargetProperty="(UIElement.RenderTransform).(CompositeTransform.TranslateY)" Storyboard.TargetName="colorfulButton3">
+                <EasingDoubleKeyFrame KeyTime="0:0:0.1" Value="0"/>
+                <EasingDoubleKeyFrame KeyTime="0:0:0.3" Value="25"/>
+            </DoubleAnimationUsingKeyFrames>
+            <DoubleAnimationUsingKeyFrames Storyboard.TargetProperty="(UIElement.RenderTransform).(CompositeTransform.TranslateX)" Storyboard.TargetName="colorfulButton3">
+                <EasingDoubleKeyFrame KeyTime="0:0:0.1" Value="0"/>
+                <EasingDoubleKeyFrame KeyTime="0:0:0.3" Value="-43"/>
+            </DoubleAnimationUsingKeyFrames>
+            <DoubleAnimationUsingKeyFrames Storyboard.TargetProperty="(UIElement.RenderTransform).(CompositeTransform.TranslateY)" Storyboard.TargetName="colorfulButton4">
+                <EasingDoubleKeyFrame KeyTime="0:0:0.15" Value="0"/>
+                <EasingDoubleKeyFrame KeyTime="0:0:0.35" Value="50"/>
+            </DoubleAnimationUsingKeyFrames>
+            <DoubleAnimationUsingKeyFrames Storyboard.TargetProperty="(UIElement.Opacity)" Storyboard.TargetName="colorfulButton1">
+                <EasingDoubleKeyFrame KeyTime="0" Value="0"/>
+                <EasingDoubleKeyFrame KeyTime="0:0:0.2" Value="1"/>
+            </DoubleAnimationUsingKeyFrames>
+            <DoubleAnimationUsingKeyFrames Storyboard.TargetProperty="(UIElement.Opacity)" Storyboard.TargetName="colorfulButton2">
+                <EasingDoubleKeyFrame KeyTime="0:0:0.05" Value="0"/>
+                <EasingDoubleKeyFrame KeyTime="0:0:0.25" Value="1"/>
+            </DoubleAnimationUsingKeyFrames>
+            <DoubleAnimationUsingKeyFrames Storyboard.TargetProperty="(UIElement.Opacity)" Storyboard.TargetName="colorfulButton3">
+                <EasingDoubleKeyFrame KeyTime="0:0:0.1" Value="0"/>
+                <EasingDoubleKeyFrame KeyTime="0:0:0.3" Value="1"/>
+            </DoubleAnimationUsingKeyFrames>
+            <DoubleAnimationUsingKeyFrames Storyboard.TargetProperty="(UIElement.Opacity)" Storyboard.TargetName="colorfulButton4">
+                <EasingDoubleKeyFrame KeyTime="0:0:0.15" Value="0"/>
+                <EasingDoubleKeyFrame KeyTime="0:0:0.35" Value="1"/>
+            </DoubleAnimationUsingKeyFrames>
+            <DoubleAnimationUsingKeyFrames Storyboard.TargetProperty="(UIElement.RenderTransform).(CompositeTransform.Rotation)" Storyboard.TargetName="colorfulButton">
+                <EasingDoubleKeyFrame KeyTime="0:0:0.0" Value="45"/>
+                <EasingDoubleKeyFrame KeyTime="0:0:0.15" Value="90"/>
+            </DoubleAnimationUsingKeyFrames>
+        </Storyboard>
+        <Storyboard x:Name="ButtonsIn">
+            <DoubleAnimationUsingKeyFrames Storyboard.TargetProperty="(UIElement.RenderTransform).(CompositeTransform.TranslateY)" Storyboard.TargetName="colorfulButton1">
+                <SplineDoubleKeyFrame KeyTime="0:0:0.15" Value="-50"/>
+                <SplineDoubleKeyFrame KeyTime="0:0:0.35" Value="0"/>
+            </DoubleAnimationUsingKeyFrames>
+            <DoubleAnimationUsingKeyFrames Storyboard.TargetProperty="(UIElement.RenderTransform).(CompositeTransform.TranslateY)" Storyboard.TargetName="colorfulButton2">
+                <SplineDoubleKeyFrame KeyTime="0:0:0.1" Value="-25"/>
+                <SplineDoubleKeyFrame KeyTime="0:0:0.3" Value="0"/>
+            </DoubleAnimationUsingKeyFrames>
+            <DoubleAnimationUsingKeyFrames Storyboard.TargetProperty="(UIElement.RenderTransform).(CompositeTransform.TranslateX)" Storyboard.TargetName="colorfulButton2">
+                <SplineDoubleKeyFrame KeyTime="0:0:0.1" Value="-43"/>
+                <SplineDoubleKeyFrame KeyTime="0:0:0.3" Value="0"/>
+            </DoubleAnimationUsingKeyFrames>
+            <DoubleAnimationUsingKeyFrames Storyboard.TargetProperty="(UIElement.RenderTransform).(CompositeTransform.TranslateY)" Storyboard.TargetName="colorfulButton3">
+                <SplineDoubleKeyFrame KeyTime="0:0:0.05" Value="25"/>
+                <SplineDoubleKeyFrame KeyTime="0:0:0.25" Value="0"/>
+            </DoubleAnimationUsingKeyFrames>
+            <DoubleAnimationUsingKeyFrames Storyboard.TargetProperty="(UIElement.RenderTransform).(CompositeTransform.TranslateX)" Storyboard.TargetName="colorfulButton3">
+                <SplineDoubleKeyFrame KeyTime="0:0:0.05" Value="-43"/>
+                <SplineDoubleKeyFrame KeyTime="0:0:0.25" Value="0"/>
+            </DoubleAnimationUsingKeyFrames>
+            <DoubleAnimationUsingKeyFrames Storyboard.TargetProperty="(UIElement.RenderTransform).(CompositeTransform.TranslateY)" Storyboard.TargetName="colorfulButton4">
+                <SplineDoubleKeyFrame KeyTime="0" Value="50"/>
+                <SplineDoubleKeyFrame KeyTime="0:0:0.2" Value="0"/>
+            </DoubleAnimationUsingKeyFrames>
+            <DoubleAnimationUsingKeyFrames Storyboard.TargetProperty="(UIElement.Opacity)" Storyboard.TargetName="colorfulButton1">
+                <SplineDoubleKeyFrame KeyTime="0:0:0.15" Value="1"/>
+                <SplineDoubleKeyFrame KeyTime="0:0:0.35" Value="0"/>
+            </DoubleAnimationUsingKeyFrames>
+            <DoubleAnimationUsingKeyFrames Storyboard.TargetProperty="(UIElement.Opacity)" Storyboard.TargetName="colorfulButton2">
+                <SplineDoubleKeyFrame KeyTime="0:0:0.1" Value="1"/>
+                <SplineDoubleKeyFrame KeyTime="0:0:0.3" Value="0"/>
+            </DoubleAnimationUsingKeyFrames>
+            <DoubleAnimationUsingKeyFrames Storyboard.TargetProperty="(UIElement.Opacity)" Storyboard.TargetName="colorfulButton3">
+                <SplineDoubleKeyFrame KeyTime="0:0:0.05" Value="1"/>
+                <SplineDoubleKeyFrame KeyTime="0:0:0.25" Value="0"/>
+            </DoubleAnimationUsingKeyFrames>
+            <DoubleAnimationUsingKeyFrames Storyboard.TargetProperty="(UIElement.Opacity)" Storyboard.TargetName="colorfulButton4">
+                <SplineDoubleKeyFrame KeyTime="0" Value="0"/>
+                <SplineDoubleKeyFrame KeyTime="0:0:0.2" Value="1"/>
+            </DoubleAnimationUsingKeyFrames>
+            <DoubleAnimationUsingKeyFrames Storyboard.TargetProperty="(UIElement.RenderTransform).(CompositeTransform.Rotation)" Storyboard.TargetName="colorfulButton">
+                <SplineDoubleKeyFrame KeyTime="0" Value="90"/>
+                <SplineDoubleKeyFrame KeyTime="0:0:0.2" Value="45"/>
+            </DoubleAnimationUsingKeyFrames>
+        </Storyboard>
+        <Storyboard x:Name="ShowButton">
+            <DoubleAnimationUsingKeyFrames  Storyboard.TargetProperty="(FrameworkElement.Width)" Storyboard.TargetName="LayoutRoot">
+                <EasingDoubleKeyFrame x:Name="ShowButtonKeyFrame1" KeyTime="0" Value="189"/>
+                <EasingDoubleKeyFrame x:Name="ShowButtonKeyFrame2" KeyTime="0:0:0.3" Value="229"/>
+            </DoubleAnimationUsingKeyFrames>
+            <DoubleAnimationUsingKeyFrames Storyboard.TargetProperty="(FrameworkElement.Width)" Storyboard.TargetName="grid">
+                <EasingDoubleKeyFrame KeyTime="0" Value="10"/>
+                <EasingDoubleKeyFrame KeyTime="0:0:0.3" Value="40"/>
+            </DoubleAnimationUsingKeyFrames>
+            <DoubleAnimationUsingKeyFrames Storyboard.TargetProperty="(UIElement.Opacity)" Storyboard.TargetName="colorfulButton">
+                <EasingDoubleKeyFrame KeyTime="0" Value="0"/>
+                <EasingDoubleKeyFrame KeyTime="0:0:0.3" Value="1"/>
+            </DoubleAnimationUsingKeyFrames>
+        </Storyboard>
+        <Storyboard x:Name="HideButton">
+            <DoubleAnimationUsingKeyFrames Storyboard.TargetProperty="(FrameworkElement.Width)" Storyboard.TargetName="LayoutRoot">
+                <SplineDoubleKeyFrame x:Name="HideButtonKeyFrame1" KeyTime="0" Value="229"/>
+                <SplineDoubleKeyFrame x:Name="HideButtonKeyFrame2" KeyTime="0:0:0.3" Value="189"/>
+            </DoubleAnimationUsingKeyFrames>
+            <DoubleAnimationUsingKeyFrames Storyboard.TargetProperty="(FrameworkElement.Width)" Storyboard.TargetName="grid">
+                <EasingDoubleKeyFrame KeyTime="0" Value="40"/>
+                <EasingDoubleKeyFrame KeyTime="0:0:0.3" Value="10"/>
+            </DoubleAnimationUsingKeyFrames>
+            <DoubleAnimationUsingKeyFrames Storyboard.TargetProperty="(UIElement.Opacity)" Storyboard.TargetName="colorfulButton">
+                <SplineDoubleKeyFrame KeyTime="0" Value="1"/>
+                <SplineDoubleKeyFrame KeyTime="0:0:0.3" Value="0"/>
+            </DoubleAnimationUsingKeyFrames>
+        </Storyboard>
+        <Storyboard x:Name="TagItemLoaded">
+            <DoubleAnimationUsingKeyFrames Storyboard.TargetProperty="(UIElement.Opacity)" Storyboard.TargetName="LayoutRoot">
+                <SplineDoubleKeyFrame KeyTime="0" Value="0"/>
+                <SplineDoubleKeyFrame KeyTime="0:0:0.3" Value="1"/>
+            </DoubleAnimationUsingKeyFrames>
+        </Storyboard>
+        <Storyboard x:Name="TagHide" Completed="TagHide_Completed">
+            <DoubleAnimationUsingKeyFrames Storyboard.TargetProperty="(UIElement.Opacity)" Storyboard.TargetName="LayoutRoot">
+                <SplineDoubleKeyFrame KeyTime="0" Value="1"/>
+                <SplineDoubleKeyFrame KeyTime="0:0:0.3" Value="0"/>
+            </DoubleAnimationUsingKeyFrames>
+        </Storyboard>
+    </UserControl.Resources>
+
+    <Grid x:Name="LayoutRoot" HorizontalAlignment="Left" VerticalAlignment="Top" Height="48" Opacity="0" LayoutUpdated="LayoutRoot_LayoutUpdated">
+        <Grid>
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition Width="16"/>
+                <ColumnDefinition/>
+                <ColumnDefinition Width="16"/>
+            </Grid.ColumnDefinitions>
+            <Image Source="/Assets/Effects/ShadowRight.png" Height="48"/>
+            <Image Grid.Column="1" Source="/Assets/Effects/ShadowContent.png" Height="48" Stretch="Fill"/>
+            <Image Grid.Column="2" Source="/Assets/Effects/ShadowRight.png" Height="48" RenderTransformOrigin="0.5,0.5">
+                <Image.RenderTransform>
+                    <CompositeTransform ScaleX="-1"/>
+                </Image.RenderTransform>
+            </Image>
+        </Grid>
+        <Grid HorizontalAlignment="Left" VerticalAlignment="Top" Background="Black" Margin="4">
+            <StackPanel x:Name="tagContent" HorizontalAlignment="Left" VerticalAlignment="Top" Orientation="Horizontal">
+                <Grid x:Name="grid" HorizontalAlignment="Left" Width="10" Height="40">
+                    <con:ColorfulButton x:Name="colorfulButton1" RenderTransformOrigin="0.5,0.5" Background="#FFFFAE00" Stroke="White" StrokeThickness="2" Margin="5" Width="30" Click="colorfulButton1_Click">
+                        <con:ColorfulButton.RenderTransform>
+                            <CompositeTransform TranslateX="0"/>
+                        </con:ColorfulButton.RenderTransform>
+                        <con:ColorfulButton.ContentBrush>
+                            <ImageBrush Stretch="Fill" ImageSource="/Assets/Icons/feature.search.png"/>
+                        </con:ColorfulButton.ContentBrush>
+                    </con:ColorfulButton>
+
+                    <con:ColorfulButton x:Name="colorfulButton2" RenderTransformOrigin="0.5,0.5" Background="#FF73D300" Stroke="White" StrokeThickness="2" Margin="5" Width="30" Click="colorfulButton2_Click">
+                        <con:ColorfulButton.RenderTransform>
+                            <CompositeTransform/>
+                        </con:ColorfulButton.RenderTransform>
+                        <con:ColorfulButton.ContentBrush>
+                            <ImageBrush Stretch="Fill" ImageSource="/Assets/Icons/favs.addto.png"/>
+                        </con:ColorfulButton.ContentBrush>
+                    </con:ColorfulButton>
+
+                    <con:ColorfulButton x:Name="colorfulButton3" RenderTransformOrigin="0.5,0.5" Background="#FF0097FF" Stroke="White" StrokeThickness="2" Margin="5" Width="30">
+                        <con:ColorfulButton.RenderTransform>
+                            <CompositeTransform/>
+                        </con:ColorfulButton.RenderTransform>
+                        <con:ColorfulButton.ContentBrush>
+                            <ImageBrush Stretch="Fill" ImageSource="/Assets/Icons/Pencil-03.png"/>
+                        </con:ColorfulButton.ContentBrush>
+                    </con:ColorfulButton>
+
+                    <con:ColorfulButton x:Name="colorfulButton4" RenderTransformOrigin="0.5,0.5" Background="#FFC200CB" Stroke="White" StrokeThickness="2" Margin="5" Width="30" Click="colorfulButton4_Click">
+                        <con:ColorfulButton.RenderTransform>
+                            <CompositeTransform TranslateX="0"/>
+                        </con:ColorfulButton.RenderTransform>
+                        <con:ColorfulButton.ContentBrush>
+                            <ImageBrush Stretch="Fill" ImageSource="/Assets/Icons/appbar.delete.png"/>
+                        </con:ColorfulButton.ContentBrush>
+                    </con:ColorfulButton>
+                    <Grid Background="{Binding TagColor, ElementName=userControl}" Width="40" Height="40">
+                        <con:ColorfulButton x:Name="colorfulButton" RenderTransformOrigin="0.5,0.5" Background="{Binding TagColor, ElementName=userControl}" Stroke="White" StrokeThickness="2" Margin="5" Click="colorfulButton_Click" Opacity="0">
+                            <con:ColorfulButton.RenderTransform>
+                                <CompositeTransform Rotation="45"/>
+                            </con:ColorfulButton.RenderTransform>
+                            <con:ColorfulButton.ContentBrush>
+                                <ImageBrush Stretch="Fill" ImageSource="/Assets/Icons/cancel.png"/>
+                            </con:ColorfulButton.ContentBrush>
+                        </con:ColorfulButton>
+                    </Grid>
+
+                </Grid>
+                <Button Click="Button_Click">
+                    <toolkit:GestureService.GestureListener>
+                        <toolkit:GestureListener DragStarted="GestureListener_DragStarted" DragDelta="GestureListener_DragDelta" DragCompleted="GestureListener_DragCompleted" />
+                    </toolkit:GestureService.GestureListener>
+                    <Button.Template>
+                        <ControlTemplate>
+                            <ContentPresenter/>
+                        </ControlTemplate>
+                    </Button.Template>
+                    <Grid Background="#FFF9F9F9">
+                        <StackPanel Margin="10,2" VerticalAlignment="Center">
+                            <TextBlock x:Name="TagName" Text="" Foreground="Black" HorizontalAlignment="Left" VerticalAlignment="Center" FontFamily="Segoe WP Black" Margin="0,-5,0,0" Loaded="TagName_Loaded"/>
+                            <TextBlock x:Name="TagText" Text="" Foreground="{Binding TagColor, ElementName=userControl}" HorizontalAlignment="Left" VerticalAlignment="Center" Margin="0,-3,0,0" FontSize="11" FontFamily="Segoe WP Semibold" Loaded="TagText_Loaded"/>
+                        </StackPanel>
+                    </Grid>
+                </Button>
+            </StackPanel>
+        </Grid>
+    </Grid>
+</UserControl>

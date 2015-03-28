@@ -1,0 +1,67 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Files>
+  <XAPFiles>
+    <File>resources.pri</File>
+    <File>MoePic.dll</File>
+    <File>AppResLib.dll.0404.mui</File>
+    <File>AppResLib.dll.0411.mui</File>
+    <File>AppResLib.dll.0804.mui</File>
+    <File>AppResLib.dll</File>
+    <File>Assets\AlignmentGrid.png</File>
+    <File>Assets\BadgeLogo.png</File>
+    <File>Assets\Effects\ShadowContent.png</File>
+    <File>Assets\Effects\ShadowNavUP.png</File>
+    <File>Assets\Effects\ShadowRight.png</File>
+    <File>Assets\Icons\appbar.bug.png</File>
+    <File>Assets\Icons\appbar.delete.png</File>
+    <File>Assets\Icons\cancel.png</File>
+    <File>Assets\Icons\favs.addto.png</File>
+    <File>Assets\Icons\feature.search.png</File>
+    <File>Assets\Icons\Pencil-03.png</File>
+    <File>Assets\Icons\Refresh.png</File>
+    <File>Assets\Icons\Search.png</File>
+    <File>Assets\Icons\setting.png</File>
+    <File>Assets\Icons\Up.png</File>
+    <File>Assets\Icons\ViewBack.png</File>
+    <File>Assets\Logo.png</File>
+    <File>Assets\Logos\konachan.png</File>
+    <File>Assets\Logos\microsoft.png</File>
+    <File>Assets\Logos\microsoft2.png</File>
+    <File>Assets\Logos\moepic.png</File>
+    <File>Assets\Logos\onedrive.png</File>
+    <File>Assets\Logos\yandere.png</File>
+    <File>Assets\SplashScreen.png</File>
+    <File>Assets\SquareTile150x150.png</File>
+    <File>Assets\SquareTile71x71.png</File>
+    <File>Assets\StoreLogo.png</File>
+    <File>Assets\WideLogo.png</File>
+    <File>Assets\Tiles\FlipCycleTileLarge.png</File>
+    <File>Assets\Tiles\FlipCycleTileSmall.png</File>
+    <File>Assets\Tiles\IconicTileMediumLarge.png</File>
+    <File>Assets\Tiles\IconicTileSmall.png</File>
+    <File>README_FIRST.txt</File>
+    <File>Toolkit.Content\ApplicationBar.Add.png</File>
+    <File>Toolkit.Content\ApplicationBar.Cancel.png</File>
+    <File>Toolkit.Content\ApplicationBar.Check.png</File>
+    <File>Toolkit.Content\ApplicationBar.Delete.png</File>
+    <File>Toolkit.Content\ApplicationBar.Select.png</File>
+    <File>AppManifest.xaml</File>
+    <File>Assets\ApplicationIcon.png</File>
+    <File>Assets\Tiles\FlipCycleTileMedium.png</File>
+    <File>Microsoft.Live.Controls.dll</File>
+    <File>Microsoft.Live.dll</File>
+    <File>Microsoft.Phone.Controls.Toolkit.dll</File>
+    <File Type="PCL">Newtonsoft.Json.dll</File>
+    <File>Telerik.Windows.Controls.Input.dll</File>
+    <File>Telerik.Windows.Controls.Primitives.dll</File>
+    <File>Telerik.Windows.Core.dll</File>
+    <File>System.Windows.Interactivity.dll</File>
+    <File>Newtonsoft.Json.xml</File>
+    <File>Telerik.Windows.Controls.Input.xml</File>
+    <File>Telerik.Windows.Controls.Primitives.xml</File>
+    <File>Telerik.Windows.Core.xml</File>
+    <File>WMAppManifest.xml</File>
+    <File>AppxManifest.xml</File>
+  </XAPFiles>
+  <APPXFiles />
+</Files>

@@ -1,0 +1,36 @@
+﻿<ListBoxItem
+    xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+    xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+    xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+    xmlns:MoePic="clr-namespace:MoePic" x:Name="listBoxItem" x:Class="MoePic.Controls.TagListItem"
+    xmlns:tool="clr-namespace:Microsoft.Phone.Controls;assembly=Microsoft.Phone.Controls.Toolkit"
+    mc:Ignorable="d"
+    d:DesignHeight="45" d:DesignWidth="480" HorizontalAlignment="Center" VerticalAlignment="Center" Tap="listBoxItem_Tap">
+
+    <ListBoxItem.Resources>
+        <MoePic:TagStringConverter x:Key="TagStringConverter"/>
+    </ListBoxItem.Resources>
+    <ListBoxItem.FontFamily>
+        <StaticResource ResourceKey="PhoneFontFamilyNormal"/>
+    </ListBoxItem.FontFamily>
+    <ListBoxItem.FontSize>
+        <StaticResource ResourceKey="PhoneFontSizeNormal"/>
+    </ListBoxItem.FontSize>
+    <ListBoxItem.Foreground>
+        <StaticResource ResourceKey="PhoneForegroundBrush"/>
+    </ListBoxItem.Foreground>
+
+    <Grid x:Name="LayoutRoot" Background="{Binding Foreground, Source={StaticResource ThemeColor}}" Width="470"  Margin="5,0,5,5">
+        <tool:ContextMenuService.ContextMenu>
+            <tool:ContextMenu>
+                <tool:MenuItem Header="{Binding LocalizedResources.OR, Mode=OneWay, Source={StaticResource LocalizedStrings}}" Click="MenuItem_Click"/>
+                <tool:MenuItem Header="{Binding LocalizedResources.NOT, Mode=OneWay, Source={StaticResource LocalizedStrings}}" Click="MenuItem_Click_1"/>
+            </tool:ContextMenu>
+        </tool:ContextMenuService.ContextMenu>
+        <TextBlock Text="{Binding Tag.name, Converter={StaticResource TagStringConverter}, ElementName=listBoxItem}" Foreground="#DEFFFFFF" Margin="6,0,0,0" VerticalAlignment="Center"/>
+        <Button Style="{StaticResource NoBorderButton}" Background="{Binding Foreground, Source={StaticResource ThemeColor}}" HorizontalAlignment="Right" Click="Button_Click">
+            <Image Source="/Assets/Icons/cancel.png" Height="40" Width="40"/>
+        </Button>
+    </Grid>
+</ListBoxItem>

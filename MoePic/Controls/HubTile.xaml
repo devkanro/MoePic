@@ -1,0 +1,124 @@
+﻿<UserControl
+    xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+    xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+    xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+    xmlns:local="clr-namespace:MoePic.Controls" x:Name="userControl" x:Class="MoePic.Controls.HubTile"
+    mc:Ignorable="d"
+    d:DesignHeight="240" d:DesignWidth="480" Loaded="userControl_Loaded">
+    <UserControl.Resources>
+        <local:Doublex x:Key="Doublex"/>
+        <Storyboard x:Name="AnimeStart" Completed="AnimeStart_Completed">
+            <DoubleAnimationUsingKeyFrames Storyboard.TargetProperty="(UIElement.RenderTransform).(CompositeTransform.TranslateY)" Storyboard.TargetName="Image1">
+                <EasingDoubleKeyFrame x:Name="startFrame1" KeyTime="0" Value="240"/>
+                <EasingDoubleKeyFrame KeyTime="0:0:0.5" Value="0">
+                    <EasingDoubleKeyFrame.EasingFunction>
+                        <CircleEase EasingMode="EaseOut"/>
+                    </EasingDoubleKeyFrame.EasingFunction>
+                </EasingDoubleKeyFrame>
+                <EasingDoubleKeyFrame x:Name="startFrame2" KeyTime="0:0:3.5" Value="-120">
+                    <EasingDoubleKeyFrame.EasingFunction>
+                        <CubicEase EasingMode="EaseInOut"/>
+                    </EasingDoubleKeyFrame.EasingFunction>
+                </EasingDoubleKeyFrame>
+                <EasingDoubleKeyFrame x:Name="startFrame4" KeyTime="0:0:6" Value="-120"/>
+            </DoubleAnimationUsingKeyFrames>
+            <DoubleAnimation x:Name="startFrame3" Duration="0" To="240" Storyboard.TargetProperty="(UIElement.RenderTransform).(CompositeTransform.TranslateY)" Storyboard.TargetName="Image2"/>
+        </Storyboard>
+        <Storyboard x:Name="SwitchImage2" Completed="SwitchImage2_Completed">
+            <DoubleAnimationUsingKeyFrames Storyboard.TargetProperty="(UIElement.RenderTransform).(CompositeTransform.TranslateY)" Storyboard.TargetName="Image1">
+                <EasingDoubleKeyFrame x:Name="switch2Frame1" KeyTime="0" Value="-120"/>
+                <EasingDoubleKeyFrame x:Name="switch2Frame2" KeyTime="0:0:0.5" Value="-360">
+                    <EasingDoubleKeyFrame.EasingFunction>
+                        <CircleEase EasingMode="EaseOut"/>
+                    </EasingDoubleKeyFrame.EasingFunction>
+                </EasingDoubleKeyFrame>
+                <EasingDoubleKeyFrame x:Name="switch2Frame3" KeyTime="0:0:3.5" Value="240"/>
+                <EasingDoubleKeyFrame x:Name="switch2Frame6" KeyTime="0:0:6" Value="240"/>
+            </DoubleAnimationUsingKeyFrames>
+            <DoubleAnimationUsingKeyFrames Storyboard.TargetProperty="(UIElement.RenderTransform).(CompositeTransform.TranslateY)" Storyboard.TargetName="Image2">
+                <EasingDoubleKeyFrame x:Name="switch2Frame4" KeyTime="0" Value="240"/>
+                <EasingDoubleKeyFrame KeyTime="0:0:0.5" Value="0">
+                    <EasingDoubleKeyFrame.EasingFunction>
+                        <CircleEase EasingMode="EaseOut"/>
+                    </EasingDoubleKeyFrame.EasingFunction>
+                </EasingDoubleKeyFrame>
+                <EasingDoubleKeyFrame x:Name="switch2Frame5" KeyTime="0:0:3.5" Value="-120">
+                    <EasingDoubleKeyFrame.EasingFunction>
+                        <CubicEase EasingMode="EaseInOut"/>
+                    </EasingDoubleKeyFrame.EasingFunction>
+                </EasingDoubleKeyFrame>
+                <EasingDoubleKeyFrame x:Name="switch2Frame7" KeyTime="0:0:6" Value="-120"/>
+            </DoubleAnimationUsingKeyFrames>
+        </Storyboard>
+        <Storyboard x:Name="SwitchImage1" Completed="SwitchImage1_Completed">
+            <DoubleAnimationUsingKeyFrames Storyboard.TargetProperty="(UIElement.RenderTransform).(CompositeTransform.TranslateY)" Storyboard.TargetName="Image2">
+                <EasingDoubleKeyFrame x:Name="switch1Frame1" KeyTime="0" Value="-120"/>
+                <EasingDoubleKeyFrame x:Name="switch1Frame2" KeyTime="0:0:0.5" Value="-360">
+                    <EasingDoubleKeyFrame.EasingFunction>
+                        <CircleEase EasingMode="EaseOut"/>
+                    </EasingDoubleKeyFrame.EasingFunction>
+                </EasingDoubleKeyFrame>
+                <EasingDoubleKeyFrame x:Name="switch1Frame3" KeyTime="0:0:1" Value="-360"/>
+                <EasingDoubleKeyFrame x:Name="switch1Frame4" KeyTime="0:0:3" Value="240"/>
+                <EasingDoubleKeyFrame x:Name="switch1Frame5" KeyTime="0:0:3.5" Value="240"/>
+                <EasingDoubleKeyFrame x:Name="switch1Frame8" KeyTime="0:0:6" Value="240"/>
+            </DoubleAnimationUsingKeyFrames>
+            <DoubleAnimationUsingKeyFrames Storyboard.TargetProperty="(UIElement.RenderTransform).(CompositeTransform.TranslateY)" Storyboard.TargetName="Image1">
+                <EasingDoubleKeyFrame x:Name="switch1Frame6" KeyTime="0" Value="240"/>
+                <EasingDoubleKeyFrame KeyTime="0:0:0.5" Value="0">
+                    <EasingDoubleKeyFrame.EasingFunction>
+                        <CircleEase EasingMode="EaseOut"/>
+                    </EasingDoubleKeyFrame.EasingFunction>
+                </EasingDoubleKeyFrame>
+                <EasingDoubleKeyFrame x:Name="switch1Frame7" KeyTime="0:0:3.5" Value="-120">
+                    <EasingDoubleKeyFrame.EasingFunction>
+                        <CubicEase EasingMode="EaseInOut"/>
+                    </EasingDoubleKeyFrame.EasingFunction>
+                </EasingDoubleKeyFrame>
+                <EasingDoubleKeyFrame x:Name="switch1Frame9" KeyTime="0:0:6" Value="-120"/>
+            </DoubleAnimationUsingKeyFrames>
+            <DoubleAnimationUsingKeyFrames Storyboard.TargetProperty="(UIElement.Opacity)" Storyboard.TargetName="Image2">
+                <EasingDoubleKeyFrame KeyTime="0:0:0.5" Value="1"/>
+                <EasingDoubleKeyFrame KeyTime="0:0:1" Value="0"/>
+                <EasingDoubleKeyFrame KeyTime="0:0:3" Value="0"/>
+                <EasingDoubleKeyFrame KeyTime="0:0:3.5" Value="1"/>
+                <EasingDoubleKeyFrame KeyTime="0:0:6" Value="1"/>
+            </DoubleAnimationUsingKeyFrames>
+        </Storyboard>
+    </UserControl.Resources>
+
+    <UserControl.FontFamily>
+        <StaticResource ResourceKey="PhoneFontFamilyNormal"/>
+    </UserControl.FontFamily>
+    <UserControl.FontSize>
+        <StaticResource ResourceKey="PhoneFontSizeNormal"/>
+    </UserControl.FontSize>
+    <UserControl.Foreground>
+        <StaticResource ResourceKey="PhoneForegroundBrush"/>
+    </UserControl.Foreground>
+
+    <Grid x:Name="LayoutRoot">
+        <Viewbox Stretch="None">
+            <Grid>
+                <Grid x:Name="Image1" RenderTransformOrigin="0.5,0.5">
+                    <Grid.RenderTransform>
+                        <CompositeTransform TranslateY="{Binding TileHeight, ElementName=userControl}"/>
+                    </Grid.RenderTransform>
+                    <Grid.Background>
+                        <ImageBrush x:Name="Content1" Stretch="UniformToFill" AlignmentY="Top" ImageOpened="ImageBrush_ImageOpened"/>
+                    </Grid.Background>
+                </Grid>
+                <Grid x:Name="Image2" RenderTransformOrigin="0.5,0.5">
+                    <Grid.RenderTransform>
+                        <CompositeTransform TranslateY="{Binding TileHeight, ElementName=userControl}"/>
+                    </Grid.RenderTransform>
+                    <Grid.Background>
+                        <ImageBrush x:Name="Content2" Stretch="UniformToFill" AlignmentY="Top" ImageOpened="ImageBrush_ImageOpened_1"/>
+                    </Grid.Background>
+                </Grid>
+            </Grid>
+        </Viewbox>
+        <TextBlock FontFamily="Segoe WP Light" Foreground="White" FontSize="22.667" Margin="6,0,0,2" Text="{Binding TileTilte, ElementName=userControl}" VerticalAlignment="Bottom" HorizontalAlignment="Left"></TextBlock>
+    </Grid>
+</UserControl>

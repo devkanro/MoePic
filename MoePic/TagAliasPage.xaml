@@ -1,0 +1,51 @@
+﻿<Models:MoePicPage
+    x:Class="MoePic.TagAliasPage"
+    xmlns:Models="clr-namespace:MoePic.Models"
+    xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+    xmlns:phone="clr-namespace:Microsoft.Phone.Controls;assembly=Microsoft.Phone"
+    xmlns:shell="clr-namespace:Microsoft.Phone.Shell;assembly=Microsoft.Phone"
+    xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+    xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+    FontFamily="{StaticResource PhoneFontFamilyNormal}"
+    FontSize="{StaticResource PhoneFontSizeNormal}"
+    Style="{StaticResource PageTranstionStyle}"
+    SupportedOrientations="Portrait" Orientation="Portrait"
+    mc:Ignorable="d"
+    shell:SystemTray.IsVisible="False">
+
+    <Grid x:Name="LayoutRoot" Background="{Binding Background, Source={StaticResource ThemeColor}}">
+        <Grid.RowDefinitions>
+            <RowDefinition Height="50"/>
+            <RowDefinition/>
+        </Grid.RowDefinitions>
+        <ScrollViewer Grid.Row="1">
+            <StackPanel Margin="15,15,15,0">
+                <TextBlock Text="Tag别名计划" FontSize="30" Foreground="#58aced"></TextBlock>
+                <TextBlock TextWrapping="Wrap" Margin="0,0,0,12" Text="将Tag标记为英语,日语,中文(简体),中文(繁体)的别名,使Tag用起来更加方便,Tag别名由用户贡献,贡献50个有效Tag别名即可解锁使用别名搜索功能,贡献200个有效Tag别名就可免费解锁MoePic Plus!" Opacity="0.5" Foreground="{Binding Text2, Source={StaticResource ThemeColor}}"/>
+                <TextBlock Text="关于提交别名" FontSize="30" Foreground="#58aced"></TextBlock>
+                <TextBlock TextWrapping="Wrap" Margin="0,0,0,12" Opacity="0.5" Foreground="{Binding Text2, Source={StaticResource ThemeColor}}">
+                您可以在图片概览页点击Tag,选择编辑别名,来提交别名,别名将会有3种状态.<LineBreak/>
+                Pending,您刚刚提交的别名将会处于此状态,此状态的别名未进行审核,但是您仍然可以使用它进行搜索.<LineBreak/>
+                Active,当处于Pending状态的别名通过审核,就会处于此状态,表示这是一个有效别名.<LineBreak/>
+                Deleted,当别名未通过审核就会处于此状态,表示该别名已被删除,且这是一个垃圾别名.
+                </TextBlock>
+                <TextBlock Text="如何规范的提交别名" FontSize="30" Foreground="#58aced"></TextBlock>
+                <TextBlock TextWrapping="Wrap" Margin="0,0,0,12" Opacity="0.5" Foreground="{Binding Text2, Source={StaticResource ThemeColor}}">
+                别名的意义要和原Tag的含义相同,正式的含义或是俗称都可,但是较为官方的含义被标记为主要别名的几率比较大.无意义的别名或是有误导性质的别名都会被标记为垃圾别名.<LineBreak/>
+                例如:<LineBreak/>"yahari_ore_no_seishun_lovecome_wa_machigatteiru."<LineBreak/>
+                这个Tag有"我的青春恋爱物语果然有问题","大老师"两个别名,前者将会标记为主要别名,后者则是次要别名.
+                </TextBlock>
+                <TextBlock Text="主要别名与次要别名" FontSize="30" Foreground="#58aced"></TextBlock>
+                <TextBlock TextWrapping="Wrap" Margin="0,0,0,12" Opacity="0.5" Foreground="{Binding Text2, Source={StaticResource ThemeColor}}">
+                一个Tag的别名允许有多个,但是只允许有一个主要别名,主要别名将会显示在图片概览的Tag上.次要别名只用于搜索.
+                </TextBlock>
+                <TextBlock Text="注意事项" FontSize="30" Foreground="#58aced"></TextBlock>
+                <TextBlock TextWrapping="Wrap" Margin="0,0,0,12" Opacity="0.5" Foreground="{Binding Text2, Source={StaticResource ThemeColor}}">
+                请不要过多的恶意提交垃圾别名,过多的恶意提交垃圾别名可能导致您的帐号与设备被添加进黑名单,从而无法使用MoePic.
+                </TextBlock>
+            </StackPanel>
+        </ScrollViewer>
+    </Grid>
+
+</Models:MoePicPage>

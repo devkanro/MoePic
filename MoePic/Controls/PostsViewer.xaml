@@ -1,0 +1,198 @@
+﻿<UserControl
+    xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+    xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+    xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+    xmlns:tl="clr-namespace:Telerik.Windows.Controls;assembly=Telerik.Windows.Controls.Primitives"
+    xmlns:tlcore="clr-namespace:Telerik.Windows.Controls;assembly=Telerik.Windows.Core"
+    xmlns:con="clr-namespace:MoePic.Controls"
+    xmlns:tool="clr-namespace:Microsoft.Phone.Controls;assembly=Microsoft.Phone.Controls.Toolkit"
+    xmlns:DataBoundListBox="clr-namespace:Telerik.Windows.Controls.DataBoundListBox;assembly=Telerik.Windows.Controls.Primitives" 
+    x:Class="MoePic.Controls.PostsViewer"
+    mc:Ignorable="d"
+    Foreground="White"
+    d:DesignHeight="480" d:DesignWidth="480" Loaded="UserControl_Loaded">
+    <UserControl.Resources>
+        <DataTemplate x:Key="HorizontalPinterestDataTemplate">
+        	<Grid Margin="0,0,0,3">
+        		<con:PostItem Post="{Binding}"/>
+        	</Grid>
+        </DataTemplate>
+        <Style x:Key="ExtendedScrollViewerStyle" TargetType="ScrollViewer">
+        	<Setter Property="ManipulationMode" Value="System"/>
+        	<Setter Property="VerticalScrollBarVisibility" Value="Hidden"/>
+        	<Setter Property="HorizontalScrollBarVisibility" Value="Disabled"/>
+        	<Setter Property="Background" Value="Transparent"/>
+        	<Setter Property="Padding" Value="0"/>
+        	<Setter Property="BorderThickness" Value="0"/>
+        	<Setter Property="BorderBrush" Value="Transparent"/>
+        	<Setter Property="Template">
+        		<Setter.Value>
+        			<ControlTemplate TargetType="ScrollViewer">
+        				<Border BorderBrush="{TemplateBinding BorderBrush}" BorderThickness="{TemplateBinding BorderThickness}" Background="{TemplateBinding Background}">
+        					<VisualStateManager.VisualStateGroups>
+        						<VisualStateGroup x:Name="ScrollStates">
+        							<VisualStateGroup.Transitions>
+        								<VisualTransition GeneratedDuration="00:00:00.5"/>
+        							</VisualStateGroup.Transitions>
+        							<VisualState x:Name="Scrolling">
+        								<Storyboard>
+        									<DoubleAnimation Duration="0" To="1" Storyboard.TargetProperty="Opacity" Storyboard.TargetName="VerticalScrollBar"/>
+        									<DoubleAnimation Duration="0" To="1" Storyboard.TargetProperty="Opacity" Storyboard.TargetName="HorizontalScrollBar"/>
+        								</Storyboard>
+        							</VisualState>
+        							<VisualState x:Name="NotScrolling"/>
+        						</VisualStateGroup>
+        						<VisualStateGroup x:Name="VerticalCompression">
+        							<VisualState x:Name="NoVerticalCompression"/>
+        							<VisualState x:Name="CompressionTop"/>
+        							<VisualState x:Name="CompressionBottom"/>
+        						</VisualStateGroup>
+        						<VisualStateGroup x:Name="HorizontalCompression">
+        							<VisualState x:Name="NoHorizontalCompression"/>
+        							<VisualState x:Name="CompressionLeft"/>
+        							<VisualState x:Name="CompressionRight"/>
+        						</VisualStateGroup>
+        					</VisualStateManager.VisualStateGroups>
+        					<Grid Margin="{TemplateBinding Padding}">
+        						<ScrollContentPresenter x:Name="ScrollContentPresenter" ContentTemplate="{TemplateBinding ContentTemplate}" Content="{TemplateBinding Content}"/>
+        						<ScrollBar x:Name="VerticalScrollBar" HorizontalAlignment="Right" Height="Auto" IsHitTestVisible="False" IsTabStop="False" Maximum="{TemplateBinding ScrollableHeight}" Minimum="0" Orientation="Vertical" Visibility="Collapsed" Value="{TemplateBinding VerticalOffset}" ViewportSize="{TemplateBinding ViewportHeight}" VerticalAlignment="Stretch" Width="5"/>
+        						<ScrollBar x:Name="HorizontalScrollBar" HorizontalAlignment="Stretch" Height="5" IsHitTestVisible="False" IsTabStop="False" Maximum="{TemplateBinding ScrollableWidth}" Minimum="0" Orientation="Horizontal" Visibility="Collapsed" Value="{TemplateBinding HorizontalOffset}" ViewportSize="{TemplateBinding ViewportWidth}" VerticalAlignment="Bottom" Width="Auto"/>
+        					</Grid>
+        				</Border>
+        			</ControlTemplate>
+        		</Setter.Value>
+        	</Setter>
+        </Style>
+        <Style x:Key="baseListBoxStyle" TargetType="tl:RadDataBoundListBox">
+        	<Setter Property="Background" Value="#00ffffff"/>
+        	<Setter Property="ScrollViewer.VerticalScrollBarVisibility" Value="Auto"/>
+        	<Setter Property="ScrollViewer.HorizontalScrollBarVisibility" Value="Auto"/>
+        	<Setter Property="EmptyContentTemplate">
+        		<Setter.Value>
+        			<DataTemplate>
+        				<TextBlock HorizontalAlignment="Center" Text="{Binding}" VerticalAlignment="Center"/>
+        			</DataTemplate>
+        		</Setter.Value>
+        	</Setter>
+        	<Setter Property="Template">
+        		<Setter.Value>
+        			<ControlTemplate TargetType="tl:RadDataBoundListBox">
+        				<Border x:Name="LayoutRoot" BorderBrush="{TemplateBinding BorderBrush}" BorderThickness="{TemplateBinding BorderThickness}" Background="{TemplateBinding Background}">
+        					<VisualStateManager.VisualStateGroups>
+        						<VisualStateGroup x:Name="CommonStates">
+        							<VisualState x:Name="Normal">
+        								<Storyboard>
+        									<ObjectAnimationUsingKeyFrames Storyboard.TargetProperty="Visibility" Storyboard.TargetName="PART_VerticalScrollbar">
+        										<DiscreteObjectKeyFrame KeyTime="0" Value="Visible"/>
+        									</ObjectAnimationUsingKeyFrames>
+        									<ObjectAnimationUsingKeyFrames Storyboard.TargetProperty="Visibility" Storyboard.TargetName="PART_EmptyContentPresenter">
+        										<DiscreteObjectKeyFrame KeyTime="0" Value="Collapsed"/>
+        									</ObjectAnimationUsingKeyFrames>
+        								</Storyboard>
+        							</VisualState>
+        							<VisualState x:Name="NoData">
+        								<Storyboard>
+        									<ObjectAnimationUsingKeyFrames Storyboard.TargetProperty="Visibility" Storyboard.TargetName="PART_VerticalScrollbar">
+        										<DiscreteObjectKeyFrame KeyTime="0" Value="Collapsed"/>
+        									</ObjectAnimationUsingKeyFrames>
+        									<ObjectAnimationUsingKeyFrames Storyboard.TargetProperty="Visibility" Storyboard.TargetName="PART_EmptyContentPresenter">
+        										<DiscreteObjectKeyFrame KeyTime="0" Value="Visible"/>
+        									</ObjectAnimationUsingKeyFrames>
+        								</Storyboard>
+        							</VisualState>
+        						</VisualStateGroup>
+        					</VisualStateManager.VisualStateGroups>
+        					<Grid>
+        						<tl:RadModalWindow x:Name="PART_ItemReorderPopup" Background="Transparent" HorizontalContentAlignment="Stretch" IsClosedOnBackButton="True" IsClosedOnOutsideTap="True" PlacementTarget="{Binding ., ElementName=LayoutRoot}" VerticalContentAlignment="Stretch" WindowSizeMode="FitToPlacementTarget">
+        							<tl:RadModalWindow.CloseAnimation>
+        								<tlcore:RadFadeAnimation EndOpacity="0" StartOpacity="1">
+        									<tlcore:RadFadeAnimation.Easing>
+        										<CubicEase EasingMode="EaseOut"/>
+        									</tlcore:RadFadeAnimation.Easing>
+        								</tlcore:RadFadeAnimation>
+        							</tl:RadModalWindow.CloseAnimation>
+        							<tl:RadModalWindow.OpenAnimation>
+        								<tlcore:RadFadeAnimation EndOpacity="1" StartOpacity="0">
+        									<tlcore:RadFadeAnimation.Easing>
+        										<CubicEase EasingMode="EaseOut"/>
+        									</tlcore:RadFadeAnimation.Easing>
+        								</tlcore:RadFadeAnimation>
+        							</tl:RadModalWindow.OpenAnimation>
+        							<DataBoundListBox:ItemReorderControl x:Name="PART_ItemReorderControl" Style="{TemplateBinding ItemReorderControlStyle}"/>
+        						</tl:RadModalWindow>
+        						<ScrollViewer x:Name="PART_ManipulationContainer" Style="{StaticResource ExtendedScrollViewerStyle}">
+        							<Canvas x:Name="PART_ScrollableContent" HorizontalAlignment="Left" VerticalAlignment="Top">
+        								<Canvas x:Name="PART_ItemsPanel">
+        									<DataBoundListBox:PullToRefreshIndicatorControl x:Name="PART_PullToRefreshIndicator" Style="{TemplateBinding PullToRefreshIndicatorStyle}" Visibility="Collapsed"/>
+        									<Rectangle x:Name="PART_CheckBoxesPressIndicator" IsHitTestVisible="False" Opacity="0" Style="{TemplateBinding CheckBoxesIndicatorStyle}" Width="24" Canvas.ZIndex="1"/>
+        									<ContentPresenter x:Name="PART_EmptyContentPresenter" ContentTemplate="{TemplateBinding EmptyContentTemplate}" Content="{TemplateBinding EmptyContent}" Visibility="Collapsed"/>
+        								</Canvas>
+        							</Canvas>
+        						</ScrollViewer>
+        						<ScrollBar x:Name="PART_VerticalScrollbar" HorizontalAlignment="Right" Opacity="0"/>
+        					</Grid>
+        				</Border>
+        			</ControlTemplate>
+        		</Setter.Value>
+        	</Setter>
+        	<Setter Property="ItemLoadingTemplate">
+        		<Setter.Value>
+        			<DataTemplate>
+        				<TextBlock Text="Loading"/>
+        			</DataTemplate>
+        		</Setter.Value>
+        	</Setter>
+        </Style>
+        <Style x:Key="CheckBoxesIndicatorStyle" TargetType="Rectangle">
+        	<Setter Property="Fill" Value="{StaticResource PhoneAccentBrush}"/>
+        </Style>
+        <Style x:Key="RadDataBoundListBoxStyle1" BasedOn="{StaticResource baseListBoxStyle}" TargetType="tl:RadDataBoundListBox">
+        	<Setter Property="MinHeight" Value="100"/>
+        	<Setter Property="MinWidth" Value="100"/>
+        	<Setter Property="CheckBoxesIndicatorStyle" Value="{StaticResource CheckBoxesIndicatorStyle}"/>
+        	<Setter Property="VirtualizationStrategyDefinition">
+        		<Setter.Value>
+        			<tl:StackVirtualizationStrategyDefinition Orientation="Vertical"/>
+        		</Setter.Value>
+        	</Setter>
+        </Style>
+    	
+    </UserControl.Resources>
+	<UserControl.FontFamily>
+		<StaticResource ResourceKey="PhoneFontFamilyNormal"/>
+	</UserControl.FontFamily>
+    <UserControl.FontSize>
+        <StaticResource ResourceKey="PhoneFontSizeNormal"/>
+    </UserControl.FontSize>
+    <Grid x:Name="LayoutRoot">
+		<tl:RadDataBoundListBox ScrollViewer.ManipulationMode="Control" IsAsyncBalanceEnabled="True"
+			x:Name="list" Margin="0,0,0,0"
+			ItemTemplate="{StaticResource HorizontalPinterestDataTemplate}"
+			DataVirtualizationMode="OnDemandAutomatic" DataRequested="list_DataRequested" Loaded="list_Loaded" BorderThickness="0" EmptyContentDisplayMode="DataSourceNull" EmptyContent="Loading..." Style="{StaticResource RadDataBoundListBoxStyle1}">
+			<tl:RadDataBoundListBox.CheckBoxStyle>
+				<Style TargetType="tl:ItemCheckBox">
+					<Setter Property="Background" Value="#CCCCCC" />
+				</Style>
+			</tl:RadDataBoundListBox.CheckBoxStyle>
+			<tl:RadDataBoundListBox.ItemAddedAnimation>
+				<tlcore:RadFadeAnimation StartOpacity="0" InitialDelay="0:0:0.3" EndOpacity="1"
+					Duration="0:0:0.9">
+					<tlcore:RadFadeAnimation.Easing>
+						<CubicEase EasingMode="EaseOut" />
+					</tlcore:RadFadeAnimation.Easing>
+				</tlcore:RadFadeAnimation>
+			</tl:RadDataBoundListBox.ItemAddedAnimation>
+			<tl:RadDataBoundListBox.VirtualizationStrategyDefinition>
+				<tl:DynamicGridVirtualizationStrategyDefinition Orientation="Horizontal"
+					StackCount="2" />
+			</tl:RadDataBoundListBox.VirtualizationStrategyDefinition>
+		</tl:RadDataBoundListBox>
+
+        <ProgressBar x:Name="LoadingBar" IsIndeterminate="True" VerticalAlignment="Top" Visibility="Collapsed">
+            <ProgressBar.Foreground>
+                <SolidColorBrush Color="{StaticResource PhoneAccentColor}"/>
+            </ProgressBar.Foreground>
+        </ProgressBar>
+    </Grid>
+</UserControl>

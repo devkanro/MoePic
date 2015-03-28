@@ -1,0 +1,36 @@
+﻿<UserControl
+    xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+    xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+    xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+    xmlns:Models="clr-namespace:MoePic.Models" x:Name="userControl" x:Class="MoePic.Controls.PostItem"
+    mc:Ignorable="d"
+    Foreground="White"
+    d:DesignHeight="480" Width="237" Margin="3,0,0,0">
+    <UserControl.Resources>
+        <Models:CDNUriConverter x:Key="CDNUriConverter"/>
+        <Storyboard x:Name="ImageOpend">
+            <DoubleAnimation Storyboard.TargetName="image"
+        		Storyboard.TargetProperty="Opacity"
+        		From="0"
+        		To="1"
+        		Duration="0:0:1"/>
+        </Storyboard>
+    </UserControl.Resources>
+    <UserControl.FontFamily>
+        <StaticResource ResourceKey="PhoneFontFamilyNormal"/>
+    </UserControl.FontFamily>
+    <UserControl.FontSize>
+        <StaticResource ResourceKey="PhoneFontSizeNormal"/>
+    </UserControl.FontSize>
+    <Button x:Name="LayoutRoot" Background="{Binding Foreground, Source={StaticResource ThemeColor}}" Click="LayoutRoot_Click">
+        <Button.Template>
+            <ControlTemplate>
+                <Grid Background="{TemplateBinding Background}">
+                    <ContentPresenter/>
+                </Grid>
+            </ControlTemplate>
+        </Button.Template>
+        <Image x:Name="image" Source="{Binding Post.preview_url, Converter={StaticResource CDNUriConverter}, ElementName=userControl}" ImageOpened="Image_ImageOpened" Opacity="0" Stretch="UniformToFill"/>
+    </Button>
+</UserControl>

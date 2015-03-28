@@ -1,0 +1,30 @@
+﻿<Models:MoePicPage
+    x:Class="MoePic.TagAliasEditPage"
+    xmlns:Models="clr-namespace:MoePic.Models"
+    xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+    xmlns:phone="clr-namespace:Microsoft.Phone.Controls;assembly=Microsoft.Phone"
+    xmlns:shell="clr-namespace:Microsoft.Phone.Shell;assembly=Microsoft.Phone"
+    xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+    xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+    FontFamily="{StaticResource PhoneFontFamilyNormal}"
+    FontSize="{StaticResource PhoneFontSizeNormal}"
+    Style="{StaticResource PageTranstionStyle}"
+    SupportedOrientations="Portrait" Orientation="Portrait"
+    mc:Ignorable="d"
+    shell:SystemTray.IsVisible="False">
+
+    <!--LayoutRoot 是包含所有页面内容的根网格-->
+    <Grid x:Name="LayoutRoot" Background="{Binding Background, Source={StaticResource ThemeColor}}">
+        <Grid.RowDefinitions>
+            <RowDefinition Height="50"/>
+            <RowDefinition/>
+        </Grid.RowDefinitions>
+        <StackPanel Grid.Row="1" Margin="15,15,15,0">
+            <TextBlock Text="Tag别名计划" FontSize="30" Foreground="#58aced"></TextBlock>
+            <TextBlock TextWrapping="Wrap" Text="将Tag标记为英语,日语,中文(简体),中文(繁体)的别名,使Tag用起来更加方便,Tag别名由用户贡献,贡献50个Tag别名即可解锁使用别名搜索功能,贡献200个Tag别名就可免费解锁MoePic Plus!" Opacity="0.5" Foreground="{Binding Text2, Source={StaticResource ThemeColor}}"/>
+            
+        </StackPanel>
+    </Grid>
+
+</Models:MoePicPage>

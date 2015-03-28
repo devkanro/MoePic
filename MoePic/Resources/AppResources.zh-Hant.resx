@@ -1,0 +1,657 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<root>
+  <!-- 
+    Microsoft ResX Schema 
+    
+    Version 2.0
+    
+    The primary goals of this format is to allow a simple XML format 
+    that is mostly human readable. The generation and parsing of the 
+    various data types are done through the TypeConverter classes 
+    associated with the data types.
+    
+    Example:
+    
+    ... ado.net/XML headers & schema ...
+    <resheader name="resmimetype">text/microsoft-resx</resheader>
+    <resheader name="version">2.0</resheader>
+    <resheader name="reader">System.Resources.ResXResourceReader, System.Windows.Forms, ...</resheader>
+    <resheader name="writer">System.Resources.ResXResourceWriter, System.Windows.Forms, ...</resheader>
+    <data name="Name1"><value>this is my long string</value><comment>this is a comment</comment></data>
+    <data name="Color1" type="System.Drawing.Color, System.Drawing">Blue</data>
+    <data name="Bitmap1" mimetype="application/x-microsoft.net.object.binary.base64">
+        <value>[base64 mime encoded serialized .NET Framework object]</value>
+    </data>
+    <data name="Icon1" type="System.Drawing.Icon, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
+        <value>[base64 mime encoded string representing a byte array form of the .NET Framework object]</value>
+        <comment>This is a comment</comment>
+    </data>
+                
+    There are any number of "resheader" rows that contain simple 
+    name/value pairs.
+    
+    Each data row contains a name, and value. The row also contains a 
+    type or mimetype. Type corresponds to a .NET class that support 
+    text/value conversion through the TypeConverter architecture. 
+    Classes that don't support this are serialized and stored with the 
+    mimetype set.
+    
+    The mimetype is used for serialized objects, and tells the 
+    ResXResourceReader how to depersist the object. This is currently not 
+    extensible. For a given mimetype the value must be set accordingly:
+    
+    Note - application/x-microsoft.net.object.binary.base64 is the format 
+    that the ResXResourceWriter will generate, however the reader can 
+    read any of the formats listed below.
+    
+    mimetype: application/x-microsoft.net.object.binary.base64
+    value   : The object must be serialized with 
+            : System.Runtime.Serialization.Formatters.Binary.BinaryFormatter
+            : and then encoded with base64 encoding.
+    
+    mimetype: application/x-microsoft.net.object.soap.base64
+    value   : The object must be serialized with 
+            : System.Runtime.Serialization.Formatters.Soap.SoapFormatter
+            : and then encoded with base64 encoding.
+
+    mimetype: application/x-microsoft.net.object.bytearray.base64
+    value   : The object must be serialized into a byte array 
+            : using a System.ComponentModel.TypeConverter
+            : and then encoded with base64 encoding.
+    -->
+  <xsd:schema id="root" xmlns="" xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:msdata="urn:schemas-microsoft-com:xml-msdata">
+    <xsd:import namespace="http://www.w3.org/XML/1998/namespace" />
+    <xsd:element name="root" msdata:IsDataSet="true">
+      <xsd:complexType>
+        <xsd:choice maxOccurs="unbounded">
+          <xsd:element name="metadata">
+            <xsd:complexType>
+              <xsd:sequence>
+                <xsd:element name="value" type="xsd:string" minOccurs="0" />
+              </xsd:sequence>
+              <xsd:attribute name="name" use="required" type="xsd:string" />
+              <xsd:attribute name="type" type="xsd:string" />
+              <xsd:attribute name="mimetype" type="xsd:string" />
+              <xsd:attribute ref="xml:space" />
+            </xsd:complexType>
+          </xsd:element>
+          <xsd:element name="assembly">
+            <xsd:complexType>
+              <xsd:attribute name="alias" type="xsd:string" />
+              <xsd:attribute name="name" type="xsd:string" />
+            </xsd:complexType>
+          </xsd:element>
+          <xsd:element name="data">
+            <xsd:complexType>
+              <xsd:sequence>
+                <xsd:element name="value" type="xsd:string" minOccurs="0" msdata:Ordinal="1" />
+                <xsd:element name="comment" type="xsd:string" minOccurs="0" msdata:Ordinal="2" />
+              </xsd:sequence>
+              <xsd:attribute name="name" type="xsd:string" use="required" msdata:Ordinal="1" />
+              <xsd:attribute name="type" type="xsd:string" msdata:Ordinal="3" />
+              <xsd:attribute name="mimetype" type="xsd:string" msdata:Ordinal="4" />
+              <xsd:attribute ref="xml:space" />
+            </xsd:complexType>
+          </xsd:element>
+          <xsd:element name="resheader">
+            <xsd:complexType>
+              <xsd:sequence>
+                <xsd:element name="value" type="xsd:string" minOccurs="0" msdata:Ordinal="1" />
+              </xsd:sequence>
+              <xsd:attribute name="name" type="xsd:string" use="required" />
+            </xsd:complexType>
+          </xsd:element>
+        </xsd:choice>
+      </xsd:complexType>
+    </xsd:element>
+  </xsd:schema>
+  <resheader name="resmimetype">
+    <value>text/microsoft-resx</value>
+  </resheader>
+  <resheader name="version">
+    <value>2.0</value>
+  </resheader>
+  <resheader name="reader">
+    <value>System.Resources.ResXResourceReader, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </resheader>
+  <resheader name="writer">
+    <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </resheader>
+  <data name="ResourceFlowDirection" xml:space="preserve">
+    <value>LeftToRight</value>
+    <comment>Controls the FlowDirection for all elements in the RootFrame. Set to the traditional direction of this resource file's language</comment>
+  </data>
+  <data name="ResourceLanguage" xml:space="preserve">
+    <value>zh-Hant</value>
+    <comment>Controls the Language and ensures that the font for all elements in the RootFrame aligns with the app's language. Set to the language code of this resource file's language.</comment>
+  </data>
+  <data name="ApplicationTitle" xml:space="preserve">
+    <value>我的應用程式</value>
+  </data>
+  <data name="AppBarButtonText" xml:space="preserve">
+    <value>添加</value>
+  </data>
+  <data name="AppBarMenuItemText" xml:space="preserve">
+    <value>菜單項</value>
+  </data>
+  <data name="Login" xml:space="preserve">
+    <value>登錄</value>
+  </data>
+  <data name="LoginPageContent1" xml:space="preserve">
+    <value> · 顯示您的個性化名字與頭像.</value>
+  </data>
+  <data name="LoginPageContent2" xml:space="preserve">
+    <value> · 隨時備份與還原應用設置到 OneDrive.</value>
+  </data>
+  <data name="LoginPageContent3" xml:space="preserve">
+    <value> · 隨時備份與還原最愛圖片,壁紙庫.</value>
+  </data>
+  <data name="LoginPageContent4" xml:space="preserve">
+    <value> · 申請與使用高級編輯功能.</value>
+  </data>
+  <data name="LoginPageInfo1" xml:space="preserve">
+    <value>使用 Microsoft 賬戶登錄MoePic,以獲得更多功能:</value>
+  </data>
+  <data name="LoginPageInfo2" xml:space="preserve">
+    <value>您可以隨時在賬戶設置中更改MoePic的訪問權限.</value>
+  </data>
+  <data name="LoginPageTile" xml:space="preserve">
+    <value>連接到 Microsoft 帳戶</value>
+  </data>
+  <data name="Cancel" xml:space="preserve">
+    <value>取消</value>
+  </data>
+  <data name="KLoginPageContent1" xml:space="preserve">
+    <value> · 同步添加最愛到您的Konachan賬戶.</value>
+  </data>
+  <data name="KLoginPageContent2" xml:space="preserve">
+    <value> · 為圖片添加評論.</value>
+  </data>
+  <data name="KLoginPageContent3" xml:space="preserve">
+    <value> · 申請與使用高級編輯功能.</value>
+  </data>
+  <data name="KLoginPageInfo1" xml:space="preserve">
+    <value>將MoePic與Konachan賬戶連接,以獲得在Konachan上的更多功能:</value>
+  </data>
+  <data name="KLoginPageTile" xml:space="preserve">
+    <value>連接到Konachan賬戶</value>
+  </data>
+  <data name="KLogoPageInfo2" xml:space="preserve">
+    <value>MoePic將保存您的帳號與密碼Hash,而不是密碼明文在設定檔.</value>
+  </data>
+  <data name="YLoginPageContent1" xml:space="preserve">
+    <value> · 同步添加最愛到您的Yande.re賬戶.</value>
+  </data>
+  <data name="YLoginPageContent2" xml:space="preserve">
+    <value> · 為圖片添加評論.</value>
+  </data>
+  <data name="YLoginPageContent3" xml:space="preserve">
+    <value> · 申請與使用高級編輯功能.</value>
+  </data>
+  <data name="YLoginPageInfo1" xml:space="preserve">
+    <value>將MoePic與Yande.re賬戶連接,以獲得在Yande.re上的更多功能:</value>
+  </data>
+  <data name="YLoginPageInfo2" xml:space="preserve">
+    <value>MoePic將保存您的帳號與密碼Hash,而不是密碼明文在設定檔.</value>
+  </data>
+  <data name="YLoginPageTile" xml:space="preserve">
+    <value>連接到Yande.re賬戶</value>
+  </data>
+  <data name="About" xml:space="preserve">
+    <value>關於</value>
+  </data>
+  <data name="AddFav" xml:space="preserve">
+    <value>已添加至喜愛列表</value>
+  </data>
+  <data name="AppInfo" xml:space="preserve">
+    <value>本應用程式圖片資源均來自網路.</value>
+  </data>
+  <data name="Application" xml:space="preserve">
+    <value>應用</value>
+  </data>
+  <data name="BackAgain" xml:space="preserve">
+    <value>再按一次退出...</value>
+  </data>
+  <data name="CanNotLink" xml:space="preserve">
+    <value>無法連接到服務器,請檢查網路或者更換圖庫...</value>
+  </data>
+  <data name="CommentNoBody" xml:space="preserve">
+    <value>請輸入要發送的內容...</value>
+  </data>
+  <data name="Confirm" xml:space="preserve">
+    <value>確定</value>
+  </data>
+  <data name="Day" xml:space="preserve">
+    <value>24小時</value>
+  </data>
+  <data name="DelFav" xml:space="preserve">
+    <value>已從喜愛列表刪除</value>
+  </data>
+  <data name="Download" xml:space="preserve">
+    <value>下載</value>
+  </data>
+  <data name="DownloadListDamage" xml:space="preserve">
+    <value>下載列表已損壞,將初始化下載列表</value>
+  </data>
+  <data name="ExplicitInfo" xml:space="preserve">
+    <value>Explicit級別的圖片,包含有著明顯的Sex描寫的圖片,註意:某些圖片可能會含有導致不適或者反感的內容.</value>
+  </data>
+  <data name="Fav" xml:space="preserve">
+    <value>最愛</value>
+  </data>
+  <data name="FavListDamage" xml:space="preserve">
+    <value>最愛列表已損壞,將初始化最愛列表</value>
+  </data>
+  <data name="FavPost" xml:space="preserve">
+    <value>最愛圖片</value>
+  </data>
+  <data name="FavTag" xml:space="preserve">
+    <value>收藏標簽</value>
+  </data>
+  <data name="Home" xml:space="preserve">
+    <value>導航</value>
+  </data>
+  <data name="Ignore" xml:space="preserve">
+    <value>忽略</value>
+  </data>
+  <data name="KLogin" xml:space="preserve">
+    <value>登錄Konachan</value>
+  </data>
+  <data name="LimitSetting" xml:space="preserve">
+    <value>圖片載入極限設定</value>
+  </data>
+  <data name="LimitSettingInfo" xml:space="preserve">
+    <value>該參數指定了一次載入中,圖片載入的最大數量,為保證瀏覽質量,建議您將此參數調整至15~25之間.</value>
+  </data>
+  <data name="Linking" xml:space="preserve">
+    <value>連接到服務器...</value>
+  </data>
+  <data name="LoadFail" xml:space="preserve">
+    <value>載入失敗,請重試...</value>
+  </data>
+  <data name="LoadPro" xml:space="preserve">
+    <value>載入 {0}%</value>
+  </data>
+  <data name="LoadRandom" xml:space="preserve">
+    <value>載入隨機圖片中</value>
+  </data>
+  <data name="LoadSettings" xml:space="preserve">
+    <value>讀取用戶設定...</value>
+  </data>
+  <data name="LoginFail" xml:space="preserve">
+    <value>登錄失敗,請檢查帳號密碼與網路.</value>
+  </data>
+  <data name="Logining" xml:space="preserve">
+    <value>驗證登錄中...</value>
+  </data>
+  <data name="LoginName" xml:space="preserve">
+    <value>帳號:</value>
+  </data>
+  <data name="LoginPassword" xml:space="preserve">
+    <value>密碼:</value>
+  </data>
+  <data name="Me" xml:space="preserve">
+    <value>我</value>
+  </data>
+  <data name="Month" xml:space="preserve">
+    <value>1月</value>
+  </data>
+  <data name="NoNetworkMessageContent" xml:space="preserve">
+    <value>網路連接已丟失,請檢查網路連接.</value>
+  </data>
+  <data name="NoNetworkMessageTitle" xml:space="preserve">
+    <value>網路不可用</value>
+  </data>
+  <data name="NoNewPost" xml:space="preserve">
+    <value>沒有更新的圖片...</value>
+  </data>
+  <data name="NotLogin" xml:space="preserve">
+    <value>未登錄</value>
+  </data>
+  <data name="NotLoginK" xml:space="preserve">
+    <value>無法添加評論,請先登錄Konachan</value>
+  </data>
+  <data name="NotLoginY" xml:space="preserve">
+    <value>無法添加評論,請先登錄Yande.re</value>
+  </data>
+  <data name="NotWifiMessageContent" xml:space="preserve">
+    <value>檢測到您當前使用的是數據流量,這可能會消耗您大量數據流量,建議您使用Wi-fi瀏覽以節約數據流量.是否轉到Wi-fi設置?</value>
+  </data>
+  <data name="NotWifiMessageTitle" xml:space="preserve">
+    <value>非Wi-fi環境</value>
+  </data>
+  <data name="OnlyWifiDownloadSetting" xml:space="preserve">
+    <value>僅在Wi-fi環境下下載</value>
+  </data>
+  <data name="OnlyWifiDownloadSettingInfo" xml:space="preserve">
+    <value>開啟此選項後將會僅在Wi-fi環境下下載,在使用數據流量時將會將下載掛起,直至連接到Wi-fi.</value>
+  </data>
+  <data name="ParallelDownloadSetting" xml:space="preserve">
+    <value>並行連接數</value>
+  </data>
+  <data name="ParallelDownloadSettingInfo" xml:space="preserve">
+    <value>該參數指定了能夠同時進行下載的任務數.</value>
+  </data>
+  <data name="Pool" xml:space="preserve">
+    <value>圖集</value>
+  </data>
+  <data name="Post" xml:space="preserve">
+    <value>圖片</value>
+  </data>
+  <data name="PostInfo" xml:space="preserve">
+    <value>圖片信息</value>
+  </data>
+  <data name="QuestionableInfo" xml:space="preserve">
+    <value>Questionable級別的圖片,包含未分級與未進行特別的Sex描寫的圖片,比如含有泳衣與內衣的描寫會被標記為此分級.</value>
+  </data>
+  <data name="Random" xml:space="preserve">
+    <value>隨機</value>
+  </data>
+  <data name="Ranking" xml:space="preserve">
+    <value>排行榜</value>
+  </data>
+  <data name="RatingSetting" xml:space="preserve">
+    <value>分級設定</value>
+  </data>
+  <data name="SafeInfo" xml:space="preserve">
+    <value>Safe級別的圖片,是您可以在大眾場合下也能瀏覽的圖片,任何有關Sex描寫都被視為不安全的.</value>
+  </data>
+  <data name="SaveRamSetting" xml:space="preserve">
+    <value>減少內存使用</value>
+  </data>
+  <data name="SaveRamSettingInfo" xml:space="preserve">
+    <value>減小喜愛,壁紙庫顯示時的圖片尺寸,來減少小內存設備的內存使用,但是可能造成高解析度設備顯示模糊.</value>
+  </data>
+  <data name="Search" xml:space="preserve">
+    <value>搜索</value>
+  </data>
+  <data name="SendCommentFailContent" xml:space="preserve">
+    <value>添加評論失敗,請檢查:
+ · 當前保存的賬戶密碼是否正確.
+ · 是否註冊超過兩周.</value>
+  </data>
+  <data name="SendCommentFailTile" xml:space="preserve">
+    <value>添加評論失敗</value>
+  </data>
+  <data name="SendCommentOk" xml:space="preserve">
+    <value>添加評論成功...</value>
+  </data>
+  <data name="Settings" xml:space="preserve">
+    <value>設置</value>
+  </data>
+  <data name="SettingsDamage" xml:space="preserve">
+    <value>設定檔已損壞,將初始化所有設定</value>
+  </data>
+  <data name="Trial" xml:space="preserve">
+    <value>試用版</value>
+  </data>
+  <data name="View" xml:space="preserve">
+    <value>瀏覽</value>
+  </data>
+  <data name="WallpaperLibrary" xml:space="preserve">
+    <value>壁紙庫</value>
+  </data>
+  <data name="Week" xml:space="preserve">
+    <value>1周</value>
+  </data>
+  <data name="Year" xml:space="preserve">
+    <value>1年</value>
+  </data>
+  <data name="YLogin" xml:space="preserve">
+    <value>登錄Yande.re</value>
+  </data>
+  <data name="LoginTimeOutContent" xml:space="preserve">
+    <value>驗證登錄超時,重試一次還是取消登錄?</value>
+  </data>
+  <data name="LoginTimeOutTile" xml:space="preserve">
+    <value>登錄超時</value>
+  </data>
+  <data name="Retry" xml:space="preserve">
+    <value>重試</value>
+  </data>
+  <data name="AddFavSnyc" xml:space="preserve">
+    <value>同步添加喜愛到賬戶</value>
+  </data>
+  <data name="AddFavSnycInfo" xml:space="preserve">
+    <value>開啟此選項後將會在您添加喜愛的時候,同步添加到您的圖庫賬戶上.</value>
+  </data>
+  <data name="AddTagFav" xml:space="preserve">
+    <value>已添加{0}到收藏列表.</value>
+  </data>
+  <data name="CancelDownload" xml:space="preserve">
+    <value>取消下載</value>
+  </data>
+  <data name="ChangePassword" xml:space="preserve">
+    <value>更改密碼</value>
+  </data>
+  <data name="ChangePasswordInfo" xml:space="preserve">
+    <value>更改訪問應用所需要的密碼</value>
+  </data>
+  <data name="ClearHistory" xml:space="preserve">
+    <value>清除歷史</value>
+  </data>
+  <data name="ClearHistoryInfo" xml:space="preserve">
+    <value>清除圖片瀏覽歷史與Tag搜索歷史.</value>
+  </data>
+  <data name="ClearHistoryOK" xml:space="preserve">
+    <value>歷史記錄已清除</value>
+  </data>
+  <data name="Completed" xml:space="preserve">
+    <value>已完成</value>
+  </data>
+  <data name="ConfirmPassword" xml:space="preserve">
+    <value>確認密碼</value>
+  </data>
+  <data name="CreatePassword" xml:space="preserve">
+    <value>創建密碼</value>
+  </data>
+  <data name="CreatFolderFail" xml:space="preserve">
+    <value>創建文件夾失敗,請檢查網路,稍後再試.</value>
+  </data>
+  <data name="DefaultImageType" xml:space="preserve">
+    <value>默認圖片類型</value>
+  </data>
+  <data name="DelDownloadHis" xml:space="preserve">
+    <value>刪除記錄</value>
+  </data>
+  <data name="DelPassword" xml:space="preserve">
+    <value>刪除密碼</value>
+  </data>
+  <data name="DelTagFav" xml:space="preserve">
+    <value>已從收藏列表移除{0}.</value>
+  </data>
+  <data name="DownloadBreak" xml:space="preserve">
+    <value>有一個下載項被中斷...</value>
+  </data>
+  <data name="DownloadBreakNetContent" xml:space="preserve">
+    <value>由於目前無法訪問網路,該下載被掛起,在連接到網路時,該下載將會自動繼續.</value>
+  </data>
+  <data name="DownloadBreakTitle" xml:space="preserve">
+    <value>下載被掛起</value>
+  </data>
+  <data name="DownloadBreakWifiContent" xml:space="preserve">
+    <value>由於目前未連接到Wifi,該下載被掛起,在連接到Wifi時,該下載將會自動繼續.</value>
+  </data>
+  <data name="DownloadErrorContent" xml:space="preserve">
+    <value>下載時遇到錯誤,您可以重試該下載.
+錯誤信息:</value>
+  </data>
+  <data name="DownloadErrorTitle" xml:space="preserve">
+    <value>下載中遇到錯誤</value>
+  </data>
+  <data name="DownloadFavFail" xml:space="preserve">
+    <value>下載喜愛列表失敗,請檢查網路,稍後重試.</value>
+  </data>
+  <data name="DownloadFavOK" xml:space="preserve">
+    <value>下載喜愛列表成功...</value>
+  </data>
+  <data name="DownloadList" xml:space="preserve">
+    <value>下載列表</value>
+  </data>
+  <data name="DownloadSettingFail" xml:space="preserve">
+    <value>下載設置失敗,請檢查網路,稍後重試.</value>
+  </data>
+  <data name="DownloadSettingOK" xml:space="preserve">
+    <value>下載設置成功...</value>
+  </data>
+  <data name="DownloadUnknowErrorContent" xml:space="preserve">
+    <value>下載時遇到未知錯誤,您可以重試該下載,如果再次出現此問題,您可以提交下載的圖片的Post號與圖庫給開發者</value>
+  </data>
+  <data name="DownloadUnknowErrorTitle" xml:space="preserve">
+    <value>下載中遇到未知錯誤</value>
+  </data>
+  <data name="EveryActive" xml:space="preserve">
+    <value>每次激活</value>
+  </data>
+  <data name="EveryRun" xml:space="preserve">
+    <value>每次啟動</value>
+  </data>
+  <data name="FavConflictContent" xml:space="preserve">
+    <value>服務器與本地喜愛列表不同步,上傳,下載,或是合並列表?</value>
+  </data>
+  <data name="FavConflictTitle" xml:space="preserve">
+    <value>喜愛列表沖突</value>
+  </data>
+  <data name="From" xml:space="preserve">
+    <value>來自</value>
+  </data>
+  <data name="History" xml:space="preserve">
+    <value>瀏覽歷史</value>
+  </data>
+  <data name="History2" xml:space="preserve">
+    <value>歷史</value>
+  </data>
+  <data name="InputPassword" xml:space="preserve">
+    <value>請輸入密碼</value>
+  </data>
+  <data name="JpegImage" xml:space="preserve">
+    <value>Jpeg(實用)</value>
+  </data>
+  <data name="JpegImageInfo" xml:space="preserve">
+    <value>Jpeg(實用)可以適用於大部分場合,不僅具有較高的解析度與清晰度還可以節省空間與服務器資源.</value>
+  </data>
+  <data name="Locked" xml:space="preserve">
+    <value>已鎖定</value>
+  </data>
+  <data name="LockedContent" xml:space="preserve">
+    <value>應用已鎖定,我們需要驗證您的身份,以解鎖應用.</value>
+  </data>
+  <data name="Merge" xml:space="preserve">
+    <value>合並</value>
+  </data>
+  <data name="MergeFavFail" xml:space="preserve">
+    <value>合並喜愛列表失敗,請檢查網路,稍後重試.</value>
+  </data>
+  <data name="MergeFavOK" xml:space="preserve">
+    <value>合並喜愛列表成功...</value>
+  </data>
+  <data name="MoeFolder" xml:space="preserve">
+    <value>本文件夾是用於MoePic同步設定,喜好列表的文件夾</value>
+  </data>
+  <data name="NeedAttention" xml:space="preserve">
+    <value>需要註意</value>
+  </data>
+  <data name="NeedAttention2" xml:space="preserve">
+    <value>掛起,需要註意</value>
+  </data>
+  <data name="NeedPasswordInfo" xml:space="preserve">
+    <value>設定需要提供密碼的場合</value>
+  </data>
+  <data name="NewPassword" xml:space="preserve">
+    <value>新密碼</value>
+  </data>
+  <data name="Nodata" xml:space="preserve">
+    <value>沒有數據</value>
+  </data>
+  <data name="NOT" xml:space="preserve">
+    <value>非</value>
+  </data>
+  <data name="NoTagsSelect" xml:space="preserve">
+    <value>請選擇要搜索的Tag</value>
+  </data>
+  <data name="NowPassword" xml:space="preserve">
+    <value>當前密碼</value>
+  </data>
+  <data name="OR" xml:space="preserve">
+    <value>或</value>
+  </data>
+  <data name="Password" xml:space="preserve">
+    <value>應用密碼</value>
+  </data>
+  <data name="PasswordIncorrect" xml:space="preserve">
+    <value>密碼不正確</value>
+  </data>
+  <data name="PasswordInfo" xml:space="preserve">
+    <value>應用密碼的相關設置</value>
+  </data>
+  <data name="PasswordNotFormat" xml:space="preserve">
+    <value>密碼格式不正確</value>
+  </data>
+  <data name="PasswordNotFormatContent" xml:space="preserve">
+    <value>您的密碼:
+- 必須至少有 4 位</value>
+  </data>
+  <data name="PassworldNotMatch" xml:space="preserve">
+    <value>密碼不匹配</value>
+  </data>
+  <data name="PNGImage" xml:space="preserve">
+    <value>PNG(原圖)</value>
+  </data>
+  <data name="PNGImageInfo" xml:space="preserve">
+    <value>PNG(原圖)是圖庫提供的圖片的最大的解析度版本,使用無損壓縮使圖片的質量完全沒有損耗.</value>
+  </data>
+  <data name="RestartDownload" xml:space="preserve">
+    <value>重新下載</value>
+  </data>
+  <data name="SampleImage" xml:space="preserve">
+    <value>Sample(樣圖)</value>
+  </data>
+  <data name="SampleImageInfo" xml:space="preserve">
+    <value>Sample(樣圖)一般比較小,適用於分享等不需要大解析度的場合.</value>
+  </data>
+  <data name="SaveImage" xml:space="preserve">
+    <value>已保存到圖庫...</value>
+  </data>
+  <data name="Saving" xml:space="preserve">
+    <value>保存中</value>
+  </data>
+  <data name="SeePassword" xml:space="preserve">
+    <value>顯示密碼</value>
+  </data>
+  <data name="SettingConflictContent" xml:space="preserve">
+    <value>服務器與本地設置不同步,上傳設置還是下載設置?</value>
+  </data>
+  <data name="SettingConflictTitle" xml:space="preserve">
+    <value>設定檔沖突</value>
+  </data>
+  <data name="SnycAddWebFail" xml:space="preserve">
+    <value>無法同步添加最愛到圖庫賬戶,請檢查網路與帳號.</value>
+  </data>
+  <data name="SnycDelWebFail" xml:space="preserve">
+    <value>無法同步刪除最愛到圖庫賬戶,請檢查網路與帳號.</value>
+  </data>
+  <data name="Upload" xml:space="preserve">
+    <value>上傳</value>
+  </data>
+  <data name="UploadFavFail" xml:space="preserve">
+    <value>上傳喜愛列表失敗,請檢查網路,稍後重試.</value>
+  </data>
+  <data name="UploadFavOK" xml:space="preserve">
+    <value>上傳喜愛列表成功...</value>
+  </data>
+  <data name="UploadSettingFail" xml:space="preserve">
+    <value>上傳設置失敗,請檢查網路,稍後重試.</value>
+  </data>
+  <data name="UploadSettingOK" xml:space="preserve">
+    <value>上傳設置成功...</value>
+  </data>
+  <data name="VerifyAccountFail" xml:space="preserve">
+    <value>無法驗證帳號,請重新登錄.</value>
+  </data>
+  <data name="VerifyAccountOk" xml:space="preserve">
+    <value>帳號使用正常.</value>
+  </data>
+  <data name="Waiting" xml:space="preserve">
+    <value>等待中</value>
+  </data>
+</root>

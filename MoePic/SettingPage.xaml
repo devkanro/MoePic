@@ -1,0 +1,139 @@
+﻿<Models:MoePicPage
+    x:Class="MoePic.SettingPage"
+    xmlns:Models="clr-namespace:MoePic.Models"
+    xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+    xmlns:phone="clr-namespace:Microsoft.Phone.Controls;assembly=Microsoft.Phone"
+    xmlns:shell="clr-namespace:Microsoft.Phone.Shell;assembly=Microsoft.Phone"
+    xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+    xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+    xmlns:tool="clr-namespace:Microsoft.Phone.Controls;assembly=Microsoft.Phone.Controls.Toolkit"
+    FontFamily="{StaticResource PhoneFontFamilyNormal}"
+    FontSize="{StaticResource PhoneFontSizeNormal}"
+    Style="{StaticResource PageTranstionStyle}"
+    SupportedOrientations="Portrait" Orientation="Portrait"
+    mc:Ignorable="d"
+    shell:SystemTray.IsVisible="False" Loaded="PhoneApplicationPage_Loaded">
+
+    <!--LayoutRoot 是包含所有页面内容的根网格-->
+    <Grid x:Name="LayoutRoot" Background="{Binding Background, Source={StaticResource ThemeColor}}">
+        <Grid.RowDefinitions>
+            <RowDefinition Height="50"/>
+            <RowDefinition/>
+        </Grid.RowDefinitions>
+        <phone:Pivot Grid.Row="1" Style="{StaticResource MoePivot}">
+            <phone:PivotItem Header="{Binding LocalizedResources.View, Mode=OneWay, Source={StaticResource LocalizedStrings}}" Margin="0" >
+                <ScrollViewer>
+                    <StackPanel Margin="15,15,15,0">
+                        <Grid>
+                            <TextBlock Foreground="{Binding Text2, Source={StaticResource ThemeColor}}" Text="{Binding LocalizedResources.RatingSetting, Mode=OneWay, Source={StaticResource LocalizedStrings}}" FontSize="30"></TextBlock>
+                            <TextBlock Foreground="{Binding Text2, Source={StaticResource ThemeColor}}" x:Name="ratingText" Text="Safe" HorizontalAlignment="Right" VerticalAlignment="Bottom"></TextBlock>
+                        </Grid>
+                        <Slider x:Name="rating" Margin="-12,-12,-12,0" Maximum="3" Style="{StaticResource SliderStyle}" ValueChanged="rating_ValueChanged"/>
+                        <TextBlock x:Name="ratingInfo" Text="{Binding LocalizedResources.SafeInfo, Mode=OneWay, Source={StaticResource LocalizedStrings}}" TextWrapping="Wrap" VerticalAlignment="Bottom" HorizontalAlignment="Left" Margin="0,-36,0,12" Opacity="0.5" Foreground="{Binding Text2, Source={StaticResource ThemeColor}}"></TextBlock>
+                        <Grid>
+                            <TextBlock Foreground="{Binding Text2, Source={StaticResource ThemeColor}}" Text="{Binding LocalizedResources.LimitSetting, Mode=OneWay, Source={StaticResource LocalizedStrings}}" FontSize="30"></TextBlock>
+                            <TextBlock Foreground="{Binding Text2, Source={StaticResource ThemeColor}}" x:Name="limitText" Text="16" HorizontalAlignment="Right" VerticalAlignment="Bottom"></TextBlock>
+                        </Grid>
+                        <Slider x:Name="limit" Margin="-12,-12,-12,0" Minimum="1" Maximum="100" Style="{StaticResource SliderStyle}" Value="16" ValueChanged="limit_ValueChanged"/>
+                        <TextBlock Text="{Binding LocalizedResources.LimitSettingInfo, Mode=OneWay, Source={StaticResource LocalizedStrings}}" TextWrapping="Wrap" VerticalAlignment="Bottom" HorizontalAlignment="Left" Margin="0,-36,0,12" Opacity="0.5" Foreground="{Binding Text2, Source={StaticResource ThemeColor}}"></TextBlock>
+                        <TextBlock Foreground="{Binding Text2, Source={StaticResource ThemeColor}}" FontSize="30" Text="{Binding LocalizedResources.DefaultImageType , Mode=OneWay, Source={StaticResource LocalizedStrings}}"/>
+                        <tool:ListPicker x:Name="defaultImageType" Margin="0" Foreground="{Binding Text2, Source={StaticResource ThemeColor}}" BorderBrush="{Binding Text2, Source={StaticResource ThemeColor}}" SelectionChanged="defaultImageType_SelectionChanged">
+                            <tool:ListPickerItem Content="{Binding LocalizedResources.SampleImage, Mode=OneWay, Source={StaticResource LocalizedStrings}}"></tool:ListPickerItem>
+                            <tool:ListPickerItem Content="{Binding LocalizedResources.JpegImage, Mode=OneWay, Source={StaticResource LocalizedStrings}}"></tool:ListPickerItem>
+                            <tool:ListPickerItem Content="{Binding LocalizedResources.PNGImage, Mode=OneWay, Source={StaticResource LocalizedStrings}}"></tool:ListPickerItem>
+                        </tool:ListPicker>
+                        <TextBlock x:Name="defaultImageTypeInfo" Text="{Binding LocalizedResources.SampleImageInfo, Mode=OneWay, Source={StaticResource LocalizedStrings}}" TextWrapping="Wrap" VerticalAlignment="Bottom" HorizontalAlignment="Left" Margin="0,6,0,12" Opacity="0.5" Foreground="{Binding Text2, Source={StaticResource ThemeColor}}"></TextBlock>
+                        <Grid>
+                            <TextBlock Foreground="{Binding Text2, Source={StaticResource ThemeColor}}" Text="{Binding LocalizedResources.AddFavSnyc, Mode=OneWay, Source={StaticResource LocalizedStrings}}" FontSize="30"></TextBlock>
+                            <tool:ToggleSwitch x:Name="addFavSnyc" Content="" HorizontalAlignment="Right" Style="{StaticResource ToggleSwitchStyle}" Checked="addFavSnyc_Checked" Unchecked="addFavSnyc_Unchecked"/>
+                        </Grid>
+                        <TextBlock Text="{Binding LocalizedResources.AddFavSnycInfo, Mode=OneWay, Source={StaticResource LocalizedStrings}}" TextWrapping="Wrap" VerticalAlignment="Bottom" HorizontalAlignment="Left" Margin="0,0,0,12" Opacity="0.5" Foreground="{Binding Text2, Source={StaticResource ThemeColor}}"></TextBlock>
+                        <Grid>
+                            <TextBlock Foreground="{Binding Text2, Source={StaticResource ThemeColor}}" FontSize="30" Text="智能筛选Tag"/>
+                            <tool:ToggleSwitch x:Name="autoHideTags" Content="" HorizontalAlignment="Right" Style="{StaticResource ToggleSwitchStyle}" Checked="autoHideTags_Checked" Unchecked="autoHideTags_Unchecked"/>
+                        </Grid>
+                        <TextBlock TextWrapping="Wrap" VerticalAlignment="Bottom" HorizontalAlignment="Left" Margin="0,0,0,12" Opacity="0.5" Foreground="{Binding Text2, Source={StaticResource ThemeColor}}" Text="开启此选项后,将智能限制显示的Tag数量."/>
+                        <Grid>
+                            <TextBlock Foreground="{Binding Text2, Source={StaticResource ThemeColor}}" FontSize="30" Text="默认隐藏Tag"/>
+                            <tool:ToggleSwitch x:Name="hideTags" Content="" HorizontalAlignment="Right" Style="{StaticResource ToggleSwitchStyle}" Checked="hideTags_Checked" Unchecked="hideTags_Unchecked"/>
+                        </Grid>
+                        <TextBlock TextWrapping="Wrap" VerticalAlignment="Bottom" HorizontalAlignment="Left" Margin="0,0,0,12" Opacity="0.5" Foreground="{Binding Text2, Source={StaticResource ThemeColor}}" Text="开启此选项后,浏览图片详情时将默认隐藏Tag."/>
+                    </StackPanel>
+                </ScrollViewer>
+            </phone:PivotItem>
+            <phone:PivotItem Header="{Binding LocalizedResources.Download, Mode=OneWay, Source={StaticResource LocalizedStrings}}" Margin="0" >
+                <StackPanel Margin="15,15,15,0">
+                    <Grid>
+                        <TextBlock Foreground="{Binding Text2, Source={StaticResource ThemeColor}}" Text="{Binding LocalizedResources.OnlyWifiDownloadSetting, Mode=OneWay, Source={StaticResource LocalizedStrings}}" FontSize="30"></TextBlock>
+                        <tool:ToggleSwitch x:Name="onlyWifi" Content="" HorizontalAlignment="Right" Style="{StaticResource ToggleSwitchStyle}" IsChecked="True" Checked="onlyWifi_Checked" Unchecked="onlyWifi_Unchecked"/>
+                    </Grid>
+                    <TextBlock Text="{Binding LocalizedResources.OnlyWifiDownloadSettingInfo, Mode=OneWay, Source={StaticResource LocalizedStrings}}" TextWrapping="Wrap" VerticalAlignment="Bottom" HorizontalAlignment="Left" Margin="0,0,0,12" Opacity="0.5" Foreground="{Binding Text2, Source={StaticResource ThemeColor}}"></TextBlock>
+                    <Grid>
+                        <TextBlock Foreground="{Binding Text2, Source={StaticResource ThemeColor}}" Text="{Binding LocalizedResources.ParallelDownloadSetting, Mode=OneWay, Source={StaticResource LocalizedStrings}}" FontSize="30"></TextBlock>
+                        <TextBlock x:Name="peerNumText" Foreground="{Binding Text2, Source={StaticResource ThemeColor}}" Text="2" HorizontalAlignment="Right" VerticalAlignment="Bottom"></TextBlock>
+                    </Grid>
+                    <Slider x:Name="peerNum" Margin="-12,-12,-12,0" Minimum="1" Maximum="25" Style="{StaticResource SliderStyle}" Value="2" ValueChanged="peerNum_ValueChanged"/>
+                    <TextBlock Text="{Binding LocalizedResources.ParallelDownloadSettingInfo, Mode=OneWay, Source={StaticResource LocalizedStrings}}" TextWrapping="Wrap" VerticalAlignment="Bottom" HorizontalAlignment="Left" Margin="0,-36,0,12" Opacity="0.5" Foreground="{Binding Text2, Source={StaticResource ThemeColor}}"></TextBlock>
+
+                    <Grid>
+                        <TextBlock Foreground="{Binding Text2, Source={StaticResource ThemeColor}}" FontSize="30" Text="启用CDN"/>
+                        <tool:ToggleSwitch x:Name="cdnEnable" Content="" HorizontalAlignment="Right" Style="{StaticResource ToggleSwitchStyle}" Checked="cdnEnable_Checked" Unchecked="cdnEnable_Unchecked"/>
+                    </Grid>
+                    <TextBlock TextWrapping="Wrap" VerticalAlignment="Bottom" HorizontalAlignment="Left" Margin="0,0,0,12" Opacity="0.5" Foreground="{Binding Text2, Source={StaticResource ThemeColor}}" Text="开启此选项后,将访问MoePic专用的图库的CDN节点,对于国内用户可能会加快访问速度,国外大概会减速吧."/>
+                </StackPanel>
+            </phone:PivotItem>
+            <phone:PivotItem Header="{Binding LocalizedResources.Application, Mode=OneWay, Source={StaticResource LocalizedStrings}}" Margin="0" >
+                <StackPanel Margin="15,15,15,0">
+                    <Grid>
+                        <TextBlock Foreground="{Binding Text2, Source={StaticResource ThemeColor}}" Text="{Binding LocalizedResources.SaveRamSetting, Mode=OneWay, Source={StaticResource LocalizedStrings}}" FontSize="30"></TextBlock>
+                        <tool:ToggleSwitch  x:Name="saveRAM" Content="" HorizontalAlignment="Right" Style="{StaticResource ToggleSwitchStyle}" Unchecked="saveRAM_Unchecked" Checked="saveRAM_Checked"/>
+                    </Grid>
+                    <TextBlock Text="{Binding LocalizedResources.SaveRamSettingInfo, Mode=OneWay, Source={StaticResource LocalizedStrings}}" TextWrapping="Wrap" VerticalAlignment="Bottom" HorizontalAlignment="Left" Margin="0,0,0,12" Opacity="0.5" Foreground="{Binding Text2, Source={StaticResource ThemeColor}}"></TextBlock>
+                    <TextBlock Foreground="{Binding Text2, Source={StaticResource ThemeColor}}" Text="{Binding LocalizedResources.ClearHistory, Mode=OneWay, Source={StaticResource LocalizedStrings}}" FontSize="30"></TextBlock>
+                    <Button Content="{Binding LocalizedResources.ClearHistory, Mode=OneWay, Source={StaticResource LocalizedStrings}}" BorderBrush="{Binding Text2, Source={StaticResource ThemeColor}}" Background="{x:Null}" Foreground="{Binding Text2, Source={StaticResource ThemeColor}}" Margin="-12,-6,-12,0" Click="Button_Click"/>
+                    <TextBlock Text="{Binding LocalizedResources.ClearHistoryInfo, Mode=OneWay, Source={StaticResource LocalizedStrings}}" TextWrapping="Wrap" VerticalAlignment="Bottom" HorizontalAlignment="Left" Margin="0,-10,0,12" Opacity="0.5" Foreground="{Binding Text2, Source={StaticResource ThemeColor}}"></TextBlock>
+
+                    <TextBlock Foreground="{Binding Text2, Source={StaticResource ThemeColor}}" Text="应用主题色" FontSize="30"/>
+                    <tool:ListPicker FullModeHeader="请选择主题色" SelectionChanged="themeColor_SelectionChanged" x:Name="themeColor" Margin="0" Foreground="{Binding Text2, Source={StaticResource ThemeColor}}" BorderBrush="{Binding Text2, Source={StaticResource ThemeColor}}" MouseLeftButtonUp="themeColor_MouseLeftButtonDown">
+                        <tool:ListPicker.ItemTemplate>
+                            <DataTemplate>
+                                <Grid Height="45">
+                                    <Rectangle Fill="{Binding SampleColor}" Margin="6,0,0,0" Width="40" Height="40" HorizontalAlignment="Left" VerticalAlignment="Center"></Rectangle>
+                                    <TextBlock Text="{Binding Name}" Margin="62,0,0,0" FontSize="30" Foreground="{Binding Text2, Source={StaticResource ThemeColor}}" VerticalAlignment="Center" HorizontalAlignment="Left"></TextBlock>
+                                </Grid>
+                            </DataTemplate>
+                        </tool:ListPicker.ItemTemplate>
+                        <tool:ListPicker.FullModeItemTemplate>
+                            <DataTemplate>
+                                <Grid Margin="0,5" Height="54">
+                                    <Rectangle Fill="{Binding SampleColor}" Margin="6,0,0,0" Width="50" Height="50" HorizontalAlignment="Left" VerticalAlignment="Center"></Rectangle>
+                                    <TextBlock Text="{Binding Name}" Margin="62,0,0,0" FontSize="35" Foreground="{Binding Text2, Source={StaticResource ThemeColor}}" VerticalAlignment="Center" HorizontalAlignment="Left"></TextBlock>
+                                </Grid>
+                            </DataTemplate>
+                        </tool:ListPicker.FullModeItemTemplate>
+                    </tool:ListPicker>
+                    <TextBlock TextWrapping="Wrap" Text="设定应用的主题色." VerticalAlignment="Bottom" HorizontalAlignment="Left" Margin="0,0,0,12" Opacity="0.5" Foreground="{Binding Text2, Source={StaticResource ThemeColor}}"/>
+
+                    <Grid>
+                        <TextBlock Foreground="{Binding Text2, Source={StaticResource ThemeColor}}" Text="{Binding LocalizedResources.Password, Mode=OneWay, Source={StaticResource LocalizedStrings}}" FontSize="30"></TextBlock>
+                        <tool:ToggleSwitch  x:Name="password" Content="" HorizontalAlignment="Right" Style="{StaticResource ToggleSwitchStyle}" Click="password_Click"/>
+                    </Grid>
+                    <TextBlock TextWrapping="Wrap" VerticalAlignment="Bottom" HorizontalAlignment="Left" Margin="0" Opacity="0.5" Foreground="{Binding Text2, Source={StaticResource ThemeColor}}" Text="{Binding LocalizedResources.PasswordInfo, Mode=OneWay, Source={StaticResource LocalizedStrings}}"/>
+                    <StackPanel x:Name="passwordSettigs">
+                        <Button BorderBrush="{Binding Text2, Source={StaticResource ThemeColor}}" Foreground="{Binding Text2, Source={StaticResource ThemeColor}}" HorizontalAlignment="Left" Margin="-12,0,0,0" Click="Button_Click_1" Content="{Binding LocalizedResources.ChangePassword, Mode=OneWay, Source={StaticResource LocalizedStrings}}"></Button>
+                        <TextBlock Text="{Binding LocalizedResources.ChangePasswordInfo, Mode=OneWay, Source={StaticResource LocalizedStrings}}" TextWrapping="Wrap" VerticalAlignment="Bottom" HorizontalAlignment="Left" Margin="0,-10,0,6" Opacity="0.5" Foreground="{Binding Text2, Source={StaticResource ThemeColor}}"></TextBlock>
+                        <tool:ListPicker x:Name="needPW" Margin="0" Foreground="{Binding Text2, Source={StaticResource ThemeColor}}" BorderBrush="{Binding Text2, Source={StaticResource ThemeColor}}" SelectionChanged="needPW_SelectionChanged">
+                            <tool:ListPickerItem Content="{Binding LocalizedResources.EveryActive, Mode=OneWay, Source={StaticResource LocalizedStrings}}"></tool:ListPickerItem>
+                            <tool:ListPickerItem Content="{Binding LocalizedResources.EveryRun, Mode=OneWay, Source={StaticResource LocalizedStrings}}"></tool:ListPickerItem>
+                        </tool:ListPicker>
+                        <TextBlock Text="{Binding LocalizedResources.NeedPasswordInfo, Mode=OneWay, Source={StaticResource LocalizedStrings}}" TextWrapping="Wrap" VerticalAlignment="Bottom" HorizontalAlignment="Left" Margin="0,3,0,12" Opacity="0.5" Foreground="{Binding Text2, Source={StaticResource ThemeColor}}"></TextBlock>
+                    </StackPanel>
+                </StackPanel>
+            </phone:PivotItem>
+        </phone:Pivot>
+        <Image Source="/Assets/Effects/ShadowNavUP.png" VerticalAlignment="Top" Stretch="Fill" Height="5" Margin="0,117,0,0" Grid.RowSpan="2"/>
+
+    </Grid>
+
+</Models:MoePicPage>

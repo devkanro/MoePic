@@ -1,0 +1,49 @@
+﻿<Models:MoePicPage
+    x:Class="MoePic.RankingPage"
+    xmlns:Models="clr-namespace:MoePic.Models"
+    xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+    xmlns:phone="clr-namespace:Microsoft.Phone.Controls;assembly=Microsoft.Phone"
+    xmlns:shell="clr-namespace:Microsoft.Phone.Shell;assembly=Microsoft.Phone"
+    xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+    xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+    xmlns:con="clr-namespace:MoePic.Controls"
+    xmlns:tool="clr-namespace:Microsoft.Phone.Controls;assembly=Microsoft.Phone.Controls.Toolkit"
+    FontFamily="{StaticResource PhoneFontFamilyNormal}"
+    FontSize="{StaticResource PhoneFontSizeNormal}"
+    SupportedOrientations="Portrait" Orientation="Portrait"
+    mc:Ignorable="d"
+    Style="{StaticResource PageTranstionStyle}"
+    shell:SystemTray.IsVisible="False">
+    <phone:PhoneApplicationPage.ApplicationBar>
+        <shell:ApplicationBar ForegroundColor="White">
+            <shell:ApplicationBar.Buttons>
+                <shell:ApplicationBarIconButton IconUri="/Assets/AppBar2/feature.calendar.png" Text="时间" Click="ApplicationBarIconButton_Click"/>
+            </shell:ApplicationBar.Buttons>
+        </shell:ApplicationBar>
+    </phone:PhoneApplicationPage.ApplicationBar>
+    <Grid x:Name="LayoutRoot" Background="{Binding Background, Source={StaticResource ThemeColor}}">
+        <Grid.RowDefinitions>
+            <RowDefinition Height="50"/>
+            <RowDefinition/>
+        </Grid.RowDefinitions>
+        <phone:Pivot x:Name="viewer" Style="{StaticResource MoePivot}" Grid.Row="1" SelectionChanged="Pivot_SelectionChanged">
+            <phone:PivotItem Header="{Binding LocalizedResources.Day, Mode=OneWay, Source={StaticResource LocalizedStrings}}" Margin="0">
+                <con:PostsViewer x:Name="day"/>
+            </phone:PivotItem>
+            <phone:PivotItem Header="{Binding LocalizedResources.Week, Mode=OneWay, Source={StaticResource LocalizedStrings}}" Margin="0">
+                <con:PostsViewer x:Name="week"/>
+            </phone:PivotItem>
+            <phone:PivotItem Header="{Binding LocalizedResources.Month, Mode=OneWay, Source={StaticResource LocalizedStrings}}" Margin="0">
+                <con:PostsViewer x:Name="month"/>
+            </phone:PivotItem>
+            <phone:PivotItem Header="{Binding LocalizedResources.Year, Mode=OneWay, Source={StaticResource LocalizedStrings}}" Margin="0">
+                <con:PostsViewer x:Name="year"/>
+            </phone:PivotItem>
+        </phone:Pivot>
+        <Image Source="/Assets/Effects/ShadowNavUP.png" VerticalAlignment="Top" Stretch="Fill" Height="5" Margin="0,117,0,0" Grid.RowSpan="2"/>
+
+        <tool:DatePicker x:Name="date"/>
+    </Grid>
+
+</Models:MoePicPage>

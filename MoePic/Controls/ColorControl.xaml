@@ -1,0 +1,51 @@
+﻿<UserControl x:Class="MoePic.Controls.ColorControl"
+    xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+    xmlns:tool="clr-namespace:Microsoft.Phone.Controls;assembly=Microsoft.Phone.Controls.Toolkit"
+    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+    xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+    xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+    xmlns:con="clr-namespace:MoePic.Controls"
+    mc:Ignorable="d"
+    FontFamily="{StaticResource PhoneFontFamilyNormal}"
+    FontSize="{StaticResource PhoneFontSizeNormal}"
+    Foreground="{StaticResource PhoneForegroundBrush}"
+    Background="Black" Loaded="UserControl_Loaded">
+
+    <UserControl.RenderTransform>
+        <CompositeTransform x:Name="move"/>
+    </UserControl.RenderTransform>
+    <Grid Background="#FF1F1F1F" Width="240" VerticalAlignment="Top">
+        <StackPanel x:Name="LayoutRoot" Margin="12,0" VerticalAlignment="Top" RenderTransformOrigin="0.5,0.5">
+            <Grid>
+                <con:ColorfulButton x:Name="moveButton" Background="{Binding Text2, Source={StaticResource ThemeColor}}" Width="30" Height="30" Stroke="White" MouseLeftButtonDown="ColorfulButton_MouseLeftButtonDown" MouseMove="moveButton_MouseMove" MouseLeftButtonUp="moveButton_MouseLeftButtonUp" HorizontalAlignment="Center">
+                    <con:ColorfulButton.ContentBrush>
+                        <ImageBrush Stretch="Fill" ImageSource="/Assets/Icons/Up.png"/>
+                    </con:ColorfulButton.ContentBrush>
+                </con:ColorfulButton>
+                <con:ColorfulButton x:Name="close" Background="#FFF53535" Width="30" Height="30" Stroke="White" Click="close_Click" HorizontalAlignment="Right">
+                    <con:ColorfulButton.ContentBrush>
+                        <ImageBrush Stretch="Fill" ImageSource="/Assets/Icons/cancel.png"/>
+                    </con:ColorfulButton.ContentBrush>
+                </con:ColorfulButton>
+            </Grid>
+
+            <tool:ListPicker x:Name="defaultImageType" Margin="0" Foreground="{Binding Text2, Source={StaticResource ThemeColor}}" BorderBrush="{Binding Text2, Source={StaticResource ThemeColor}}" SelectionChanged="defaultImageType_SelectionChanged">
+                <tool:ListPickerItem Content="前景色"></tool:ListPickerItem>
+                <tool:ListPickerItem Content="背景色"></tool:ListPickerItem>
+                <tool:ListPickerItem Content="文字"></tool:ListPickerItem>
+                <tool:ListPickerItem Content="导航栏"></tool:ListPickerItem>
+                <tool:ListPickerItem Content="状态栏"></tool:ListPickerItem>
+            </tool:ListPicker>
+            <TextBlock Text="Red" Foreground="White"></TextBlock>
+            <Slider x:Name="Red" Margin="-12,-12,-12,-24" Maximum="255" Style="{StaticResource SliderStyle}" Value="0" SmallChange="1" ValueChanged="Red_ValueChanged"/>
+
+            <TextBlock Text="Green" Foreground="White"></TextBlock>
+            <Slider x:Name="Green" Margin="-12,-12,-12,-24" Maximum="255" Style="{StaticResource SliderStyle}" Value="0" SmallChange="1" ValueChanged="Red_ValueChanged"/>
+
+            <TextBlock Text="Blue" Foreground="White"></TextBlock>
+            <Slider x:Name="Blue" Margin="-12,-12,-12,-24" Maximum="255" Style="{StaticResource SliderStyle}" Value="0" SmallChange="1" ValueChanged="Red_ValueChanged"/>
+            <TextBox x:Name="ColorText" Background="#26FFFFFF" BorderBrush="#26FFFFFF" Foreground="#DEFFFFFF" Text="#FFFFFF" Margin="-12,0"></TextBox>
+        </StackPanel>
+    </Grid>
+
+</UserControl>

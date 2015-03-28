@@ -1,0 +1,59 @@
+﻿<UserControl
+    xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+    xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+    xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+    xmlns:tl="clr-namespace:Telerik.Windows.Controls;assembly=Telerik.Windows.Controls.Primitives"
+    xmlns:tlcore="clr-namespace:Telerik.Windows.Controls;assembly=Telerik.Windows.Core"
+    xmlns:con="clr-namespace:MoePic.Controls"
+    xmlns:tool="clr-namespace:Microsoft.Phone.Controls;assembly=Microsoft.Phone.Controls.Toolkit"
+    xmlns:DataBoundListBox="clr-namespace:Telerik.Windows.Controls.DataBoundListBox;assembly=Telerik.Windows.Controls.Primitives" 
+    x:Class="MoePic.Controls.PoolsViewer"
+    mc:Ignorable="d"
+    Foreground="White"
+    d:DesignHeight="480" d:DesignWidth="480" Loaded="UserControl_Loaded">
+    <UserControl.Resources>
+        <DataTemplate x:Key="HorizontalPinterestDataTemplate">
+            <Grid Margin="0,0,0,3">
+                <con:PoolItem Pool="{Binding}"/>
+            </Grid>
+        </DataTemplate>
+
+    </UserControl.Resources>
+    <UserControl.FontFamily>
+        <StaticResource ResourceKey="PhoneFontFamilyNormal"/>
+    </UserControl.FontFamily>
+    <UserControl.FontSize>
+        <StaticResource ResourceKey="PhoneFontSizeNormal"/>
+    </UserControl.FontSize>
+    <Grid x:Name="LayoutRoot">
+        <tl:RadDataBoundListBox ScrollViewer.ManipulationMode="Control" IsAsyncBalanceEnabled="True"
+			x:Name="list" Margin="0,0,0,0"
+			ItemTemplate="{StaticResource HorizontalPinterestDataTemplate}"
+			DataVirtualizationMode="OnDemandAutomatic" DataRequested="list_DataRequested" Loaded="list_Loaded" BorderThickness="0" EmptyContentDisplayMode="DataSourceNull" EmptyContent="Loading...">
+            <tl:RadDataBoundListBox.CheckBoxStyle>
+                <Style TargetType="tl:ItemCheckBox">
+                    <Setter Property="Background" Value="#CCCCCC" />
+                </Style>
+            </tl:RadDataBoundListBox.CheckBoxStyle>
+            <tl:RadDataBoundListBox.ItemAddedAnimation>
+                <tlcore:RadFadeAnimation StartOpacity="0" InitialDelay="0:0:0.3" EndOpacity="1"
+					Duration="0:0:0.9">
+                    <tlcore:RadFadeAnimation.Easing>
+                        <CubicEase EasingMode="EaseOut" />
+                    </tlcore:RadFadeAnimation.Easing>
+                </tlcore:RadFadeAnimation>
+            </tl:RadDataBoundListBox.ItemAddedAnimation>
+            <tl:RadDataBoundListBox.VirtualizationStrategyDefinition>
+                <tl:DynamicGridVirtualizationStrategyDefinition Orientation="Horizontal"
+					StackCount="2" />
+            </tl:RadDataBoundListBox.VirtualizationStrategyDefinition>
+        </tl:RadDataBoundListBox>
+
+        <ProgressBar x:Name="LoadingBar" IsIndeterminate="True" VerticalAlignment="Top" Visibility="Collapsed">
+            <ProgressBar.Foreground>
+                <SolidColorBrush Color="{StaticResource PhoneAccentColor}"/>
+            </ProgressBar.Foreground>
+        </ProgressBar>
+    </Grid>
+</UserControl>

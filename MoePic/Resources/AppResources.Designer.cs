@@ -61,7 +61,52 @@ namespace MoePic.Resources {
         }
         
         /// <summary>
-        ///   查找类似 add 的本地化字符串。
+        ///   查找类似 About 的本地化字符串。
+        /// </summary>
+        public static string About {
+            get {
+                return ResourceManager.GetString("About", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   查找类似 Added to the favorite list. 的本地化字符串。
+        /// </summary>
+        public static string AddFav {
+            get {
+                return ResourceManager.GetString("AddFav", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   查找类似 Add favorite to account 的本地化字符串。
+        /// </summary>
+        public static string AddFavSnyc {
+            get {
+                return ResourceManager.GetString("AddFavSnyc", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   查找类似 Open the options,when you add a post to favorite list, add it to your account synchronization. 的本地化字符串。
+        /// </summary>
+        public static string AddFavSnycInfo {
+            get {
+                return ResourceManager.GetString("AddFavSnycInfo", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   查找类似 Added {0} to the list of favorite tags. 的本地化字符串。
+        /// </summary>
+        public static string AddTagFav {
+            get {
+                return ResourceManager.GetString("AddTagFav", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   查找类似 添加 的本地化字符串。
         /// </summary>
         public static string AppBarButtonText {
             get {
@@ -70,7 +115,7 @@ namespace MoePic.Resources {
         }
         
         /// <summary>
-        ///   查找类似 Menu Item 的本地化字符串。
+        ///   查找类似 菜单项 的本地化字符串。
         /// </summary>
         public static string AppBarMenuItemText {
             get {
@@ -79,11 +124,1156 @@ namespace MoePic.Resources {
         }
         
         /// <summary>
-        ///   查找类似 MY APPLICATION 的本地化字符串。
+        ///   查找类似 The image resources of MoePic is all from the network. 的本地化字符串。
+        /// </summary>
+        public static string AppInfo {
+            get {
+                return ResourceManager.GetString("AppInfo", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   查找类似 Application 的本地化字符串。
+        /// </summary>
+        public static string Application {
+            get {
+                return ResourceManager.GetString("Application", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   查找类似 我的应用程序 的本地化字符串。
         /// </summary>
         public static string ApplicationTitle {
             get {
                 return ResourceManager.GetString("ApplicationTitle", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   查找类似 Press again to exit... 的本地化字符串。
+        /// </summary>
+        public static string BackAgain {
+            get {
+                return ResourceManager.GetString("BackAgain", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   查找类似 Cancel 的本地化字符串。
+        /// </summary>
+        public static string Cancel {
+            get {
+                return ResourceManager.GetString("Cancel", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   查找类似 Cancel the download 的本地化字符串。
+        /// </summary>
+        public static string CancelDownload {
+            get {
+                return ResourceManager.GetString("CancelDownload", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   查找类似 Unable to connect to the server, please check your network or replace the website... 的本地化字符串。
+        /// </summary>
+        public static string CanNotLink {
+            get {
+                return ResourceManager.GetString("CanNotLink", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   查找类似 Change the password 的本地化字符串。
+        /// </summary>
+        public static string ChangePassword {
+            get {
+                return ResourceManager.GetString("ChangePassword", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   查找类似 Change the password required to access the application 的本地化字符串。
+        /// </summary>
+        public static string ChangePasswordInfo {
+            get {
+                return ResourceManager.GetString("ChangePasswordInfo", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   查找类似 Clear history 的本地化字符串。
+        /// </summary>
+        public static string ClearHistory {
+            get {
+                return ResourceManager.GetString("ClearHistory", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   查找类似 Clear picture browsing history and tag search history. 的本地化字符串。
+        /// </summary>
+        public static string ClearHistoryInfo {
+            get {
+                return ResourceManager.GetString("ClearHistoryInfo", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   查找类似 History have been cleared. 的本地化字符串。
+        /// </summary>
+        public static string ClearHistoryOK {
+            get {
+                return ResourceManager.GetString("ClearHistoryOK", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   查找类似 Please enter the text to be send... 的本地化字符串。
+        /// </summary>
+        public static string CommentNoBody {
+            get {
+                return ResourceManager.GetString("CommentNoBody", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   查找类似 Completed 的本地化字符串。
+        /// </summary>
+        public static string Completed {
+            get {
+                return ResourceManager.GetString("Completed", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   查找类似 Confirm 的本地化字符串。
+        /// </summary>
+        public static string Confirm {
+            get {
+                return ResourceManager.GetString("Confirm", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   查找类似 Confirm password 的本地化字符串。
+        /// </summary>
+        public static string ConfirmPassword {
+            get {
+                return ResourceManager.GetString("ConfirmPassword", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   查找类似 Create a password 的本地化字符串。
+        /// </summary>
+        public static string CreatePassword {
+            get {
+                return ResourceManager.GetString("CreatePassword", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   查找类似 Create folder failed, please check your network, or try again later. 的本地化字符串。
+        /// </summary>
+        public static string CreatFolderFail {
+            get {
+                return ResourceManager.GetString("CreatFolderFail", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   查找类似 24 Hour 的本地化字符串。
+        /// </summary>
+        public static string Day {
+            get {
+                return ResourceManager.GetString("Day", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   查找类似 Default image type 的本地化字符串。
+        /// </summary>
+        public static string DefaultImageType {
+            get {
+                return ResourceManager.GetString("DefaultImageType", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   查找类似 Delete record 的本地化字符串。
+        /// </summary>
+        public static string DelDownloadHis {
+            get {
+                return ResourceManager.GetString("DelDownloadHis", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   查找类似 Removed from to the favorite list. 的本地化字符串。
+        /// </summary>
+        public static string DelFav {
+            get {
+                return ResourceManager.GetString("DelFav", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   查找类似 Remove password 的本地化字符串。
+        /// </summary>
+        public static string DelPassword {
+            get {
+                return ResourceManager.GetString("DelPassword", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   查找类似 {0} has been removed from the favorite list. 的本地化字符串。
+        /// </summary>
+        public static string DelTagFav {
+            get {
+                return ResourceManager.GetString("DelTagFav", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   查找类似 Download 的本地化字符串。
+        /// </summary>
+        public static string Download {
+            get {
+                return ResourceManager.GetString("Download", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   查找类似 There is a download was interrupted... 的本地化字符串。
+        /// </summary>
+        public static string DownloadBreak {
+            get {
+                return ResourceManager.GetString("DownloadBreak", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   查找类似 Because can&apos;t access network, the download is suspended, when connected to the network, the download will automatically continue. 的本地化字符串。
+        /// </summary>
+        public static string DownloadBreakNetContent {
+            get {
+                return ResourceManager.GetString("DownloadBreakNetContent", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   查找类似 Download is suspended 的本地化字符串。
+        /// </summary>
+        public static string DownloadBreakTitle {
+            get {
+                return ResourceManager.GetString("DownloadBreakTitle", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   查找类似 Because Wi-fi connect is unable, the download is suspended, when connected to Wi-fi, the download will automatically continue. 的本地化字符串。
+        /// </summary>
+        public static string DownloadBreakWifiContent {
+            get {
+                return ResourceManager.GetString("DownloadBreakWifiContent", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   查找类似 Error encountered in downloading, you can retry the download.
+        ///The error message: 的本地化字符串。
+        /// </summary>
+        public static string DownloadErrorContent {
+            get {
+                return ResourceManager.GetString("DownloadErrorContent", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   查找类似 Error 的本地化字符串。
+        /// </summary>
+        public static string DownloadErrorTitle {
+            get {
+                return ResourceManager.GetString("DownloadErrorTitle", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   查找类似 Download favorite list failed, please check the network, try again later. 的本地化字符串。
+        /// </summary>
+        public static string DownloadFavFail {
+            get {
+                return ResourceManager.GetString("DownloadFavFail", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   查找类似 Download favorite list success. 的本地化字符串。
+        /// </summary>
+        public static string DownloadFavOK {
+            get {
+                return ResourceManager.GetString("DownloadFavOK", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   查找类似 Downloading 的本地化字符串。
+        /// </summary>
+        public static string DownloadList {
+            get {
+                return ResourceManager.GetString("DownloadList", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   查找类似 The download list has been damaged, will initialize the download list 的本地化字符串。
+        /// </summary>
+        public static string DownloadListDamage {
+            get {
+                return ResourceManager.GetString("DownloadListDamage", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   查找类似 Download settings failed, please check the network, try again later. 的本地化字符串。
+        /// </summary>
+        public static string DownloadSettingFail {
+            get {
+                return ResourceManager.GetString("DownloadSettingFail", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   查找类似 Download settings success. 的本地化字符串。
+        /// </summary>
+        public static string DownloadSettingOK {
+            get {
+                return ResourceManager.GetString("DownloadSettingOK", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   查找类似 Encountered an unknown error while downloading, you can retry the download, if this problem occurs again,you can submit the Post number and the gallery to to developer. 的本地化字符串。
+        /// </summary>
+        public static string DownloadUnknowErrorContent {
+            get {
+                return ResourceManager.GetString("DownloadUnknowErrorContent", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   查找类似 Unknown error 的本地化字符串。
+        /// </summary>
+        public static string DownloadUnknowErrorTitle {
+            get {
+                return ResourceManager.GetString("DownloadUnknowErrorTitle", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   查找类似 Each activation 的本地化字符串。
+        /// </summary>
+        public static string EveryActive {
+            get {
+                return ResourceManager.GetString("EveryActive", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   查找类似 Each start 的本地化字符串。
+        /// </summary>
+        public static string EveryRun {
+            get {
+                return ResourceManager.GetString("EveryRun", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   查找类似 The Explicit rating post contains Sex description.Note: someone may contain lead to discomfort or objectionable content. 的本地化字符串。
+        /// </summary>
+        public static string ExplicitInfo {
+            get {
+                return ResourceManager.GetString("ExplicitInfo", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   查找类似 Favorite 的本地化字符串。
+        /// </summary>
+        public static string Fav {
+            get {
+                return ResourceManager.GetString("Fav", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   查找类似 Local&apos;s favorite list and server&apos;s is not the same, upload, download, or merge list? 的本地化字符串。
+        /// </summary>
+        public static string FavConflictContent {
+            get {
+                return ResourceManager.GetString("FavConflictContent", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   查找类似 Favorite lists conflict 的本地化字符串。
+        /// </summary>
+        public static string FavConflictTitle {
+            get {
+                return ResourceManager.GetString("FavConflictTitle", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   查找类似 The favorite list has been damaged, will initialize the favorite list 的本地化字符串。
+        /// </summary>
+        public static string FavListDamage {
+            get {
+                return ResourceManager.GetString("FavListDamage", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   查找类似 Favorite Posts 的本地化字符串。
+        /// </summary>
+        public static string FavPost {
+            get {
+                return ResourceManager.GetString("FavPost", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   查找类似 Favorite Tags 的本地化字符串。
+        /// </summary>
+        public static string FavTag {
+            get {
+                return ResourceManager.GetString("FavTag", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   查找类似 Form 的本地化字符串。
+        /// </summary>
+        public static string From {
+            get {
+                return ResourceManager.GetString("From", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   查找类似 History 的本地化字符串。
+        /// </summary>
+        public static string History {
+            get {
+                return ResourceManager.GetString("History", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   查找类似 History 的本地化字符串。
+        /// </summary>
+        public static string History2 {
+            get {
+                return ResourceManager.GetString("History2", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   查找类似 Home 的本地化字符串。
+        /// </summary>
+        public static string Home {
+            get {
+                return ResourceManager.GetString("Home", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   查找类似 Ignore 的本地化字符串。
+        /// </summary>
+        public static string Ignore {
+            get {
+                return ResourceManager.GetString("Ignore", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   查找类似 Please enter the password 的本地化字符串。
+        /// </summary>
+        public static string InputPassword {
+            get {
+                return ResourceManager.GetString("InputPassword", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   查找类似 Jpeg 的本地化字符串。
+        /// </summary>
+        public static string JpegImage {
+            get {
+                return ResourceManager.GetString("JpegImage", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   查找类似 Jpeg can be applied in most situations, not only has high resolution and definition but also can save space and server resources. 的本地化字符串。
+        /// </summary>
+        public static string JpegImageInfo {
+            get {
+                return ResourceManager.GetString("JpegImageInfo", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   查找类似 Login Konachan 的本地化字符串。
+        /// </summary>
+        public static string KLogin {
+            get {
+                return ResourceManager.GetString("KLogin", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   查找类似  · Synchronization add favorite posts to your Konachan account. 的本地化字符串。
+        /// </summary>
+        public static string KLoginPageContent1 {
+            get {
+                return ResourceManager.GetString("KLoginPageContent1", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   查找类似  · Send comment. 的本地化字符串。
+        /// </summary>
+        public static string KLoginPageContent2 {
+            get {
+                return ResourceManager.GetString("KLoginPageContent2", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   查找类似  · Apply and use the advanced editing functions. 的本地化字符串。
+        /// </summary>
+        public static string KLoginPageContent3 {
+            get {
+                return ResourceManager.GetString("KLoginPageContent3", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   查找类似 Link the MoePic and Konachan accounts,to get more features on Konachan: 的本地化字符串。
+        /// </summary>
+        public static string KLoginPageInfo1 {
+            get {
+                return ResourceManager.GetString("KLoginPageInfo1", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   查找类似 Link to Konachan Account 的本地化字符串。
+        /// </summary>
+        public static string KLoginPageTile {
+            get {
+                return ResourceManager.GetString("KLoginPageTile", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   查找类似 MoePic will save your account and password hash, not the plaintext password in the settings 的本地化字符串。
+        /// </summary>
+        public static string KLogoPageInfo2 {
+            get {
+                return ResourceManager.GetString("KLogoPageInfo2", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   查找类似 Post Load Limit  的本地化字符串。
+        /// </summary>
+        public static string LimitSetting {
+            get {
+                return ResourceManager.GetString("LimitSetting", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   查找类似 This parameter specifies in a loading, the maximum number of posts, for improve the experience, suggest this parameter is adjusted to 15~25. 的本地化字符串。
+        /// </summary>
+        public static string LimitSettingInfo {
+            get {
+                return ResourceManager.GetString("LimitSettingInfo", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   查找类似 Connection to the server... 的本地化字符串。
+        /// </summary>
+        public static string Linking {
+            get {
+                return ResourceManager.GetString("Linking", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   查找类似 Failed to load, please try again... 的本地化字符串。
+        /// </summary>
+        public static string LoadFail {
+            get {
+                return ResourceManager.GetString("LoadFail", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   查找类似 Loaded {0}% 的本地化字符串。
+        /// </summary>
+        public static string LoadPro {
+            get {
+                return ResourceManager.GetString("LoadPro", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   查找类似 Load random post 的本地化字符串。
+        /// </summary>
+        public static string LoadRandom {
+            get {
+                return ResourceManager.GetString("LoadRandom", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   查找类似 Read user settings... 的本地化字符串。
+        /// </summary>
+        public static string LoadSettings {
+            get {
+                return ResourceManager.GetString("LoadSettings", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   查找类似 Locked 的本地化字符串。
+        /// </summary>
+        public static string Locked {
+            get {
+                return ResourceManager.GetString("Locked", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   查找类似 The application has been locked, we need to verify your identity, to unlock the application. 的本地化字符串。
+        /// </summary>
+        public static string LockedContent {
+            get {
+                return ResourceManager.GetString("LockedContent", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   查找类似 Login 的本地化字符串。
+        /// </summary>
+        public static string Login {
+            get {
+                return ResourceManager.GetString("Login", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   查找类似 Logon failed, please check the account and password and network. 的本地化字符串。
+        /// </summary>
+        public static string LoginFail {
+            get {
+                return ResourceManager.GetString("LoginFail", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   查找类似 Verifying login... 的本地化字符串。
+        /// </summary>
+        public static string Logining {
+            get {
+                return ResourceManager.GetString("Logining", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   查找类似 Account: 的本地化字符串。
+        /// </summary>
+        public static string LoginName {
+            get {
+                return ResourceManager.GetString("LoginName", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   查找类似  · Display your name and avatar. 的本地化字符串。
+        /// </summary>
+        public static string LoginPageContent1 {
+            get {
+                return ResourceManager.GetString("LoginPageContent1", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   查找类似  · Backup and restore application settings to OneDrive at any time. 的本地化字符串。
+        /// </summary>
+        public static string LoginPageContent2 {
+            get {
+                return ResourceManager.GetString("LoginPageContent2", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   查找类似  · Backup and restore your favorite list to OneDrive at any time. 的本地化字符串。
+        /// </summary>
+        public static string LoginPageContent3 {
+            get {
+                return ResourceManager.GetString("LoginPageContent3", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   查找类似  · Apply and use the advanced editing functions. 的本地化字符串。
+        /// </summary>
+        public static string LoginPageContent4 {
+            get {
+                return ResourceManager.GetString("LoginPageContent4", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   查找类似 Using the Microsoft account login MoePic, get more function: 的本地化字符串。
+        /// </summary>
+        public static string LoginPageInfo1 {
+            get {
+                return ResourceManager.GetString("LoginPageInfo1", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   查找类似 You can always change the access of MoePic in the account settings. 的本地化字符串。
+        /// </summary>
+        public static string LoginPageInfo2 {
+            get {
+                return ResourceManager.GetString("LoginPageInfo2", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   查找类似 Link to Microsoft Account 的本地化字符串。
+        /// </summary>
+        public static string LoginPageTile {
+            get {
+                return ResourceManager.GetString("LoginPageTile", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   查找类似 Password: 的本地化字符串。
+        /// </summary>
+        public static string LoginPassword {
+            get {
+                return ResourceManager.GetString("LoginPassword", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   查找类似 Login Time out,Retry or cancel login? 的本地化字符串。
+        /// </summary>
+        public static string LoginTimeOutContent {
+            get {
+                return ResourceManager.GetString("LoginTimeOutContent", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   查找类似 Login Time out! 的本地化字符串。
+        /// </summary>
+        public static string LoginTimeOutTile {
+            get {
+                return ResourceManager.GetString("LoginTimeOutTile", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   查找类似 Me 的本地化字符串。
+        /// </summary>
+        public static string Me {
+            get {
+                return ResourceManager.GetString("Me", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   查找类似 Merge 的本地化字符串。
+        /// </summary>
+        public static string Merge {
+            get {
+                return ResourceManager.GetString("Merge", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   查找类似 Merge favorite list failed, please check the network, try again later. 的本地化字符串。
+        /// </summary>
+        public static string MergeFavFail {
+            get {
+                return ResourceManager.GetString("MergeFavFail", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   查找类似 Merge favorite list success. 的本地化字符串。
+        /// </summary>
+        public static string MergeFavOK {
+            get {
+                return ResourceManager.GetString("MergeFavOK", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   查找类似 This folder is used for MoePic synchronization settings and favorite list. 的本地化字符串。
+        /// </summary>
+        public static string MoeFolder {
+            get {
+                return ResourceManager.GetString("MoeFolder", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   查找类似 1Month 的本地化字符串。
+        /// </summary>
+        public static string Month {
+            get {
+                return ResourceManager.GetString("Month", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   查找类似 Needs Attention 的本地化字符串。
+        /// </summary>
+        public static string NeedAttention {
+            get {
+                return ResourceManager.GetString("NeedAttention", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   查找类似 Hang up,Needs Attention 的本地化字符串。
+        /// </summary>
+        public static string NeedAttention2 {
+            get {
+                return ResourceManager.GetString("NeedAttention2", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   查找类似 Set when you need the password to access the MoePic 的本地化字符串。
+        /// </summary>
+        public static string NeedPasswordInfo {
+            get {
+                return ResourceManager.GetString("NeedPasswordInfo", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   查找类似 New password 的本地化字符串。
+        /// </summary>
+        public static string NewPassword {
+            get {
+                return ResourceManager.GetString("NewPassword", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   查找类似 No Data 的本地化字符串。
+        /// </summary>
+        public static string Nodata {
+            get {
+                return ResourceManager.GetString("Nodata", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   查找类似 The network connection has been lost, please check your network connection. 的本地化字符串。
+        /// </summary>
+        public static string NoNetworkMessageContent {
+            get {
+                return ResourceManager.GetString("NoNetworkMessageContent", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   查找类似 The network is not available 的本地化字符串。
+        /// </summary>
+        public static string NoNetworkMessageTitle {
+            get {
+                return ResourceManager.GetString("NoNetworkMessageTitle", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   查找类似 No update Posts... 的本地化字符串。
+        /// </summary>
+        public static string NoNewPost {
+            get {
+                return ResourceManager.GetString("NoNewPost", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   查找类似 NOT 的本地化字符串。
+        /// </summary>
+        public static string NOT {
+            get {
+                return ResourceManager.GetString("NOT", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   查找类似 Please choose Tags to search. 的本地化字符串。
+        /// </summary>
+        public static string NoTagsSelect {
+            get {
+                return ResourceManager.GetString("NoTagsSelect", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   查找类似 Not logged in 的本地化字符串。
+        /// </summary>
+        public static string NotLogin {
+            get {
+                return ResourceManager.GetString("NotLogin", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   查找类似 Unable to add comments, please login Konachan 的本地化字符串。
+        /// </summary>
+        public static string NotLoginK {
+            get {
+                return ResourceManager.GetString("NotLoginK", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   查找类似 Unable to add comments, please login Yande.re 的本地化字符串。
+        /// </summary>
+        public static string NotLoginY {
+            get {
+                return ResourceManager.GetString("NotLoginY", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   查找类似 Detects that you are using Mobile network, This application may cause a lot of data usage, it is recommended that you use Wi-fi to browse to save data. Whether to go to the Wi-fi settings? 的本地化字符串。
+        /// </summary>
+        public static string NotWifiMessageContent {
+            get {
+                return ResourceManager.GetString("NotWifiMessageContent", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   查找类似 Non Wi-fi environment 的本地化字符串。
+        /// </summary>
+        public static string NotWifiMessageTitle {
+            get {
+                return ResourceManager.GetString("NotWifiMessageTitle", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   查找类似 The current password 的本地化字符串。
+        /// </summary>
+        public static string NowPassword {
+            get {
+                return ResourceManager.GetString("NowPassword", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   查找类似 Download only with Wi-fi 的本地化字符串。
+        /// </summary>
+        public static string OnlyWifiDownloadSetting {
+            get {
+                return ResourceManager.GetString("OnlyWifiDownloadSetting", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   查找类似 Enable this option will download only with Wi-fi, when use data it will be suspended until the connection to Wi-fi. 的本地化字符串。
+        /// </summary>
+        public static string OnlyWifiDownloadSettingInfo {
+            get {
+                return ResourceManager.GetString("OnlyWifiDownloadSettingInfo", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   查找类似 OR 的本地化字符串。
+        /// </summary>
+        public static string OR {
+            get {
+                return ResourceManager.GetString("OR", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   查找类似 Parallel connection 的本地化字符串。
+        /// </summary>
+        public static string ParallelDownloadSetting {
+            get {
+                return ResourceManager.GetString("ParallelDownloadSetting", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   查找类似 This parameter specifies the maximum number of downloaded tasks. 的本地化字符串。
+        /// </summary>
+        public static string ParallelDownloadSettingInfo {
+            get {
+                return ResourceManager.GetString("ParallelDownloadSettingInfo", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   查找类似 Password 的本地化字符串。
+        /// </summary>
+        public static string Password {
+            get {
+                return ResourceManager.GetString("Password", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   查找类似 The password is not correct 的本地化字符串。
+        /// </summary>
+        public static string PasswordIncorrect {
+            get {
+                return ResourceManager.GetString("PasswordIncorrect", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   查找类似 Settings about password 的本地化字符串。
+        /// </summary>
+        public static string PasswordInfo {
+            get {
+                return ResourceManager.GetString("PasswordInfo", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   查找类似 The password is not in the correct format 的本地化字符串。
+        /// </summary>
+        public static string PasswordNotFormat {
+            get {
+                return ResourceManager.GetString("PasswordNotFormat", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   查找类似 Your password:
+        ///- must be at least 4 的本地化字符串。
+        /// </summary>
+        public static string PasswordNotFormatContent {
+            get {
+                return ResourceManager.GetString("PasswordNotFormatContent", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   查找类似 The passwords do not match 的本地化字符串。
+        /// </summary>
+        public static string PassworldNotMatch {
+            get {
+                return ResourceManager.GetString("PassworldNotMatch", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   查找类似 PNG 的本地化字符串。
+        /// </summary>
+        public static string PNGImage {
+            get {
+                return ResourceManager.GetString("PNGImage", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   查找类似 PNG is a copy of the maximum resolution of gallery provides a picture, using lossless compression to make the picture quality is no loss. 的本地化字符串。
+        /// </summary>
+        public static string PNGImageInfo {
+            get {
+                return ResourceManager.GetString("PNGImageInfo", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   查找类似 Pool 的本地化字符串。
+        /// </summary>
+        public static string Pool {
+            get {
+                return ResourceManager.GetString("Pool", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   查找类似 Post 的本地化字符串。
+        /// </summary>
+        public static string Post {
+            get {
+                return ResourceManager.GetString("Post", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   查找类似 Picture Info 的本地化字符串。
+        /// </summary>
+        public static string PostInfo {
+            get {
+                return ResourceManager.GetString("PostInfo", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   查找类似 The Questionable rating post contains Unrated and without special Sex description.For example, swimwear and underwear will be marked with this rating . 的本地化字符串。
+        /// </summary>
+        public static string QuestionableInfo {
+            get {
+                return ResourceManager.GetString("QuestionableInfo", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   查找类似 Random 的本地化字符串。
+        /// </summary>
+        public static string Random {
+            get {
+                return ResourceManager.GetString("Random", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   查找类似 Ranking 的本地化字符串。
+        /// </summary>
+        public static string Ranking {
+            get {
+                return ResourceManager.GetString("Ranking", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   查找类似 Rating Setting 的本地化字符串。
+        /// </summary>
+        public static string RatingSetting {
+            get {
+                return ResourceManager.GetString("RatingSetting", resourceCulture);
             }
         }
         
@@ -97,11 +1287,373 @@ namespace MoePic.Resources {
         }
         
         /// <summary>
-        ///   查找类似 en-US 的本地化字符串。
+        ///   查找类似 en 的本地化字符串。
         /// </summary>
         public static string ResourceLanguage {
             get {
                 return ResourceManager.GetString("ResourceLanguage", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   查找类似 Re Download 的本地化字符串。
+        /// </summary>
+        public static string RestartDownload {
+            get {
+                return ResourceManager.GetString("RestartDownload", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   查找类似 Retry 的本地化字符串。
+        /// </summary>
+        public static string Retry {
+            get {
+                return ResourceManager.GetString("Retry", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   查找类似 The Safe rating post is you can browse the pictures in public places, any Sex descriptions are unsafe. 的本地化字符串。
+        /// </summary>
+        public static string SafeInfo {
+            get {
+                return ResourceManager.GetString("SafeInfo", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   查找类似 Sample 的本地化字符串。
+        /// </summary>
+        public static string SampleImage {
+            get {
+                return ResourceManager.GetString("SampleImage", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   查找类似 Sample is relatively small, suitable for sharing does not require high resolution applications. 的本地化字符串。
+        /// </summary>
+        public static string SampleImageInfo {
+            get {
+                return ResourceManager.GetString("SampleImageInfo", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   查找类似 Have been saved to Picture Library 的本地化字符串。
+        /// </summary>
+        public static string SaveImage {
+            get {
+                return ResourceManager.GetString("SaveImage", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   查找类似 Saving RAM 的本地化字符串。
+        /// </summary>
+        public static string SaveRamSetting {
+            get {
+                return ResourceManager.GetString("SaveRamSetting", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   查找类似 By reduce the image size, to reduce memory usage, but may cause high resolution display equipment fuzzy. 的本地化字符串。
+        /// </summary>
+        public static string SaveRamSettingInfo {
+            get {
+                return ResourceManager.GetString("SaveRamSettingInfo", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   查找类似 Saving 的本地化字符串。
+        /// </summary>
+        public static string Saving {
+            get {
+                return ResourceManager.GetString("Saving", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   查找类似 Search 的本地化字符串。
+        /// </summary>
+        public static string Search {
+            get {
+                return ResourceManager.GetString("Search", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   查找类似 Show the password 的本地化字符串。
+        /// </summary>
+        public static string SeePassword {
+            get {
+                return ResourceManager.GetString("SeePassword", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   查找类似 Send comment fail,Please check:
+        /// · Account and password is correct.
+        /// · Registered more than two weeks. 的本地化字符串。
+        /// </summary>
+        public static string SendCommentFailContent {
+            get {
+                return ResourceManager.GetString("SendCommentFailContent", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   查找类似 Send comment fail 的本地化字符串。
+        /// </summary>
+        public static string SendCommentFailTile {
+            get {
+                return ResourceManager.GetString("SendCommentFailTile", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   查找类似 Send comment success... 的本地化字符串。
+        /// </summary>
+        public static string SendCommentOk {
+            get {
+                return ResourceManager.GetString("SendCommentOk", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   查找类似 The server settings and local&apos;s are not the same, upload or download settings settings? 的本地化字符串。
+        /// </summary>
+        public static string SettingConflictContent {
+            get {
+                return ResourceManager.GetString("SettingConflictContent", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   查找类似 Settings conflict 的本地化字符串。
+        /// </summary>
+        public static string SettingConflictTitle {
+            get {
+                return ResourceManager.GetString("SettingConflictTitle", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   查找类似 Settings 的本地化字符串。
+        /// </summary>
+        public static string Settings {
+            get {
+                return ResourceManager.GetString("Settings", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   查找类似 The configuration file is corrupted, will initialize all settings. 的本地化字符串。
+        /// </summary>
+        public static string SettingsDamage {
+            get {
+                return ResourceManager.GetString("SettingsDamage", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   查找类似 Unable to add post to account, please check the network and account. 的本地化字符串。
+        /// </summary>
+        public static string SnycAddWebFail {
+            get {
+                return ResourceManager.GetString("SnycAddWebFail", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   查找类似 Unable to remove post form account, please check the network and account. 的本地化字符串。
+        /// </summary>
+        public static string SnycDelWebFail {
+            get {
+                return ResourceManager.GetString("SnycDelWebFail", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   查找类似 Trial! 的本地化字符串。
+        /// </summary>
+        public static string Trial {
+            get {
+                return ResourceManager.GetString("Trial", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   查找类似 Upload 的本地化字符串。
+        /// </summary>
+        public static string Upload {
+            get {
+                return ResourceManager.GetString("Upload", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   查找类似 Upload favorite list failed, please check the network, try again later. 的本地化字符串。
+        /// </summary>
+        public static string UploadFavFail {
+            get {
+                return ResourceManager.GetString("UploadFavFail", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   查找类似 Upload favorite list success... 的本地化字符串。
+        /// </summary>
+        public static string UploadFavOK {
+            get {
+                return ResourceManager.GetString("UploadFavOK", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   查找类似 Upload settings failed, please check the network, try again later. 的本地化字符串。
+        /// </summary>
+        public static string UploadSettingFail {
+            get {
+                return ResourceManager.GetString("UploadSettingFail", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   查找类似 Upload settings success... 的本地化字符串。
+        /// </summary>
+        public static string UploadSettingOK {
+            get {
+                return ResourceManager.GetString("UploadSettingOK", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   查找类似 Unable to verify the account, please login again. 的本地化字符串。
+        /// </summary>
+        public static string VerifyAccountFail {
+            get {
+                return ResourceManager.GetString("VerifyAccountFail", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   查找类似 The account is normal. 的本地化字符串。
+        /// </summary>
+        public static string VerifyAccountOk {
+            get {
+                return ResourceManager.GetString("VerifyAccountOk", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   查找类似 View 的本地化字符串。
+        /// </summary>
+        public static string View {
+            get {
+                return ResourceManager.GetString("View", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   查找类似 Waiting 的本地化字符串。
+        /// </summary>
+        public static string Waiting {
+            get {
+                return ResourceManager.GetString("Waiting", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   查找类似 Wallpaper Library 的本地化字符串。
+        /// </summary>
+        public static string WallpaperLibrary {
+            get {
+                return ResourceManager.GetString("WallpaperLibrary", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   查找类似 1 Week 的本地化字符串。
+        /// </summary>
+        public static string Week {
+            get {
+                return ResourceManager.GetString("Week", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   查找类似 1 Year 的本地化字符串。
+        /// </summary>
+        public static string Year {
+            get {
+                return ResourceManager.GetString("Year", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   查找类似 Login Yande.re 的本地化字符串。
+        /// </summary>
+        public static string YLogin {
+            get {
+                return ResourceManager.GetString("YLogin", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   查找类似  · Synchronization add favorite posts to your Yande.re account. 的本地化字符串。
+        /// </summary>
+        public static string YLoginPageContent1 {
+            get {
+                return ResourceManager.GetString("YLoginPageContent1", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   查找类似  · Send comment. 的本地化字符串。
+        /// </summary>
+        public static string YLoginPageContent2 {
+            get {
+                return ResourceManager.GetString("YLoginPageContent2", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   查找类似  · Apply and use the advanced editing functions. 的本地化字符串。
+        /// </summary>
+        public static string YLoginPageContent3 {
+            get {
+                return ResourceManager.GetString("YLoginPageContent3", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   查找类似 Link the MoePic and Yande.re accounts,to get more features on Yande.re: 的本地化字符串。
+        /// </summary>
+        public static string YLoginPageInfo1 {
+            get {
+                return ResourceManager.GetString("YLoginPageInfo1", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   查找类似 MoePic will save your account and password hash, not the plaintext password in the settings 的本地化字符串。
+        /// </summary>
+        public static string YLoginPageInfo2 {
+            get {
+                return ResourceManager.GetString("YLoginPageInfo2", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   查找类似 Link to Yande.re Account 的本地化字符串。
+        /// </summary>
+        public static string YLoginPageTile {
+            get {
+                return ResourceManager.GetString("YLoginPageTile", resourceCulture);
             }
         }
     }

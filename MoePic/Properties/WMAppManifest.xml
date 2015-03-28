@@ -1,37 +1,62 @@
 ﻿<?xml version="1.0" encoding="utf-8"?>
 <Deployment xmlns="http://schemas.microsoft.com/windowsphone/2014/deployment" AppPlatformVersion="8.1">
-  <DefaultLanguage xmlns="" code="zh-CN" />
-  <App xmlns="" ProductID="{f0f083eb-a195-4506-82fa-a85a45c17f73}" Title="MoePic" RuntimeType="Silverlight" Version="1.0.0.0" Genre="apps.normal" Author="MoePic author" Description="Sample description" Publisher="MoePic" PublisherID="{75352607-7b5a-48a9-9265-4be443b19e86}">
+  <DefaultLanguage xmlns="" code="en" />
+  <Languages xmlns="">
+    <Language code="en" />
+    <Language code="zh-Hans" />
+    <Language code="ja-JP" />
+    <Language code="zh-Hant" />
+  </Languages>
+  <App xmlns="" ProductID="{e52323d2-7a2c-4be7-94e5-d15ed906b0ab}" Title="MoePic" RuntimeType="Silverlight" Version="0.4.4.0" Genre="apps.normal" Author="HIGAN" Description="Sample description" SDOptOut="false" BackUpOptOut="true" Publisher="MoePic" PublisherID="{5e10199f-6617-4b5d-b10f-d21750e722ea}" NotificationService="WNS">
     <IconPath IsRelative="true" IsResource="false">Assets\ApplicationIcon.png</IconPath>
     <Capabilities>
       <Capability Name="ID_CAP_NETWORKING" />
-      <Capability Name="ID_CAP_MEDIALIB_AUDIO" />
-      <Capability Name="ID_CAP_MEDIALIB_PLAYBACK" />
       <Capability Name="ID_CAP_SENSORS" />
       <Capability Name="ID_CAP_WEBBROWSERCOMPONENT" />
+      <Capability Name="ID_CAP_MEDIALIB_PHOTO" />
+      <Capability Name="ID_CAP_PUSH_NOTIFICATION" />
+      <Capability Name="ID_CAP_IDENTITY_DEVICE" />
+      <Capability Name="ID_CAP_SPEECH_RECOGNITION" />
     </Capabilities>
     <Tasks>
-      <DefaultTask Name="_default" NavigationPage="MainPage.xaml" />
+      <DefaultTask Name="_default" NavigationPage="SplashScreen.xaml" ActivationPolicy="Resume" />
     </Tasks>
     <Tokens>
-      <PrimaryToken TokenID="DataBoundToken" TaskName="_default">
+      <PrimaryToken TokenID="MoePicToken" TaskName="_default">
         <TemplateFlip>
           <SmallImageURI IsRelative="true" IsResource="false">Assets\Tiles\FlipCycleTileSmall.png</SmallImageURI>
           <Count>0</Count>
           <BackgroundImageURI IsRelative="true" IsResource="false">Assets\Tiles\FlipCycleTileMedium.png</BackgroundImageURI>
           <Title>MoePic</Title>
-          <BackContent></BackContent>
-          <BackBackgroundImageURI></BackBackgroundImageURI>
-          <BackTitle></BackTitle>
-          <DeviceLockImageURI></DeviceLockImageURI>
-          <HasLarge></HasLarge>
+          <BackContent>
+          </BackContent>
+          <BackBackgroundImageURI>
+          </BackBackgroundImageURI>
+          <BackTitle>
+          </BackTitle>
+          <DeviceLockImageURI>
+          </DeviceLockImageURI>
+          <HasLarge>
+          </HasLarge>
         </TemplateFlip>
       </PrimaryToken>
     </Tokens>
+    <Extensions>
+      <FileTypeAssociation Name="MoePic" TaskID="_default" NavUriFragment="fileToken=%s">
+        <SupportedFileTypes>
+          <FileType ContentType="application/sdk">.wx30f8bcf233e8cc01</FileType>
+          <FileType ContentType="application/sdk">.wechatapp</FileType>
+        </SupportedFileTypes>
+      </FileTypeAssociation>
+      <Protocol Name="moepic" NavUriFragment="encodedLaunchUri=%s" TaskID="_default" />
+    </Extensions>
     <ScreenResolutions>
       <ScreenResolution Name="ID_RESOLUTION_WVGA" />
       <ScreenResolution Name="ID_RESOLUTION_WXGA" />
       <ScreenResolution Name="ID_RESOLUTION_HD720P" />
     </ScreenResolutions>
+    <FunctionalCapabilities>
+      <FunctionalCapability Name="ID_FUNCCAP_EXTEND_MEM" />
+    </FunctionalCapabilities>
   </App>
 </Deployment>
