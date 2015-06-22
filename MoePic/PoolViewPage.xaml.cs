@@ -7,6 +7,7 @@ using System.Windows.Controls;
 using System.Windows.Navigation;
 using Microsoft.Phone.Controls;
 using Microsoft.Phone.Shell;
+using MoePic.Resources;
 
 namespace MoePic
 {
@@ -15,6 +16,42 @@ namespace MoePic
         public PoolViewPage()
         {
             InitializeComponent();
+            BuildLocalizedApplicationBar();
+        }
+
+        private void BuildLocalizedApplicationBar()
+        {
+            ApplicationBar = new ApplicationBar();
+            ApplicationBar.Opacity = 0.9;
+            ApplicationBar.BackgroundColor = (App.Current.Resources["ThemeColor"] as Models.ThemeColor).StatusBar.Color;
+
+            ApplicationBarIconButton appBarButton = new ApplicationBarIconButton(new Uri("/Assets/Icons/favs.addto.png", UriKind.Relative));
+            appBarButton.Click += AddFavClick; ;
+            appBarButton.Text = AppResources.Fav;
+            ApplicationBar.Buttons.Add(appBarButton);
+            appBarButton = new ApplicationBarIconButton(new Uri("/Assets/Icons/share.png", UriKind.Relative));
+            appBarButton.Click += ShareClick;
+            appBarButton.Text = "链接";
+            ApplicationBar.Buttons.Add(appBarButton);
+        }
+
+        private void ShareClick(object sender, EventArgs e)
+        {
+            Clipboard.SetText(Models.UriHelp.GetShareUrl(Pool));
+            Models.ToastService.Show("已复制链接分享到剪切板");
+        }
+
+        private void AddFavClick(object sender, EventArgs e)
+        {
+            if(Pool.posts.Count != 0)
+            {
+                foreach (var item in Pool.posts)
+                {
+                    Models.FavoriteHelp.AddFavorite(item);
+                }
+
+                Models.ToastService.Show($"已经将Pool {Pool.id}加入喜爱列表.");
+            }
         }
 
         public MoePic.Models.MoePool Pool { get; set; }
@@ -93,7 +130,6 @@ namespace MoePic
                 foreach (var item in Pool.posts)
                 {
                     viewer.AddPost(item);
-
                 }
             }
             viewer.LoadOver();

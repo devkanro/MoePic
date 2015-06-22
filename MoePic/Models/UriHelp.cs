@@ -27,6 +27,11 @@ namespace MoePic.Models
             return String.Format("http://higan.sinaapp.com/MoePic.php?type=post&id={0}&web={1}", post.id, post.preview_url.Contains("yande") ? "yandere" : "konachan");
         }
 
+        public static String GetShareUrl(MoePool pool)
+        {
+            return String.Format("http://higan.sinaapp.com/MoePic.php?type=pool&id={0}&web={1}", pool.id, pool.posts[0].preview_url.Contains("yande") ? "yandere" : "konachan");
+        }
+
         public async static Task<String> GetShortUrl(String url, String token)
         {
             HttpPostRequest request = new HttpPostRequest();

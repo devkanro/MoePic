@@ -25,7 +25,7 @@ namespace MoePic
         {
             ApplicationBar = new ApplicationBar();
             ApplicationBar.Opacity = 0.9;
-            ApplicationBar.BackgroundColor = System.Windows.Media.Color.FromArgb(0xFF, 0x00, 0x85, 0xB5);
+            ApplicationBar.BackgroundColor = (App.Current.Resources["ThemeColor"] as ThemeColor).StatusBar.Color;
 
             ApplicationBarIconButton appBarButton = new ApplicationBarIconButton(new Uri("/Assets/Icons/check.png", UriKind.Relative));
             appBarButton.Click += Login_Click;

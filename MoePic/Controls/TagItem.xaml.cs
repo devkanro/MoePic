@@ -111,7 +111,7 @@ namespace MoePic.Controls
             x = x + OldMargin.Right;
             y = y + OldMargin.Bottom;
 
-            x = x < 0 ? 0 : x;
+            //x = x < 0 ? 0 : x;
             y = y < 0 ? 0 : y;
 
             Margin = new Thickness(0, 0, x + ActualWidth > (this.Parent as FrameworkElement).ActualWidth ? (this.Parent as FrameworkElement).ActualWidth - ActualWidth : x, y + ActualHeight > (this.Parent as FrameworkElement).ActualHeight ? (this.Parent as FrameworkElement).ActualHeight - ActualHeight : y);

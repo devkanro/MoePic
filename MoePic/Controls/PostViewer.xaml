@@ -177,8 +177,8 @@
                 <Grid tool:TiltEffect.SuppressTilt="True" x:Name="tagsPanel"/>
                 <Grid x:Name="noteViewer" Visibility="Collapsed" Opacity="0">
                     <Rectangle Fill="#7F000000" x:Name="noteBackground" Opacity="0"></Rectangle>
-                    <Canvas x:Name="notePanel">
-                    </Canvas>
+                    <Grid x:Name="notePanel">
+                    </Grid>
                     <TextBlock TextWrapping="Wrap" x:Name="noteText" Foreground="#DEFFFFFF" HorizontalAlignment="Left" VerticalAlignment="Top" Opacity="0" RenderTransformOrigin="0.5,0.5">
                         <TextBlock.RenderTransform>
                             <CompositeTransform/>

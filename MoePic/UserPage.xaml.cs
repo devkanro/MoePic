@@ -470,7 +470,23 @@ namespace MoePic
                 RefreshY.Begin();
                 if(Settings.Current.UserY != null && await MoebooruAPI.LoginY())
                 {
-                    ToastService.Show(new Uri(MoebooruAPI.GetUserAvatar(Settings.Current.UserY.id, MoebooruAPI.Yandere)), MoePic.Resources.AppResources.VerifyAccountOk);
+                    var posts = await MoebooruAPI.GetFavoritePost(Settings.Current.UserY.name, MoebooruAPI.Yandere);
+                    foreach (var item in posts)
+                    {
+                        if(!FavoriteHelp.ContainsPost(item))
+                        {
+                            FavoriteHelp.AddFavorite(item, false);
+                        }
+                    }
+                    foreach (var item in FavoriteHelp.FavoriteList)
+                    {
+                        if (item.sample_url.Contains("yande.re") && !posts.Contains(item, new PostComparer()))
+                        {
+                            await FavoriteHelp.AddFavWeb(item);
+                        }
+                    }
+
+                    ToastService.Show(new Uri(MoebooruAPI.GetUserAvatar(Settings.Current.UserY.id, MoebooruAPI.Yandere)), "Yandere图库喜爱列表同步完成.");
                 }
                 else
                 {
@@ -481,7 +497,7 @@ namespace MoePic
                     UpdataLoginStatus();
                     ToastService.Show(MoePic.Resources.AppResources.VerifyAccountFail);
                 }
-                YSnycing = true;
+                YSnycing = false;
             }
         }
 
@@ -501,7 +517,24 @@ namespace MoePic
                 RefreshK.Begin();
                 if (Settings.Current.UserK != null && await MoebooruAPI.LoginK())
                 {
-                    ToastService.Show(new Uri(MoebooruAPI.GetUserAvatar(Settings.Current.UserK.id,MoebooruAPI.Konachan)), MoePic.Resources.AppResources.VerifyAccountOk);
+                    var posts = await MoebooruAPI.GetFavoritePost(Settings.Current.UserY.name, MoebooruAPI.Konachan);
+                    foreach (var item in posts)
+                    {
+                        if (!FavoriteHelp.ContainsPost(item))
+                        {
+                            FavoriteHelp.AddFavorite(item, false);
+                        }
+                    }
+                    
+                    foreach (var item in FavoriteHelp.FavoriteList)
+                    {
+                        if (item.sample_url.Contains("konachan") && !posts.Contains(item, new PostComparer()))
+                        {
+                            await FavoriteHelp.AddFavWeb(item);
+                        }
+                    }
+
+                    ToastService.Show(new Uri(MoebooruAPI.GetUserAvatar(Settings.Current.UserK.id,MoebooruAPI.Konachan)), "Konachan图库喜爱列表同步完成.");
                 }
                 else
                 {

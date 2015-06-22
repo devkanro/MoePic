@@ -12,11 +12,6 @@ namespace MoePic.Models
 {
     public static class FavoriteHelp
     {
-        static FavoriteHelp()
-        {
-            AddFavWeb += FavoriteHelp_AddFavWeb;
-            DelFavWeb += FavoriteHelp_DelFavWeb;
-        }
 
         public static ObservableCollection<MoePost> FavoriteList;
         public static ObservableCollection<MoeTag> FavoriteTagList;
@@ -81,7 +76,7 @@ namespace MoePic.Models
             stream.Close();
         }
 
-        public static bool AddFavorite(MoePost post)
+        public static bool AddFavorite(MoePost post, bool addFavSnyc = true)
         {
             if (FavoriteList.Contains(post, new PostComparer()))
             {
@@ -89,16 +84,16 @@ namespace MoePic.Models
             }
             else
             {
-                if(Settings.Current.AddFavSnyc)
+                if (Settings.Current.AddFavSnyc && addFavSnyc)
                 {
-                    AddFavWeb(null, post);
+                    AddFavWeb( post);
                 }
                 FavoriteList.Insert(0, post);
                 return true;
             }
         }
 
-        static async void FavoriteHelp_DelFavWeb(object sender, MoePost e)
+        public static async void DelFavWeb( MoePost e)
         {
             
             if(e.preview_url.Contains("yande"))
@@ -115,7 +110,7 @@ namespace MoePic.Models
             {
                 if (Settings.Current.UserK != null)
                 {
-                    if (!await MoebooruAPI.DelFav((int)e.id, MoebooruAPI.Konachan))
+                    if (!await MoebooruAPI.DelFav((int)e.id, "http://konachan.com"))
                     {
                         ToastService.Show(new Uri(e.preview_url), Resources.AppResources.SnycDelWebFail);
                     }
@@ -123,7 +118,7 @@ namespace MoePic.Models
             }
         }
 
-        static async void FavoriteHelp_AddFavWeb(object sender, MoePost e)
+        public static async Task AddFavWeb( MoePost e)
         {
             if (e.preview_url.Contains("yande"))
             {
@@ -139,16 +134,13 @@ namespace MoePic.Models
             {
                 if (Settings.Current.UserK != null)
                 {
-                    if (!await MoebooruAPI.AddFav((int)e.id, MoebooruAPI.Konachan))
+                    if (!await MoebooruAPI.AddFav((int)e.id, "http://konachan.com"))
                     {
                         ToastService.Show(new Uri(e.preview_url), Resources.AppResources.SnycAddWebFail);
                     }
                 }
             }
         }
-
-        static event EventHandler<MoePost> AddFavWeb;
-        static event EventHandler<MoePost> DelFavWeb;
 
         public static bool DelFavorite(MoePost post)
         {
@@ -164,7 +156,7 @@ namespace MoePic.Models
                 }));
                 if (Settings.Current.AddFavSnyc)
                 {
-                    DelFavWeb(null, post);
+                    DelFavWeb(post);
                 }
                 return true;
             }

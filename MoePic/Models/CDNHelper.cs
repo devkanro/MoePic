@@ -11,12 +11,12 @@ namespace MoePic.Models
 {
     public static class CDNHelper
     {
-        public static Uri GetCDNUri(String url)
+        public static Uri GetCDNUri(String url,bool konachanControl = false)
         {
             Uri uri = new Uri(url);
             if(Settings.Current.EnableCDN)
             {
-                uri = new Uri(String.Format("{0}{1}", uri.Host.Contains("yande") ? "http://yandere.sinaapp.com" : "http://moepic.sinaapp.com", uri.PathAndQuery));
+                uri = new Uri(String.Format("{0}{1}", uri.Host.Contains("yande") ? "http://yandere.sinaapp.com" : (konachanControl ? "http://konachan.com" : "http://moepic.sinaapp.com"), uri.PathAndQuery));
             }
             return uri;
         }

@@ -133,7 +133,7 @@ namespace MoePic.Models
             HttpPostRequest httpPostRequest = new HttpPostRequest();
             try
             {
-                String PostsData = await httpPostRequest.PostDataAsync(String.Format("{2}/post/vote.json?id=3&score=0&login={0}&password_hash={1}", user, passwordHash,Yandere));
+                String PostsData = await httpPostRequest.PostDataAsync(String.Format("{2}/post/vote.json?id=3&score=0&login={0}&password_hash={1}", user, passwordHash, "https://yande.re"));
             }
             catch (System.Net.WebException ex)
             {
@@ -149,7 +149,7 @@ namespace MoePic.Models
             HttpPostRequest httpPostRequest = new HttpPostRequest();
             try
             {
-                String PostsData = await httpPostRequest.PostDataAsync(String.Format("{2}/post/vote.json?id=3&score=0&login={0}&password_hash={1}", userY, passwordHashY, Yandere));
+                String PostsData = await httpPostRequest.PostDataAsync(String.Format("{2}/post/vote.json?id=3&score=0&login={0}&password_hash={1}", userY, passwordHashY, "https://yande.re"));
             }
             catch (System.Net.WebException ex)
             {
@@ -170,7 +170,7 @@ namespace MoePic.Models
             HttpPostRequest httpPostRequest = new HttpPostRequest();
             try
             {
-                String PostsData = await httpPostRequest.PostDataAsync(String.Format("{2}/post/vote.json?id=3&score=0&login={0}&password_hash={1}", user, passwordHash,Konachan), true, true);
+                String PostsData = await httpPostRequest.PostDataAsync(String.Format("{2}/post/vote.json?id=3&score=0&login={0}&password_hash={1}", user, passwordHash, "http://konachan.com"), true, true);
             }
             catch (System.Net.WebException ex)
             {
@@ -186,7 +186,7 @@ namespace MoePic.Models
             HttpPostRequest httpPostRequest = new HttpPostRequest();
             try
             {
-                String PostsData = await httpPostRequest.PostDataAsync(String.Format("{2}/post/vote.json?id=3&score=0&login={0}&password_hash={1}", userK, passwordHashK, Konachan), true, true);
+                String PostsData = await httpPostRequest.PostDataAsync(String.Format("{2}/post/vote.json?id=3&score=0&login={0}&password_hash={1}", userK, passwordHashK, "http://konachan.com"), true, true);
             }
             catch (System.Net.WebException ex)
             {
@@ -203,11 +203,11 @@ namespace MoePic.Models
                 string web = website == null ? _website : website;
                 if(web.Contains("yande"))
                 {
-                    String PostsData = await httpPostRequest.PostDataAsync(String.Format("{3}/post/vote.json?id={0}&score=3&login={1}&password_hash={2}", id, userY, passwordHashY,Yandere), true, true);
+                    String PostsData = await httpPostRequest.PostDataAsync(String.Format("{3}/post/vote.json?id={0}&score=3&login={1}&password_hash={2}", id, userY, passwordHashY,"https://yande.re"), true, true);
                 }
                 else
                 {
-                    String PostsData = await httpPostRequest.PostDataAsync(String.Format("{3}/post/vote.json?id={0}&score=3&login={1}&password_hash={2}", id, userK, passwordHashK,Konachan), true, true);
+                    String PostsData = await httpPostRequest.PostDataAsync(String.Format("{3}/post/vote.json?id={0}&score=3&login={1}&password_hash={2}", id, userK, passwordHashK, "http://konachan.com"), true, true);
                 }
             }
             catch (System.Net.WebException ex)
@@ -571,14 +571,14 @@ namespace MoePic.Models
             if ((website == null ? _website : website).Contains("yande"))
             {
                 HttpPostRequest httpPostRequest = new HttpPostRequest();
-                String PostsData = await httpPostRequest.PostDataAsync(String.Format("{0}/comment/create.json?comment[post_id]={1}&comment[body]={2}&login={3}&password_hash={4}{5}", _website, postId, body, userY, passwordHashY, anonymous ? "&comment[anonymous]=1" : ""));
+                String PostsData = await httpPostRequest.PostDataAsync(String.Format("{0}/comment/create.json?comment[post_id]={1}&comment[body]={2}&login={3}&password_hash={4}{5}", "https://yande.re", postId, body, userY, passwordHashY, anonymous ? "&comment[anonymous]=1" : ""));
 
                 return true;
             }
             else
             {
                 HttpPostRequest httpPostRequest = new HttpPostRequest();
-                String PostsData = await httpPostRequest.PostDataAsync(String.Format("{0}/comment/create.json?comment[post_id]={1}&comment[body]={2}&login={3}&password_hash={4}{5}", _website, postId, body, userK, passwordHashK, anonymous ? "&comment[anonymous]=1" : ""));
+                String PostsData = await httpPostRequest.PostDataAsync(String.Format("{0}/comment/create.json?comment[post_id]={1}&comment[body]={2}&login={3}&password_hash={4}{5}", "http://koanchan.com", postId, body, userK, passwordHashK, anonymous ? "&comment[anonymous]=1" : ""));
 
                 return true;
             }
@@ -686,6 +686,25 @@ namespace MoePic.Models
             {
                 Cache.Add(uri, content);
             }
+        }
+
+        public async static Task<List<MoePost>> GetFavoritePost(String user, String website = null)
+        {
+            int page = 1;
+            HttpPostRequest httpPostRequest = new HttpPostRequest();
+            List<MoePost> postsList = new List<MoePost>(100);
+            do
+            {
+                String PostsData = await httpPostRequest.PostDataAsync(String.Format("{0}/post.json?page={2}&limit=100&tags=vote:3:{1}", website == null ? _website : website, user, page++));
+                var posts = JsonConvert.DeserializeObject<List<MoePost>>(PostsData);
+                postsList.AddRange(posts);
+                if (posts.Count < 100)
+                {
+                    break;
+                }
+
+            } while (true);
+            return SafeMode(ScreenPost(postsList));
         }
 
         /// <summary>

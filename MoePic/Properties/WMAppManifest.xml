@@ -7,7 +7,7 @@
     <Language code="ja-JP" />
     <Language code="zh-Hant" />
   </Languages>
-  <App xmlns="" ProductID="{e52323d2-7a2c-4be7-94e5-d15ed906b0ab}" Title="MoePic" RuntimeType="Silverlight" Version="0.4.4.0" Genre="apps.normal" Author="HIGAN" Description="Sample description" SDOptOut="false" BackUpOptOut="true" Publisher="MoePic" PublisherID="{5e10199f-6617-4b5d-b10f-d21750e722ea}" NotificationService="WNS">
+  <App xmlns="" ProductID="{e52323d2-7a2c-4be7-94e5-d15ed906b0ab}" Title="MoePic" RuntimeType="Silverlight" Version="0.4.4.1" Genre="apps.normal" Author="HIGAN" Description="Sample description" SDOptOut="false" BackUpOptOut="true" Publisher="MoePic" PublisherID="{5e10199f-6617-4b5d-b10f-d21750e722ea}" NotificationService="WNS">
     <IconPath IsRelative="true" IsResource="false">Assets\ApplicationIcon.png</IconPath>
     <Capabilities>
       <Capability Name="ID_CAP_NETWORKING" />

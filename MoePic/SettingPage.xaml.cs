@@ -5,11 +5,12 @@ using System.Net;
 using System.Windows;
 using System.Windows.Controls;
 using System.Windows.Navigation;
+using System.IO.IsolatedStorage;
 using Microsoft.Phone.Controls;
 using Microsoft.Phone.Shell;
 using MoePic.Resources;
 using System.IO;
-using System.IO.IsolatedStorage;
+using Microsoft.Phone.Tasks;
 
 namespace MoePic
 {
@@ -28,6 +29,11 @@ namespace MoePic
             MoePic.Models.StatusBarService.Init(view);
             MoePic.Models.StatusBarService.Change(view);
             MoePic.Models.StatusBarService.ShowStatusBar();
+
+            if(Models.NavigationService.GetNavigateArgs(this.NavigationContext) as String == "Feedback")
+            {
+                content.SelectedIndex = 2;
+            }
 
             if(Models.Settings.Current.IsExAble)
             {
@@ -205,6 +211,8 @@ namespace MoePic
             hideTags.IsChecked = Models.Settings.Current.HideTags;
             autoHideTags.IsChecked = Models.Settings.Current.AutoHideTags;
             cdnEnable.IsChecked = Models.Settings.Current.EnableCDN;
+            feedback.IsChecked = Models.Settings.Current.FeedbackOn;
+
             base.OnNavigatedTo(e);
         }
 
@@ -506,7 +514,48 @@ namespace MoePic
             }
         }
 
+        private void feedback_Checked(object sender, RoutedEventArgs e)
+        {
+            if (LoadOver)
+            {
+                Models.Settings.Current.FeedbackOn = true;
+            }
+        }
 
+        private void feedback_Unchecked(object sender, RoutedEventArgs e)
+        {
+            if (LoadOver)
+            {
+                Models.Settings.Current.FeedbackOn = false;
+            }
+        }
+
+        private void Button_Click_2(object sender, RoutedEventArgs e)
+        {
+            var file = IsolatedStorageFile.GetUserStoreForApplication();
+            if(file.FileExists("Feedback.log"))
+            {
+                using (var stream = file.OpenFile("Feedback.log", FileMode.Open))
+                {
+                    byte[] data = new Byte[stream.Length];
+                    stream.Read(data, 0, data.Length);
+                    var logdata = System.Text.Encoding.UTF8.GetString(data, 0, data.Length);
+                    var info = Newtonsoft.Json.JsonConvert.DeserializeObject<ExceptionInfo>(logdata);
+
+                    EmailComposeTask task = new EmailComposeTask();
+                    task.To = "higan@live.cn";
+                    task.Subject = String.Format("MoePic Ver.{0} 异常报告", App.GetVersion());
+                    task.Body = info.ToString();
+                    task.Show();
+                }
+                file.DeleteFile("Feedback.log");
+            }
+            else
+            {
+                Models.ToastService.Show("没有要反馈的异常.");
+            }
+            
+        }
     }
 
     public class ThemeColorItem

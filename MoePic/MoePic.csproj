@@ -229,6 +229,9 @@
       <DependentUpon>WeiboControl.xaml</DependentUpon>
     </Compile>
     <Compile Include="Models\UriHelp.cs" />
+    <Compile Include="NameEditPage.xaml.cs">
+      <DependentUpon>NameEditPage.xaml</DependentUpon>
+    </Compile>
     <Compile Include="PasswordPage.xaml.cs">
       <DependentUpon>PasswordPage.xaml</DependentUpon>
     </Compile>
@@ -273,9 +276,6 @@
     </Compile>
     <Compile Include="WhatsNewPage.xaml.cs">
       <DependentUpon>WhatsNewPage.xaml</DependentUpon>
-    </Compile>
-    <Compile Include="WXEntryPage.xaml.cs">
-      <DependentUpon>WXEntryPage.xaml</DependentUpon>
     </Compile>
     <Compile Include="YandereLoginPage.xaml.cs">
       <DependentUpon>YandereLoginPage.xaml</DependentUpon>
@@ -430,6 +430,10 @@
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
+    <Page Include="NameEditPage.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
     <Page Include="PasswordPage.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
@@ -479,10 +483,6 @@
       <Generator>MSBuild:Compile</Generator>
     </Page>
     <Page Include="WhatsNewPage.xaml">
-      <SubType>Designer</SubType>
-      <Generator>MSBuild:Compile</Generator>
-    </Page>
-    <Page Include="WXEntryPage.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
@@ -594,13 +594,11 @@
   </ItemGroup>
   <ItemGroup>
     <Reference Include="Google.ProtocolBuffersLite">
-      <HintPath>..\..\..\..\..\Downloads\WinPhone_SDK\SDK开发包_For_Windows Phone8\Google.ProtocolBuffersLite.dll</HintPath>
+      <HintPath>..\Libs\Google.ProtocolBuffersLite.dll</HintPath>
     </Reference>
     <Reference Include="MicroMsgSDK">
-      <HintPath>..\..\..\..\..\Downloads\WinPhone_SDK\SDK开发包_For_Windows Phone8\MicroMsgSDK.dll</HintPath>
+      <HintPath>..\Libs\MicroMsgSDK.dll</HintPath>
     </Reference>
-    <Reference Include="Microsoft.Expression.Drawing" />
-    <Reference Include="Microsoft.Expression.Interactions, Version=3.9.5.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL" />
     <Reference Include="Microsoft.Live">
       <HintPath>..\packages\LiveSDK.5.6\lib\WindowsPhone81\Microsoft.Live.dll</HintPath>
     </Reference>
@@ -625,15 +623,14 @@
       <SpecificVersion>False</SpecificVersion>
       <HintPath>..\packages\Microsoft.Net.Http.2.2.28\lib\sl4-windowsphone71\System.Net.Http.Primitives.dll</HintPath>
     </Reference>
-    <Reference Include="System.Windows.Interactivity, Version=3.9.5.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL" />
     <Reference Include="Telerik.Windows.Controls.Input">
-      <HintPath>..\..\..\..\..\..\..\Program Files (x86)\Telerik\UI for Windows Phone 8 Q3 2014\Binaries\WindowsPhone\Telerik.Windows.Controls.Input.dll</HintPath>
+      <HintPath>D:\APIs\Telerik\UI for Windows Phone 8 Q3 2014\Binaries\WindowsPhone\Telerik.Windows.Controls.Input.dll</HintPath>
     </Reference>
     <Reference Include="Telerik.Windows.Controls.Primitives">
-      <HintPath>..\..\..\..\..\..\..\Program Files (x86)\Telerik\UI for Windows Phone 8 Q3 2014\Binaries\WindowsPhone\Telerik.Windows.Controls.Primitives.dll</HintPath>
+      <HintPath>D:\APIs\Telerik\UI for Windows Phone 8 Q3 2014\Binaries\WindowsPhone\Telerik.Windows.Controls.Primitives.dll</HintPath>
     </Reference>
     <Reference Include="Telerik.Windows.Core">
-      <HintPath>..\..\..\..\..\..\..\Program Files (x86)\Telerik\UI for Windows Phone 8 Q3 2014\Binaries\WindowsPhone\Telerik.Windows.Core.dll</HintPath>
+      <HintPath>D:\APIs\Telerik\UI for Windows Phone 8 Q3 2014\Binaries\WindowsPhone\Telerik.Windows.Core.dll</HintPath>
     </Reference>
   </ItemGroup>
   <ItemGroup>

@@ -5,6 +5,8 @@ using System.Windows;
 using System.Windows.Markup;
 using System.Windows.Navigation;
 using System.Text;
+
+using System.IO.IsolatedStorage;
 using System.Text.RegularExpressions;
 using Microsoft.Phone.Controls;
 using Microsoft.Phone.Shell;
@@ -18,6 +20,25 @@ using Microsoft.Phone.Marketplace;
 
 namespace MoePic
 {
+    public class ExceptionInfo
+    {
+        public String Phone { get; set; }
+        public String DeviceManufacturer { get; set; }
+        public int ScaleFactor { get; set; }
+        public Version OSVersion { get; set; }
+        public double AppMemoryUsage { get; set; }
+        public double AppMemoryUsageLimit { get; set; }
+        public Version DotNetVersion { get; set; }
+        public String ExceptionType { get; set; }
+        public String Message { get; set; }
+        public String StackTrace { get; set; }
+
+        public override string ToString()
+        {
+            return $"MoePic在使用中抛出了一个未处理的异常,我们将收集以下信息来帮助我们处理这个异常.\r\n\r\n具体情况说明:\r\n\r\n手机型号:{Phone}\r\n制造商:{DeviceManufacturer}\r\n屏幕缩放:{ScaleFactor}\r\n系统版本:{OSVersion}\r\n内存使用:{AppMemoryUsage:F2}/{AppMemoryUsageLimit:F2}MB\r\n.Net版本:{DotNetVersion}\r\n异常类型:{ExceptionType}\r\n闪退信息:{Message}\r\n调用栈堆:{StackTrace}\r\n";
+        }
+    }
+
     public partial class App : Application
     {
         public static String GetVersion()
@@ -99,7 +120,7 @@ namespace MoePic
 
         // 激活应用程序(置于前台)时执行的代码
         // 此代码在首次启动应用程序时不执行
-        private async void Application_Activated(object sender, ActivatedEventArgs e)
+        private void Application_Activated(object sender, ActivatedEventArgs e)
         {
 #if DEBUG || PREVIEW
             //Models.MemoryDiagnosticsHelper.Start();
@@ -179,11 +200,48 @@ namespace MoePic
                 Debugger.Break();
             }
 
-            EmailComposeTask task = new EmailComposeTask();
-            task.To = "higan@live.cn";
-            task.Subject = "导航失败";
-            task.Body = "这是由导航失败导致的闪退";
-            task.Show();
+            var phoneInfo = PhoneNameResolver.Resolve(Microsoft.Phone.Info.DeviceStatus.DeviceManufacturer, Microsoft.Phone.Info.DeviceStatus.DeviceName);
+            ExceptionInfo info = new ExceptionInfo()
+            {
+                AppMemoryUsage = 1.0 * Windows.System.MemoryManager.AppMemoryUsage / 1024 / 1024,
+                AppMemoryUsageLimit = 1.0 * Windows.System.MemoryManager.AppMemoryUsageLimit / 1024 / 1024,
+                DeviceManufacturer = Microsoft.Phone.Info.DeviceStatus.DeviceManufacturer,
+                DotNetVersion = System.Environment.Version,
+                ExceptionType = "导航失败",
+                Message = "导航失败",
+                OSVersion = System.Environment.OSVersion.Version,
+                Phone = phoneInfo.CanonicalModel,
+                ScaleFactor = Current.Host.Content.ScaleFactor,
+                StackTrace = null,
+            };
+
+            if (Models.Settings.Current.FeedbackOn)
+            {
+                EmailComposeTask task = new EmailComposeTask();
+                task.To = "higan@live.cn";
+                task.Subject = "导航失败";
+                task.Body = info.ToString();
+                task.Show();
+            }
+            else
+            {
+                ToastService.Show("应用出现了导航失败,可以在设置界面反馈给开发者.", (s, a) => { Models.NavigationService.Navigate("SettingPage.xaml", "Feedback"); }, null, null);
+                IsolatedStorageFile file = IsolatedStorageFile.GetUserStoreForApplication();
+                IsolatedStorageFileStream stream = null;
+                if (!file.FileExists("Feedback.log"))
+                {
+                    stream = file.CreateFile("Feedback.log");
+                }
+                else
+                {
+                    stream = file.OpenFile("Feedback.log", System.IO.FileMode.Create);
+                }
+
+                var data = UTF8Encoding.UTF8.GetBytes(Newtonsoft.Json.JsonConvert.SerializeObject(info));
+                stream.Write(data, 0, data.Length);
+                stream.Close();
+            }
+
             e.Handled = true;
         }
 
@@ -223,12 +281,47 @@ namespace MoePic
                         Debugger.Break();
                     }
 
-                    EmailComposeTask task = new EmailComposeTask();
-                    task.To = "higan@live.cn";
-                    task.Subject = String.Format("MoePic Ver.{0} 异常报告",App.GetVersion());
-                    var info = PhoneNameResolver.Resolve(Microsoft.Phone.Info.DeviceStatus.DeviceManufacturer,Microsoft.Phone.Info.DeviceStatus.DeviceName);
-                    task.Body = String.Format("MoePic在使用中抛出了一个未处理的异常,我们将收集以下信息来帮助我们处理这个异常.\r\n\r\n具体情况说明:\r\n\r\n手机型号:{6}\r\n制造商:{5}\r\n屏幕缩放:{2}\r\n系统版本:{3}\r\n内存使用:{7:F2}/{8:F2}MB\r\n.Net版本:{4}\r\n闪退信息:{0}\r\n调用栈堆:{1}\r\n", e.ExceptionObject.Message, e.ExceptionObject.StackTrace, System.Windows.Application.Current.Host.Content.ScaleFactor, System.Environment.OSVersion.Version, System.Environment.Version, Microsoft.Phone.Info.DeviceStatus.DeviceManufacturer, info.CanonicalModel, 1.0 * Windows.System.MemoryManager.AppMemoryUsage / 1024 / 1024, 1.0 * Windows.System.MemoryManager.AppMemoryUsageLimit / 1024 / 1024);
-                    task.Show();
+                    var phoneInfo = PhoneNameResolver.Resolve(Microsoft.Phone.Info.DeviceStatus.DeviceManufacturer, Microsoft.Phone.Info.DeviceStatus.DeviceName);
+                    ExceptionInfo info = new ExceptionInfo()
+                    {
+                        AppMemoryUsage = 1.0 * Windows.System.MemoryManager.AppMemoryUsage / 1024 / 1024,
+                        AppMemoryUsageLimit = 1.0 * Windows.System.MemoryManager.AppMemoryUsageLimit / 1024 / 1024,
+                        DeviceManufacturer = Microsoft.Phone.Info.DeviceStatus.DeviceManufacturer,
+                        DotNetVersion = System.Environment.Version,
+                        ExceptionType = e.ExceptionObject.ToString(),
+                        Message = e.ExceptionObject.Message,
+                        OSVersion = System.Environment.OSVersion.Version,
+                        Phone = phoneInfo.CanonicalModel,
+                        ScaleFactor = Current.Host.Content.ScaleFactor,
+                        StackTrace = e.ExceptionObject.StackTrace,
+                    };
+
+                    if (Models.Settings.Current.FeedbackOn)
+                    {
+                        EmailComposeTask task = new EmailComposeTask();
+                        task.To = "higan@live.cn";
+                        task.Subject = String.Format("MoePic Ver.{0} 异常报告", App.GetVersion());
+                        task.Body = info.ToString();
+                        task.Show();
+                    }
+                    else
+                    {
+                        ToastService.Show("应用内部出现了异常,可以在设置界面反馈给开发者.", (s, a) => { Models.NavigationService.Navigate("SettingPage.xaml", "Feedback"); }, null, null);
+                        IsolatedStorageFile file = IsolatedStorageFile.GetUserStoreForApplication();
+                        IsolatedStorageFileStream stream = null;
+                        if (!file.FileExists("Feedback.log"))
+                        {
+                            stream = file.CreateFile("Feedback.log");
+                        }
+                        else
+                        {
+                            stream = file.OpenFile("Feedback.log", System.IO.FileMode.Create);
+                        }
+
+                        var data = UTF8Encoding.UTF8.GetBytes(Newtonsoft.Json.JsonConvert.SerializeObject(info));
+                        stream.Write(data, 0, data.Length);
+                        stream.Close();
+                    }
                 }
             }
         }

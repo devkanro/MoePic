@@ -109,14 +109,7 @@ namespace MoePic
             {
                 IsolatedStorageSettings.ApplicationSettings.Add(App.GetVersion(), true);
                 IsolatedStorageSettings.ApplicationSettings.Save();
-                MessageBoxService.Show("有什么新功能?", "MoePic 已更新至Ver.0.4.4.0,以下是新加的功能:\r\n01.开放无限试用版,但是只提供基本的浏览功能.\r\n02.正式版用户将得到全部功能的支持,可使用CDN等拓展功能.\r\n03.登录步骤转至后台,加快启动速度.", true, new Command(MoePic.Resources.AppResources.Confirm, null));
-            }
-
-            if (!IsolatedStorageSettings.ApplicationSettings.Contains("CDN"))
-            {
-                IsolatedStorageSettings.ApplicationSettings.Add("CDN", true);
-                IsolatedStorageSettings.ApplicationSettings.Save();
-                MessageBoxService.Show("关于CDN服务的说明", "MoePic 在Ver.0.4.3.3版本加入了CDN服务,该服务可以对中国内地用户的访问进行加速,国外用户访问可能变慢,而且CDN服务目前处于实验阶段,在使用中可能出现某些未知的问题,例如:无法载入某些图片,图片列表不更新,请谨慎使用.", true, new Command(MoePic.Resources.AppResources.Confirm, null));
+                MessageBoxService.Show("有什么新功能?", "MoePic 已更新至Ver.0.4.4.1,以下是新加的功能:\r\n01.可以一次性将图集内的所有图片加入喜爱列表.\r\n02.可以创建图集分享链接.\r\n03.可以与图库账户的喜爱列表同步.\r\n04.避免过长标签,可以将标签向右移动出界.\r\n05.可以在设置里选择不自动弹出闪退信息.\r\n06.CDN功能调整,使用登录,同步,评论功能时不会使用CDN.\r\n07.仅限本周!限时优惠,Plus!版本仅需6RMB.", true, new Command(MoePic.Resources.AppResources.Confirm, null));
             }
 
             LoadNotice();

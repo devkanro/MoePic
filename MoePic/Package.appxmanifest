@@ -1,6 +1,6 @@
 ﻿<?xml version="1.0" encoding="utf-8"?>
 <Package xmlns="http://schemas.microsoft.com/appx/2010/manifest" xmlns:m2="http://schemas.microsoft.com/appx/2013/manifest" xmlns:m3="http://schemas.microsoft.com/appx/2014/manifest" xmlns:mp="http://schemas.microsoft.com/appx/2014/phone/manifest">
-  <Identity Name="13372HIGAN.MoePic" Publisher="CN=F02C3F66-CA67-481A-B104-47930F905273" Version="0.4.4.0" />
+  <Identity Name="13372HIGAN.MoePic" Publisher="CN=F02C3F66-CA67-481A-B104-47930F905273" Version="0.4.4.1" />
   <mp:PhoneIdentity PhoneProductId="e52323d2-7a2c-4be7-94e5-d15ed906b0ab" PhonePublisherId="5e10199f-6617-4b5d-b10f-d21750e722ea" />
   <Properties>
     <DisplayName>MoePic</DisplayName>

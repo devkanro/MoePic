@@ -94,10 +94,15 @@ namespace MoePic.Models
                 }
                 else
                 {
-
                     Current = JsonConvert.DeserializeObject<Settings>(jsonString);
 
-                    if(Current.VisionString != "0.4.4.0")
+                    if(Current.VisionString == "0.4.4.0")
+                    {
+                        Current.VisionString = "0.4.4.1";
+                        Current.FeedbackOn = true;
+                    }
+
+                    if(Current.VisionString != "0.4.4.1")
                     {
                         ToastService.Show("设定档已过期,将初始化设定档.");
                         Init();
@@ -212,7 +217,10 @@ namespace MoePic.Models
         public DateTime FirstLaunchTime { get; set; }
 
         public bool IsExAble { get; set; }
+
         public bool IsExOnlyAble { get; set; }
+
+        public bool FeedbackOn { get; set; }
 
         public static void SaveSetting()
         {
@@ -243,7 +251,7 @@ namespace MoePic.Models
                 KLast = -1,
                 LastPostK = -1,
                 LastPostY = -1,
-                VisionString = "0.4.4.0",
+                VisionString = "0.4.4.1",
                 UserY = null,
                 UserK = null,
                 UserYHash = null,
@@ -264,7 +272,8 @@ namespace MoePic.Models
                 ThemeColorUnlock = 0,
                 HideTags = false,
                 AutoHideTags = false,
-                EnableCDN = false
+                EnableCDN = false,
+                FeedbackOn = true
             };
             (App.Current.Resources["RuntimeResources"] as RuntimeResources).NameFormat = Current.NameFormat;
         }

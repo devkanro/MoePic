@@ -21,7 +21,7 @@
             <RowDefinition Height="50"/>
             <RowDefinition/>
         </Grid.RowDefinitions>
-        <phone:Pivot Grid.Row="1" Style="{StaticResource MoePivot}">
+        <phone:Pivot x:Name="content" Grid.Row="1" Style="{StaticResource MoePivot}">
             <phone:PivotItem Header="{Binding LocalizedResources.View, Mode=OneWay, Source={StaticResource LocalizedStrings}}" Margin="0" >
                 <ScrollViewer>
                     <StackPanel Margin="15,15,15,0">
@@ -84,52 +84,65 @@
                 </StackPanel>
             </phone:PivotItem>
             <phone:PivotItem Header="{Binding LocalizedResources.Application, Mode=OneWay, Source={StaticResource LocalizedStrings}}" Margin="0" >
-                <StackPanel Margin="15,15,15,0">
-                    <Grid>
-                        <TextBlock Foreground="{Binding Text2, Source={StaticResource ThemeColor}}" Text="{Binding LocalizedResources.SaveRamSetting, Mode=OneWay, Source={StaticResource LocalizedStrings}}" FontSize="30"></TextBlock>
-                        <tool:ToggleSwitch  x:Name="saveRAM" Content="" HorizontalAlignment="Right" Style="{StaticResource ToggleSwitchStyle}" Unchecked="saveRAM_Unchecked" Checked="saveRAM_Checked"/>
-                    </Grid>
-                    <TextBlock Text="{Binding LocalizedResources.SaveRamSettingInfo, Mode=OneWay, Source={StaticResource LocalizedStrings}}" TextWrapping="Wrap" VerticalAlignment="Bottom" HorizontalAlignment="Left" Margin="0,0,0,12" Opacity="0.5" Foreground="{Binding Text2, Source={StaticResource ThemeColor}}"></TextBlock>
-                    <TextBlock Foreground="{Binding Text2, Source={StaticResource ThemeColor}}" Text="{Binding LocalizedResources.ClearHistory, Mode=OneWay, Source={StaticResource LocalizedStrings}}" FontSize="30"></TextBlock>
-                    <Button Content="{Binding LocalizedResources.ClearHistory, Mode=OneWay, Source={StaticResource LocalizedStrings}}" BorderBrush="{Binding Text2, Source={StaticResource ThemeColor}}" Background="{x:Null}" Foreground="{Binding Text2, Source={StaticResource ThemeColor}}" Margin="-12,-6,-12,0" Click="Button_Click"/>
-                    <TextBlock Text="{Binding LocalizedResources.ClearHistoryInfo, Mode=OneWay, Source={StaticResource LocalizedStrings}}" TextWrapping="Wrap" VerticalAlignment="Bottom" HorizontalAlignment="Left" Margin="0,-10,0,12" Opacity="0.5" Foreground="{Binding Text2, Source={StaticResource ThemeColor}}"></TextBlock>
+                <ScrollViewer>
+                    <StackPanel Margin="15,15,15,0">
+                        <Grid>
+                            <TextBlock Foreground="{Binding Text2, Source={StaticResource ThemeColor}}" Text="{Binding LocalizedResources.SaveRamSetting, Mode=OneWay, Source={StaticResource LocalizedStrings}}" FontSize="30"></TextBlock>
+                            <tool:ToggleSwitch  x:Name="saveRAM" Content="" HorizontalAlignment="Right" Style="{StaticResource ToggleSwitchStyle}" Unchecked="saveRAM_Unchecked" Checked="saveRAM_Checked"/>
+                        </Grid>
+                        <TextBlock Text="{Binding LocalizedResources.SaveRamSettingInfo, Mode=OneWay, Source={StaticResource LocalizedStrings}}" TextWrapping="Wrap" VerticalAlignment="Bottom" HorizontalAlignment="Left" Margin="0,0,0,12" Opacity="0.5" Foreground="{Binding Text2, Source={StaticResource ThemeColor}}"></TextBlock>
+                        <TextBlock Foreground="{Binding Text2, Source={StaticResource ThemeColor}}" Text="{Binding LocalizedResources.ClearHistory, Mode=OneWay, Source={StaticResource LocalizedStrings}}" FontSize="30"></TextBlock>
+                        <Button Content="{Binding LocalizedResources.ClearHistory, Mode=OneWay, Source={StaticResource LocalizedStrings}}" BorderBrush="{Binding Text2, Source={StaticResource ThemeColor}}" Background="{x:Null}" Foreground="{Binding Text2, Source={StaticResource ThemeColor}}" Margin="-12,-6,-12,0" Click="Button_Click"/>
+                        <TextBlock Text="{Binding LocalizedResources.ClearHistoryInfo, Mode=OneWay, Source={StaticResource LocalizedStrings}}" TextWrapping="Wrap" VerticalAlignment="Bottom" HorizontalAlignment="Left" Margin="0,-10,0,12" Opacity="0.5" Foreground="{Binding Text2, Source={StaticResource ThemeColor}}"></TextBlock>
 
-                    <TextBlock Foreground="{Binding Text2, Source={StaticResource ThemeColor}}" Text="应用主题色" FontSize="30"/>
-                    <tool:ListPicker FullModeHeader="请选择主题色" SelectionChanged="themeColor_SelectionChanged" x:Name="themeColor" Margin="0" Foreground="{Binding Text2, Source={StaticResource ThemeColor}}" BorderBrush="{Binding Text2, Source={StaticResource ThemeColor}}" MouseLeftButtonUp="themeColor_MouseLeftButtonDown">
-                        <tool:ListPicker.ItemTemplate>
-                            <DataTemplate>
-                                <Grid Height="45">
-                                    <Rectangle Fill="{Binding SampleColor}" Margin="6,0,0,0" Width="40" Height="40" HorizontalAlignment="Left" VerticalAlignment="Center"></Rectangle>
-                                    <TextBlock Text="{Binding Name}" Margin="62,0,0,0" FontSize="30" Foreground="{Binding Text2, Source={StaticResource ThemeColor}}" VerticalAlignment="Center" HorizontalAlignment="Left"></TextBlock>
-                                </Grid>
-                            </DataTemplate>
-                        </tool:ListPicker.ItemTemplate>
-                        <tool:ListPicker.FullModeItemTemplate>
-                            <DataTemplate>
-                                <Grid Margin="0,5" Height="54">
-                                    <Rectangle Fill="{Binding SampleColor}" Margin="6,0,0,0" Width="50" Height="50" HorizontalAlignment="Left" VerticalAlignment="Center"></Rectangle>
-                                    <TextBlock Text="{Binding Name}" Margin="62,0,0,0" FontSize="35" Foreground="{Binding Text2, Source={StaticResource ThemeColor}}" VerticalAlignment="Center" HorizontalAlignment="Left"></TextBlock>
-                                </Grid>
-                            </DataTemplate>
-                        </tool:ListPicker.FullModeItemTemplate>
-                    </tool:ListPicker>
-                    <TextBlock TextWrapping="Wrap" Text="设定应用的主题色." VerticalAlignment="Bottom" HorizontalAlignment="Left" Margin="0,0,0,12" Opacity="0.5" Foreground="{Binding Text2, Source={StaticResource ThemeColor}}"/>
-
-                    <Grid>
-                        <TextBlock Foreground="{Binding Text2, Source={StaticResource ThemeColor}}" Text="{Binding LocalizedResources.Password, Mode=OneWay, Source={StaticResource LocalizedStrings}}" FontSize="30"></TextBlock>
-                        <tool:ToggleSwitch  x:Name="password" Content="" HorizontalAlignment="Right" Style="{StaticResource ToggleSwitchStyle}" Click="password_Click"/>
-                    </Grid>
-                    <TextBlock TextWrapping="Wrap" VerticalAlignment="Bottom" HorizontalAlignment="Left" Margin="0" Opacity="0.5" Foreground="{Binding Text2, Source={StaticResource ThemeColor}}" Text="{Binding LocalizedResources.PasswordInfo, Mode=OneWay, Source={StaticResource LocalizedStrings}}"/>
-                    <StackPanel x:Name="passwordSettigs">
-                        <Button BorderBrush="{Binding Text2, Source={StaticResource ThemeColor}}" Foreground="{Binding Text2, Source={StaticResource ThemeColor}}" HorizontalAlignment="Left" Margin="-12,0,0,0" Click="Button_Click_1" Content="{Binding LocalizedResources.ChangePassword, Mode=OneWay, Source={StaticResource LocalizedStrings}}"></Button>
-                        <TextBlock Text="{Binding LocalizedResources.ChangePasswordInfo, Mode=OneWay, Source={StaticResource LocalizedStrings}}" TextWrapping="Wrap" VerticalAlignment="Bottom" HorizontalAlignment="Left" Margin="0,-10,0,6" Opacity="0.5" Foreground="{Binding Text2, Source={StaticResource ThemeColor}}"></TextBlock>
-                        <tool:ListPicker x:Name="needPW" Margin="0" Foreground="{Binding Text2, Source={StaticResource ThemeColor}}" BorderBrush="{Binding Text2, Source={StaticResource ThemeColor}}" SelectionChanged="needPW_SelectionChanged">
-                            <tool:ListPickerItem Content="{Binding LocalizedResources.EveryActive, Mode=OneWay, Source={StaticResource LocalizedStrings}}"></tool:ListPickerItem>
-                            <tool:ListPickerItem Content="{Binding LocalizedResources.EveryRun, Mode=OneWay, Source={StaticResource LocalizedStrings}}"></tool:ListPickerItem>
+                        <TextBlock Foreground="{Binding Text2, Source={StaticResource ThemeColor}}" Text="应用主题色" FontSize="30"/>
+                        <tool:ListPicker FullModeHeader="请选择主题色" SelectionChanged="themeColor_SelectionChanged" x:Name="themeColor" Margin="0" Foreground="{Binding Text2, Source={StaticResource ThemeColor}}" BorderBrush="{Binding Text2, Source={StaticResource ThemeColor}}" MouseLeftButtonUp="themeColor_MouseLeftButtonDown">
+                            <tool:ListPicker.ItemTemplate>
+                                <DataTemplate>
+                                    <Grid Height="45">
+                                        <Rectangle Fill="{Binding SampleColor}" Margin="6,0,0,0" Width="40" Height="40" HorizontalAlignment="Left" VerticalAlignment="Center"></Rectangle>
+                                        <TextBlock Text="{Binding Name}" Margin="62,0,0,0" FontSize="30" Foreground="{Binding Text2, Source={StaticResource ThemeColor}}" VerticalAlignment="Center" HorizontalAlignment="Left"></TextBlock>
+                                    </Grid>
+                                </DataTemplate>
+                            </tool:ListPicker.ItemTemplate>
+                            <tool:ListPicker.FullModeItemTemplate>
+                                <DataTemplate>
+                                    <Grid Margin="0,5" Height="54">
+                                        <Rectangle Fill="{Binding SampleColor}" Margin="6,0,0,0" Width="50" Height="50" HorizontalAlignment="Left" VerticalAlignment="Center"></Rectangle>
+                                        <TextBlock Text="{Binding Name}" Margin="62,0,0,0" FontSize="35" Foreground="{Binding Text2, Source={StaticResource ThemeColor}}" VerticalAlignment="Center" HorizontalAlignment="Left"></TextBlock>
+                                    </Grid>
+                                </DataTemplate>
+                            </tool:ListPicker.FullModeItemTemplate>
                         </tool:ListPicker>
-                        <TextBlock Text="{Binding LocalizedResources.NeedPasswordInfo, Mode=OneWay, Source={StaticResource LocalizedStrings}}" TextWrapping="Wrap" VerticalAlignment="Bottom" HorizontalAlignment="Left" Margin="0,3,0,12" Opacity="0.5" Foreground="{Binding Text2, Source={StaticResource ThemeColor}}"></TextBlock>
+                        <TextBlock TextWrapping="Wrap" Text="设定应用的主题色." VerticalAlignment="Bottom" HorizontalAlignment="Left" Margin="0,0,0,12" Opacity="0.5" Foreground="{Binding Text2, Source={StaticResource ThemeColor}}"/>
+
+                        <Grid>
+                            <TextBlock Foreground="{Binding Text2, Source={StaticResource ThemeColor}}" Text="{Binding LocalizedResources.Password, Mode=OneWay, Source={StaticResource LocalizedStrings}}" FontSize="30"></TextBlock>
+                            <tool:ToggleSwitch  x:Name="password" Content="" HorizontalAlignment="Right" Style="{StaticResource ToggleSwitchStyle}" Click="password_Click"/>
+                        </Grid>
+                        <TextBlock TextWrapping="Wrap" VerticalAlignment="Bottom" HorizontalAlignment="Left" Margin="0" Opacity="0.5" Foreground="{Binding Text2, Source={StaticResource ThemeColor}}" Text="{Binding LocalizedResources.PasswordInfo, Mode=OneWay, Source={StaticResource LocalizedStrings}}"/>
+                        <StackPanel x:Name="passwordSettigs">
+                            <Button BorderBrush="{Binding Text2, Source={StaticResource ThemeColor}}" Foreground="{Binding Text2, Source={StaticResource ThemeColor}}" HorizontalAlignment="Left" Margin="-12,0,0,0" Click="Button_Click_1" Content="{Binding LocalizedResources.ChangePassword, Mode=OneWay, Source={StaticResource LocalizedStrings}}"></Button>
+                            <TextBlock Text="{Binding LocalizedResources.ChangePasswordInfo, Mode=OneWay, Source={StaticResource LocalizedStrings}}" TextWrapping="Wrap" VerticalAlignment="Bottom" HorizontalAlignment="Left" Margin="0,-10,0,6" Opacity="0.5" Foreground="{Binding Text2, Source={StaticResource ThemeColor}}"></TextBlock>
+                            <tool:ListPicker x:Name="needPW" Margin="0" Foreground="{Binding Text2, Source={StaticResource ThemeColor}}" BorderBrush="{Binding Text2, Source={StaticResource ThemeColor}}" SelectionChanged="needPW_SelectionChanged">
+                                <tool:ListPickerItem Content="{Binding LocalizedResources.EveryActive, Mode=OneWay, Source={StaticResource LocalizedStrings}}"></tool:ListPickerItem>
+                                <tool:ListPickerItem Content="{Binding LocalizedResources.EveryRun, Mode=OneWay, Source={StaticResource LocalizedStrings}}"></tool:ListPickerItem>
+                            </tool:ListPicker>
+                            <TextBlock Text="{Binding LocalizedResources.NeedPasswordInfo, Mode=OneWay, Source={StaticResource LocalizedStrings}}" TextWrapping="Wrap" VerticalAlignment="Bottom" HorizontalAlignment="Left" Margin="0,3,0,12" Opacity="0.5" Foreground="{Binding Text2, Source={StaticResource ThemeColor}}"></TextBlock>
+                        </StackPanel>
+
+                        <Grid Margin="0,12,0,0">
+                            <TextBlock Foreground="{Binding Text2, Source={StaticResource ThemeColor}}" Text="弹出异常反馈" FontSize="30"></TextBlock>
+                            <tool:ToggleSwitch  x:Name="feedback" Content="" HorizontalAlignment="Right" Style="{StaticResource ToggleSwitchStyle}" Checked="feedback_Checked" Unchecked="feedback_Unchecked"/>
+                        </Grid>
+                        <TextBlock Text="遇到异常时弹出反馈邮件." TextWrapping="Wrap" VerticalAlignment="Bottom" HorizontalAlignment="Left" Margin="0,0,0,12" Opacity="0.5" Foreground="{Binding Text2, Source={StaticResource ThemeColor}}"></TextBlock>
+
+                        <TextBlock Foreground="{Binding Text2, Source={StaticResource ThemeColor}}" Text="反馈异常" FontSize="30"></TextBlock>
+                        <Button Content="反馈异常" BorderBrush="{Binding Text2, Source={StaticResource ThemeColor}}" Background="{x:Null}" Foreground="{Binding Text2, Source={StaticResource ThemeColor}}" Margin="-12,-6,-12,0" Click="Button_Click_2"/>
+                        <TextBlock Text="将程序的上个异常反馈通过邮件反馈至开发者." TextWrapping="Wrap" VerticalAlignment="Bottom" HorizontalAlignment="Left" Margin="0,-10,0,12" Opacity="0.5" Foreground="{Binding Text2, Source={StaticResource ThemeColor}}"></TextBlock>
+
                     </StackPanel>
-                </StackPanel>
+                </ScrollViewer>
             </phone:PivotItem>
         </phone:Pivot>
         <Image Source="/Assets/Effects/ShadowNavUP.png" VerticalAlignment="Top" Stretch="Fill" Height="5" Margin="0,117,0,0" Grid.RowSpan="2"/>
